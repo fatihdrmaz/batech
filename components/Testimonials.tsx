@@ -1,23 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const testimonials = [
-  {
-    quote: "Hem ürün kalitesi hem fiyat-performance açısından memnun kaldık. Projemizde Batech ekipmanları kullandık, sorunsuz teslimat ve sonrasında da destek aldık.",
-    role: "Havuz İnşaat Firması",
-  },
-  {
-    quote: "Havuz aydınlatma ürünlerinde uzun süredir Batech ile çalışıyoruz. Geniş ürün yelpazesi ve hızlı sevkiyat işimizi kolaylaştırıyor.",
-    role: "Bayi / Uygulayıcı",
-  },
-  {
-    quote: "Villa havuzumuz için tek noktadan tüm ekipmanı temin ettik. Teknik ekibin önerileri ve uygun fiyat politikası tercih sebebimiz oldu.",
-    role: "Bireysel Müşteri",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
+  const t = useTranslations();
+  const testimonials = t.raw("testimonials.items") as Array<{ quote: string; role: string }>;
+
   return (
     <section className="py-20 lg:py-28 bg-batech-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,13 +17,13 @@ export default function Testimonials() {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-batech-cyan font-medium text-sm uppercase tracking-wider">
-            Referanslar
+            {t("testimonials.label")}
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold section-accent pb-6">
-            Müşterilerimiz Ne Diyor?
+            {t("testimonials.title")}
           </h2>
           <p className="mt-4 text-batech-silver">
-            Binlerce projede güvenilir iş ortağı olarak yer aldık.
+            {t("testimonials.subtitle")}
           </p>
         </motion.div>
 

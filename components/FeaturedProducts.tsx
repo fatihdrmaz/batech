@@ -1,19 +1,31 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
-const products = [
-  { slug: "mosaic-model-havuz-kenar-izgarasi", name: "20 cm Mosaic Model Havuz Kenar Izgarası", category: "Havuz Kenar Ekipmanları", description: "Dayanıklı paslanmaz yapı, mosaic tasarım.", image: "/images/placeholder-product.svg" },
-  { slug: "tek-led-mini-spot", name: "Tek Led Mini Spot (Parmak Mini Spot)", category: "Havuz Aydınlatma", description: "Enerji tasarruflu LED, uzun ömürlü.", image: "/images/placeholder-product.svg" },
-  { slug: "paslanmaz-havuz-su-perdesi", name: "Paslanmaz Havuz Su Perdesi (Kobra Şelale)", category: "Süs Havuzu Ekipmanları", description: "Estetik su perdesi ve şelale efekti.", image: "/images/placeholder-product.svg" },
-  { slug: "alti-yollu-vana", name: "Altı Yollu Vana", category: "Havuz Kenar ve İç Ekipmanları", description: "Çok yönlü akış kontrolü, güvenilir kullanım.", image: "/images/placeholder-product.svg" },
-  { slug: "par56-paslanmaz-armatur-siva-alti", name: "PAR56 Paslanmaz Armatür (Sıva Altı)", category: "Havuz Aydınlatma", description: "Profesyonel havuz aydınlatma çözümü.", image: "/images/placeholder-product.svg" },
-  { slug: "par38-ayakli-armatur", name: "PAR38 Ayaklı Armatür", category: "Havuz Aydınlatma", description: "9W LED, beyaz / güneş ışığı / RGB ve renk seçenekleri.", image: "/images/placeholder-product.svg" },
+const FEATURED_SLUGS = [
+  "mosaic-model-havuz-kenar-izgarasi",
+  "tek-led-mini-spot",
+  "paslanmaz-havuz-su-perdesi",
+  "alti-yollu-vana",
+  "par56-paslanmaz-armatur-siva-alti",
+  "par38-ayakli-armatur",
 ];
+const PLACEHOLDER_IMAGE = "/images/placeholder-product.svg";
 
 export default function FeaturedProducts() {
+  const t = useTranslations();
+  const items = t.raw("products.featured.items") as Array<{ name: string; category: string; description: string }>;
+  const products = Array.isArray(items)
+    ? items.slice(0, FEATURED_SLUGS.length).map((item, i) => ({
+        ...item,
+        slug: FEATURED_SLUGS[i],
+        image: PLACEHOLDER_IMAGE,
+      }))
+    : [];
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,13 +36,13 @@ export default function FeaturedProducts() {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
-            Öne Çıkan Ürünler
+            {t("products.featured.label")}
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
-            Son Eklenen & Popüler Ürünler
+            {t("products.featured.title")}
           </h2>
           <p className="mt-4 text-batech-silver">
-            Katalogumuzdan güncel ve çok tercih edilen havuz ekipmanları.
+            {t("products.featured.subtitle")}
           </p>
         </motion.div>
 
@@ -44,12 +56,13 @@ export default function FeaturedProducts() {
               transition={{ delay: i * 0.05 }}
               className="group rounded-2xl border border-batech-pearl bg-white overflow-hidden hover:border-batech-cyan/40 hover:shadow-lg transition-all duration-300 relative card-shine"
             >
-              <div className="relative aspect-[4/3] w-full bg-batech-pearl overflow-hidden">
+              <div className="relative aspect-[4/3] w-full bg-white overflow-hidden">
+                <div className="absolute inset-0 bg-white z-0" />
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300 relative z-10"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
@@ -70,13 +83,13 @@ export default function FeaturedProducts() {
                     href={`/urun/${product.slug}`}
                     className="inline-flex items-center gap-1 text-sm font-medium text-batech-teal hover:text-batech-cyan"
                   >
-                    Ürün detayı
+                    {t("products.detail")}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </Link>
                   <Link href="/#iletisim" className="text-sm font-medium text-batech-silver hover:text-batech-teal">
-                    Teklif al
+                    {t("products.quote")}
                   </Link>
                 </div>
               </div>
@@ -94,7 +107,7 @@ export default function FeaturedProducts() {
             href="/urunler"
             className="inline-flex items-center gap-2 text-batech-teal font-semibold hover:text-batech-cyan transition-colors"
           >
-            Tüm ürün kategorilerini inceleyin
+            {t("products.featured.viewAll")}
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>

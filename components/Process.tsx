@@ -1,31 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-const steps = [
-  {
-    step: "01",
-    title: "İletişime Geçin",
-    description: "Telefon, e-posta veya WhatsApp ile bize ulaşın. İhtiyacınızı kısaca belirtin.",
-  },
-  {
-    step: "02",
-    title: "İhtiyaç Analizi",
-    description: "Havuz tipi, kullanım alanı ve bütçenize göre en uygun ürünleri belirliyoruz.",
-  },
-  {
-    step: "03",
-    title: "Teklif & Katalog",
-    description: "Detaylı fiyat teklifi ve ürün kataloğu ile size özel çözüm sunuyoruz.",
-  },
-  {
-    step: "04",
-    title: "Sevkiyat & Destek",
-    description: "Siparişiniz hızlıca hazırlanır; kurulum ve sonrasında teknik destek sağlarız.",
-  },
+const DEFAULT_STEPS: Array<{ step: string; title: string; description: string }> = [
+  { step: "01", title: "Contact", description: "Reach us by phone, email or WhatsApp." },
+  { step: "02", title: "Analysis", description: "We identify the most suitable products." },
+  { step: "03", title: "Quote & Catalog", description: "We offer a tailored solution." },
+  { step: "04", title: "Shipping & Support", description: "Your order is prepared; we provide support." },
 ];
 
 export default function Process() {
+  const t = useTranslations();
+  const rawSteps = t.raw("workProcess.steps");
+  const steps = Array.isArray(rawSteps) ? (rawSteps as Array<{ step: string; title: string; description: string }>) : DEFAULT_STEPS;
+
   return (
     <section className="py-20 lg:py-28 bg-water-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,13 +25,13 @@ export default function Process() {
           className="text-center max-w-2xl mx-auto mb-16"
         >
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
-            Çalışma Şeklimiz
+            {t("workProcess.label")}
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
-            Nasıl Çalışıyoruz?
+            {t("workProcess.title")}
           </h2>
           <p className="mt-4 text-batech-silver">
-            Basit ve şeffaf süreçle ihtiyacınıza en uygun havuz ekipmanını birlikte belirliyoruz.
+            {t("workProcess.subtitle")}
           </p>
         </motion.div>
 

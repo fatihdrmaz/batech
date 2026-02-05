@@ -18,13 +18,30 @@ export async function generateStaticParams() {
   return getAllProductSlugs().map((slug) => ({ slug }));
 }
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
+
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) return { title: "Ürün | Batech" };
+  const title = `${product.name} | Batech Havuz Ekipmanları`;
+  const description = product.description?.slice(0, 160) || product.name;
+  const image = product.image ? `${SITE_URL}${product.image}` : undefined;
   return {
-    title: `${product.name} | Batech Havuz Ekipmanları`,
-    description: product.description?.slice(0, 160) || product.name,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/urun/${slug}`,
+      type: "website",
+      images: image ? [{ url: image, alt: product.name }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -36,8 +53,25 @@ export default async function ProductPage({ params }: Props) {
   const category = getCategoryBySlug(product.categorySlug);
   const related = getRelatedProducts(product);
 
+  const imgPath = getProductImage(product);
+  const productImageUrl = imgPath.startsWith("http") ? imgPath : `${SITE_URL}${imgPath}`;
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: product.name,
+            description: product.description?.slice(0, 200) || product.name,
+            image: productImageUrl,
+            brand: { "@type": "Brand", name: "Batech" },
+            category: category?.name,
+          }),
+        }}
+      />
       {/* Breadcrumb & header */}
       <div className="relative bg-batech-navy text-white py-10 lg:py-14 overflow-hidden">
         <div
@@ -87,15 +121,19 @@ export default async function ProductPage({ params }: Props) {
                 fallbackImage={getProductImage(product)}
               />
             ) : (
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-batech-pearl border border-batech-pearl shadow-lg shadow-batech-navy/5">
-                <Image
-                  src={getProductImage(product)}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                  priority
-                />
+              <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-batech-pearl shadow-lg shadow-batech-navy/5">
+                <div className="relative aspect-square max-w-2xl mx-auto p-8 sm:p-12 lg:p-16 bg-white">
+                  {/* Beyaz arka plan katmanı - görselin şeffaf kısımlarını beyaz yapar */}
+                  <div className="absolute inset-0 bg-white z-0" />
+                  <Image
+                    src={getProductImage(product)}
+                    alt={product.name}
+                    fill
+                    className="object-contain relative z-10"
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    priority
+                  />
+                </div>
               </div>
             )}
             {/* Varyant tablosu */}
@@ -200,7 +238,16 @@ export default async function ProductPage({ params }: Props) {
                   0212 616 55 20
                 </a>
                 <a
-                  href="https://wa.me/902126165520"
+                  href="tel:+905462541454"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl border-2 border-batech-teal text-batech-teal font-medium hover:bg-batech-teal hover:text-white transition-colors"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  0546 254 14 54
+                </a>
+                <a
+                  href="https://wa.me/905462541454"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-[#25D366] text-white font-medium hover:bg-[#20BD5A] transition-colors"

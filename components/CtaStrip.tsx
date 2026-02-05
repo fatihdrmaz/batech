@@ -1,8 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+
+const KATALOG_URL = process.env.NEXT_PUBLIC_KATALOG_URL;
 
 export default function CtaStrip() {
+  const t = useTranslations();
+
   return (
     <section className="py-16 lg:py-20 bg-water-gradient text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,21 +19,34 @@ export default function CtaStrip() {
         >
           <div>
             <h2 className="text-2xl sm:text-3xl font-bold">
-              Projeniz için fiyat teklifi alın
+              {t("cta.title")}
             </h2>
             <p className="mt-2 text-batech-silver max-w-xl">
-              Katalog, teknik bilgi veya toplu sipariş talepleriniz için hemen iletişime geçin. Ekibimiz en kısa sürede size dönüş yapacaktır.
+              {t("cta.description")}
             </p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0 flex-wrap justify-center">
             <a
               href="#iletisim"
               className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-batech-navy font-semibold hover:bg-batech-pearl transition-colors"
             >
-              Teklif Talep Et
+              {t("cta.request")}
             </a>
+            {KATALOG_URL && (
+              <a
+                href={KATALOG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                {t("cta.downloadCatalog")}
+              </a>
+            )}
             <a
-              href="https://wa.me/902126165520"
+              href={`https://wa.me/90${t("common.mobile").replace(/\s/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"

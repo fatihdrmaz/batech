@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function About() {
+  const t = useTranslations();
+
   return (
     <section id="hakkimizda" className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,36 +16,22 @@ export default function About() {
             viewport={{ once: true }}
           >
             <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
-              Hakkımızda
+              {t("about.label")}
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
-              41 yıldır havuz ekipmanlarında
+              {t("about.title1")}
               <br />
-              <span className="text-batech-teal">güvenilir çözüm ortağınız</span>
+              <span className="text-batech-teal">{t("about.title2")}</span>
             </h2>
             <p className="mt-6 text-batech-silver leading-relaxed">
-              Batech olarak havuz projelerinin imalatından tasarımına, kullanım sonrası
-              bakım aşamasına kadar tüm süreçlerde kaliteli ekipman ve güvenilir hizmet
-              sunuyoruz. Havuz aydınlatma ekipmanları, elektrik panoları, filtreler,
-              pompalar, ısıtma ekipmanları ve havuz kimyasalları ile tek adresiniziz.
+              {t("about.description1")}
             </p>
             <p className="mt-4 text-batech-silver leading-relaxed">
-              Özellikle havuz lambaları ve aydınlatma sistemlerinde 41 yılı aşkın üretim
-              tecrübemizle sektörde öncü konumdayız. Konut havuzlarından otel ve spor tesislerine,
-              süs havuzlarından olimpik yüzme havuzlarına kadar her ölçekte projeye uygun
-              ürün çeşitliliği sunuyoruz. Müşteri memnuniyeti ve uzun ömürlü ürünler
-              önceliğimizdir.
+              {t("about.description2")}
             </p>
             <ul className="mt-8 space-y-3">
-              {[
-                "Havuz Aydınlatma Ekipmanları",
-                "Elektrik Panoları",
-                "Filtreler ve Ekipmanları",
-                "Pompalar ve Isıtma Ekipmanları",
-                "Havuz Temizlik ve Kenar Ekipmanları",
-                "Yüzme Havuzu Kimyasalları",
-              ].map((item, i) => (
-                <li key={item} className="flex items-center gap-3 text-batech-ocean">
+              {(t.raw("about.items") as string[]).map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-batech-ocean">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-batech-cyan/20 flex items-center justify-center">
                     <svg className="w-3.5 h-3.5 text-batech-teal" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -63,9 +52,9 @@ export default function About() {
             <div className="aspect-[4/3] rounded-2xl bg-water-gradient overflow-hidden shadow-2xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white/90 p-8">
-                  <span className="text-6xl sm:text-7xl font-bold">41</span>
-                  <p className="text-lg font-medium mt-2">Yıllık Tecrübe</p>
-                  <p className="text-sm mt-1 opacity-80">Havuz ekipmanlarında 1 numara</p>
+                  <span className="text-6xl sm:text-7xl font-bold">{t("about.years")}</span>
+                  <p className="text-lg font-medium mt-2">{t("about.yearsLabel")}</p>
+                  <p className="text-sm mt-1 opacity-80">{t("about.yearsSub")}</p>
                 </div>
               </div>
               {/* Decorative grid overlay */}

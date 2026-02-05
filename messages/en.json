@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "values": "Values",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "41 Years of Experience",
+    "title1": "The safe and",
+    "title2": "economical way",
+    "title3": "to enter the pool",
+    "description": "Quality products, competitive prices, fast shipping in pool lighting, filters, pumps and all equipment. Turkey's trusted pool equipment brand.",
+    "cta": "Get Quote",
+    "scroll": "Explore",
+    "qualityProduct": "Quality Products",
+    "fastShipping": "Fast Shipping",
+    "fairPrice": "Competitive Price",
+    "technicalSupport": "Technical Support"
+  },
+  "stats": {
+    "experience": "Years of Experience",
+    "experienceSub": "Since 1983",
+    "categories": "Product Categories",
+    "categoriesSub": "Pool equipment",
+    "projects": "Completed Projects",
+    "projectsSub": "Across Turkey",
+    "customer": "Customer Focused",
+    "customerSub": "Custom solutions"
+  },
+  "about": {
+    "label": "About Us",
+    "title1": "Your trusted partner",
+    "title2": "in pool equipment for 41 years",
+    "description1": "As Batech, we provide quality equipment and reliable service in all processes from manufacturing to design and post-use maintenance of pool projects. We are your single source for pool lighting equipment, electrical panels, filters, pumps, heating equipment and pool chemicals.",
+    "description2": "We are a leader in the industry with over 41 years of production experience, especially in pool lights and lighting systems. We offer product diversity suitable for projects of all scales, from residential pools to hotels and sports facilities, from decorative pools to Olympic swimming pools. Customer satisfaction and long-lasting products are our priorities.",
+    "items": [
+      "Pool Lighting Equipment",
+      "Electrical Panels",
+      "Filters and Equipment",
+      "Pumps and Heating Equipment",
+      "Pool Cleaning and Edge Equipment",
+      "Swimming Pool Chemicals"
+    ],
+    "years": "41",
+    "yearsLabel": "Years of Experience",
+    "yearsSub": "Number 1 in pool equipment"
+  },
+  "values": {
+    "label": "Our Values",
+    "title": "Why Batech?",
+    "subtitle": "Our approach focused on quality, trust and customer satisfaction.",
+    "items": [
+      {
+        "title": "41 Years of Experience",
+        "description": "We are a reliable business partner with our strong product portfolio and experienced team."
+      },
+      {
+        "title": "Quality Product",
+        "description": "We always strive to create the perfect product."
+      },
+      {
+        "title": "Reliable Service",
+        "description": "We think about you more than you do."
+      },
+      {
+        "title": "Competitive Price",
+        "description": "We apply the fairest pricing policy for the highest quality products."
+      },
+      {
+        "title": "Customer Satisfaction",
+        "description": "We listen to our customers and provide the most suitable product for the usage area."
+      },
+      {
+        "title": "Fast Shipping",
+        "description": "We work to deliver the produced product to you in the shortest time."
+      }
+    ]
+  },
+  "products": {
+    "featured": {
+      "label": "Featured Products",
+      "title": "Latest & Popular Products",
+      "subtitle": "Current and most preferred pool equipment from our catalog.",
+      "viewAll": "Browse all product categories",
+      "items": [
+        { "name": "20 cm Mosaic Model Pool Edge Grate", "category": "Pool Edge Equipment", "description": "Durable stainless steel, mosaic design." },
+        { "name": "Single LED Mini Spot (Finger Mini Spot)", "category": "Pool Lighting", "description": "Energy-efficient LED, long-lasting." },
+        { "name": "Stainless Steel Pool Water Curtain (Cobra Waterfall)", "category": "Decorative Pool Equipment", "description": "Aesthetic water curtain and waterfall effect." },
+        { "name": "Six-Way Valve", "category": "Pool Edge and Internal Equipment", "description": "Multi-directional flow control, reliable use." },
+        { "name": "PAR56 Stainless Steel Fixture (Recessed)", "category": "Pool Lighting", "description": "Professional pool lighting solution." },
+        { "name": "PAR38 Pedestal Fixture", "category": "Pool Lighting", "description": "9W LED, white / daylight / RGB and color options." }
+      ]
+    },
+    "all": {
+      "label": "Products",
+      "title": "All Product Categories",
+      "subtitle": "Discover products that suit your needs from our pool equipment catalog.",
+      "viewAll": "View all categories"
+    },
+    "categories": [
+      { "name": "Pool Lighting Equipment", "count": "15 products", "description": "Number one in pool light manufacturing with 41 years of experience." },
+      { "name": "Filters and Equipment", "count": "2 categories", "description": "Pool filter systems and spare parts." },
+      { "name": "Pumps", "count": "1 category", "description": "High-performance pool pumps." },
+      { "name": "Heating Equipment", "count": "3 products", "description": "Pipe-type heaters and heating solutions." },
+      { "name": "Pool Edge and Internal Equipment", "count": "13 products", "description": "Grates, valves, edge equipment." },
+      { "name": "Pool Cleaning Equipment", "count": "12 products", "description": "Cleaning brushes, skimmers and accessories." }
+    ],
+    "lightExampleTitle": "Pool Lighting Products (Sample Catalog)",
+    "lightExampleSubtitle": "PAR and mini spot series, floor fixtures, recessed and surface-mounted options.",
+    "lightProductNames": ["Pedestal Mini Spot", "Flat Fixture (Surface-Mounted)", "Flush Mini Spot", "PAR38 Recessed", "PAR56 Fixture", "PAR56 Stainless Steel Fixture", "Floor Fixture (Fountain Type)", "Mini Flat (21cm Surface-Mounted)", "Single LED Mini Spot"],
+    "contactForCatalog": "For catalog, price quote and custom solutions",
+    "contactForCatalogLink": "contact us",
+    "detail": "Product details",
+    "quote": "Get quote"
+  },
+  "workProcess": {
+    "label": "Process",
+    "title": "How We Work?",
+    "subtitle": "We determine the most suitable pool equipment for your needs together through a simple and transparent process.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Contact Us",
+        "description": "Reach us by phone, email or WhatsApp. Briefly state your needs."
+      },
+      {
+        "step": "02",
+        "title": "Needs Analysis",
+        "description": "We identify the most suitable products according to pool type, usage area and budget."
+      },
+      {
+        "step": "03",
+        "title": "Quote & Catalog",
+        "description": "We offer you a tailored solution with detailed price quote and product catalog."
+      },
+      {
+        "step": "04",
+        "title": "Shipping & Support",
+        "description": "Your order is prepared quickly; we provide installation and technical support afterwards."
+      }
+    ]
+  },
+  "certificates": {
+    "label": "Trust",
+    "title": "Our Certificates",
+    "subtitle": "We provide reliable products and services with our quality and compliance certificates.",
+    "contact": "contact us",
+    "items": [
+      {
+        "title": "Quality Certificates",
+        "desc": "Product and production standards"
+      },
+      {
+        "title": "CE Certificate",
+        "desc": "European compliance"
+      },
+      {
+        "title": "TSE Conformity",
+        "desc": "Local standards"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "References",
+    "title": "What Our Customers Say?",
+    "subtitle": "We have been a trusted business partner in thousands of projects.",
+    "items": [
+      {
+        "quote": "We were satisfied both in terms of product quality and price-performance. We used Batech equipment in our project, had smooth delivery and support afterwards.",
+        "role": "Pool Construction Company"
+      },
+      {
+        "quote": "We have been working with Batech for a long time on pool lighting products. Wide product range and fast shipping make our job easier.",
+        "role": "Distributor / Contractor"
+      },
+      {
+        "quote": "We sourced all equipment from a single point for our villa pool. The technical team's recommendations and competitive pricing were our reasons for choosing them.",
+        "role": "Individual Customer"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "What you wonder about pool equipment, orders and pricing.",
+    "contact": "Contact us",
+    "notAnswered": "Your question not answered?",
+    "items": [
+      {
+        "question": "How can I get a price quote?",
+        "answer": "Submit your request by phone (0212 616 55 20 / 0546 254 14 54), email (info@batech.com.tr), WhatsApp or the contact form on the site. If you share product name, quantity and project details, we will prepare a quote as soon as possible."
+      },
+      {
+        "question": "How does the order process work?",
+        "answer": "First you contact us and state your needs. After the quote and catalog are presented, we take your order with your approval. Once products are ready, we ship by courier or our own vehicles. We are with you for installation and technical support."
+      },
+      {
+        "question": "How can I download the product catalog?",
+        "answer": "You can download our PDF catalog from the \"Download Catalog\" button on the site. We recommend contacting us for current prices and technical information."
+      },
+      {
+        "question": "What voltage do your pool lighting products run on?",
+        "answer": "Our pool lights mostly run on 12V DC safety voltage. Technical specifications are given on product detail pages and in the catalog. Different voltage options can be offered for special projects."
+      },
+      {
+        "question": "Can I place wholesale or project-based orders?",
+        "answer": "Yes. We offer special pricing and delivery terms for distributors, contractors and project-based orders. Just contact us and state your needs."
+      },
+      {
+        "question": "What are the warranty and return conditions?",
+        "answer": "Warranty period and conditions vary by product group. Contact us for returns and exchanges; we will inform you according to product and order status."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title1": "Contact us for",
+    "title2": "catalog, price quote and suggestions",
+    "description": "You can reach us through the channels below for product catalog, project quote or technical support. We will get back to you as soon as possible.",
+    "phone": "Phone",
+    "mobile": "Mobile",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Weekdays: 09:00 – 18:00 · Saturday: 09:00 – 13:00 · Sunday: Closed",
+    "whatsapp": "Write on WhatsApp",
+    "formTitle": "Quote / Message Form",
+    "formName": "Full Name",
+    "formPhone": "Phone",
+    "formEmail": "Email",
+    "formMessage": "Your Message",
+    "formSubmit": "Send",
+    "formSending": "Sending...",
+    "formSuccess": "Your message has been received. We will get back to you as soon as possible.",
+    "formError": "An error occurred while sending. Please try again or contact us by phone/WhatsApp.",
+    "downloadCatalog": "Download catalog as PDF",
+    "formPlaceholderName": "Your Full Name",
+    "formPlaceholderPhone": "05XX XXX XX XX",
+    "formPlaceholderEmail": "example@email.com",
+    "formPlaceholderMessage": "Quote request, product info or your question...",
+    "formNotConfigured": "To enable the form, set the NEXT_PUBLIC_FORMSPREE_ID environment variable (get form ID from your Formspree account)."
+  },
+  "cta": {
+    "title": "Get a price quote for your project",
+    "description": "Contact us immediately for catalog, technical information or bulk order requests. Our team will get back to you as soon as possible.",
+    "request": "Request Quote",
+    "downloadCatalog": "Download Catalog"
+  },
+  "footer": {
+    "description": "Turkey's trusted brand in pool equipment with 41 years of experience.",
+    "products": "Products",
+    "company": "Company",
+    "contact": "Contact",
+    "categoryLighting": "Pool Lighting",
+    "categoryFilters": "Filters",
+    "categoryPumps": "Pumps",
+    "categoryHeating": "Heating Equipment",
+    "hours": "Weekdays: 09:00 – 18:00",
+    "hoursSat": "Saturday: 09:00 – 13:00",
+    "copyright": "Batech Pool Equipment. All rights reserved.",
+    "downloadCatalog": "Download Catalog"
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Home",
+      "products": "Products"
+    },
+    "category": "Category",
+    "variants": "Product variants",
+    "variantCode": "Code",
+    "variantName": "Product name",
+    "variantNote": "Note",
+    "description": "Description",
+    "tags": "Tags",
+    "priceTitle": "Price and catalog",
+    "priceDescription": "Contact us for price quote, technical information or bulk order request for this product.",
+    "quote": "Get quote",
+    "related": "Related products"
+  },
+  "sssPage": {
+    "back": "Home",
+    "title": "Frequently Asked Questions",
+    "subtitle": "What you wonder about pool equipment, orders and pricing."
+  },
+  "productsPage": {
+    "label": "Catalog",
+    "title": "Product Categories",
+    "subtitle": "Our pool equipment catalog. Browse products by selecting a category.",
+    "productCount": "products",
+    "viewProducts": "View products",
+    "contact": "contact us",
+    "contactText": "For catalog and price quote"
+  },
+  "categoryPage": {
+    "back": "All categories",
+    "products": "products listed",
+    "empty": "No products found in this category yet.",
+    "emptyContact": "contact us",
+    "emptyContactText": "For catalog and price",
+    "quote": "Get price quote",
+    "allCategories": "All categories",
+    "detail": "Detail"
+  },
+  "common": {
+    "required": "*",
+    "phone": "0212 616 55 20",
+    "mobile": "0546 254 14 54",
+    "email": "info@batech.com.tr",
+    "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
+    "city": "Gaziosmanpaşa / İstanbul",
+    "selectLanguage": "Select language",
+    "whatsapp": "WhatsApp"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or may have been moved.",
+    "home": "Home",
+    "products": "Products"
+  },
+  "error": {
+    "title": "An error occurred",
+    "description": "Something went wrong while loading the page. Please try again.",
+    "tryAgain": "Try again",
+    "backHome": "Back to home"
+  }
+}

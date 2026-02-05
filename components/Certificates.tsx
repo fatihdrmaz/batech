@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const items = [
-  { title: "Kalite Belgeleri", desc: "Ürün ve üretim standartları" },
-  { title: "CE Belgesi", desc: "Avrupa uyumluluğu" },
-  { title: "TSE Uygunluk", desc: "Yerli standartlar" },
-];
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Certificates() {
+  const t = useTranslations();
+  const items = t.raw("certificates.items") as Array<{ title: string; desc: string }>;
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,13 +18,13 @@ export default function Certificates() {
           className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
-            Güven
+            {t("certificates.label")}
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
-            Belgelerimiz
+            {t("certificates.title")}
           </h2>
           <p className="mt-4 text-batech-silver">
-            Kalite ve uyumluluk belgelerimizle güvenilir ürün ve hizmet sunuyoruz.
+            {t("certificates.subtitle")}
           </p>
         </motion.div>
 
@@ -67,9 +66,9 @@ export default function Certificates() {
           className="mt-8 text-center text-sm text-batech-silver"
         >
           Detaylı belge bilgisi ve katalog için{" "}
-          <a href="#iletisim" className="text-batech-teal font-medium hover:underline">
-            iletişime geçiniz
-          </a>
+          <Link href="#iletisim" className="text-batech-teal font-medium hover:underline">
+            {t("certificates.contact")}
+          </Link>
           .
         </motion.p>
       </div>

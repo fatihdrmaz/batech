@@ -88,15 +88,15 @@ export default async function CategoryPage({ params }: Props) {
                 href={`/urun/${product.slug}`}
                 className="group block rounded-2xl border border-batech-pearl bg-white overflow-hidden hover:border-batech-cyan/40 hover:shadow-xl hover:shadow-batech-cyan/5 transition-all duration-300 card-shine"
               >
-                <div className="relative aspect-[4/3] w-full bg-batech-pearl overflow-hidden">
+                <div className="relative aspect-[4/3] w-full bg-white overflow-hidden">
+                  <div className="absolute inset-0 bg-white z-0" />
                   <Image
                     src={getProductImage(product)}
                     alt={product.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500 relative z-10"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-batech-navy/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <div className="p-6">
                   <h2 className="text-lg font-semibold text-batech-navy group-hover:text-batech-teal transition-colors line-clamp-2">

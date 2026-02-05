@@ -1,19 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { href: "/", label: "Ana Sayfa" },
-  { href: "/#hakkimizda", label: "Hakkımızda" },
-  { href: "/urunler", label: "Ürünler" },
-  { href: "/#degerler", label: "Değerlerimiz" },
-  { href: "/#iletisim", label: "İletişim" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const t = useTranslations();
+
+  const navLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/#hakkimizda", label: t("nav.about") },
+    { href: "/urunler", label: t("nav.products") },
+    { href: "/#degerler", label: t("nav.values") },
+    { href: "/sss", label: t("nav.faq") },
+    { href: "/#iletisim", label: t("nav.contact") },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-batech-pearl/50 shadow-sm">
@@ -23,7 +27,7 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 group"
-            aria-label="Batech Ana Sayfa"
+            aria-label="Batech"
           >
             <span className="text-2xl font-bold tracking-tight text-batech-ocean group-hover:text-batech-teal transition-colors">
               Batech
@@ -34,7 +38,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -45,12 +49,22 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="tel:+902126165520"
+              href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-ocean text-white text-sm font-medium hover:bg-batech-teal transition-colors"
             >
-              <span className="hidden sm:inline">0212 616 55 20</span>
-              <span className="sm:hidden">Ara</span>
+              <span className="hidden xl:inline">{t("common.phone")}</span>
+              <span className="xl:hidden">{t("nav.contact")}</span>
             </a>
+            <a
+              href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-teal text-white text-sm font-medium hover:bg-batech-cyan transition-colors"
+            >
+              <span className="hidden xl:inline">{t("common.mobile")}</span>
+              <span className="xl:hidden">{t("contact.mobile")}</span>
+            </a>
+            <div className="ml-1 pl-3 border-l border-batech-pearl/60">
+              <LanguageSwitcher />
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -107,12 +121,22 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
+                <div className="px-4 py-3 border-t border-batech-pearl">
+                  <LanguageSwitcher />
+                </div>
                 <a
-                  href="tel:+902126165520"
+                  href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
                   className="block px-4 py-3 text-batech-teal font-semibold"
                   onClick={() => setMobileOpen(false)}
                 >
-                  0212 616 55 20
+                  {t("common.phone")}
+                </a>
+                <a
+                  href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
+                  className="block px-4 py-3 text-batech-teal font-semibold"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {t("common.mobile")}
                 </a>
               </div>
             </motion.div>

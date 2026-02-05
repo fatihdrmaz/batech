@@ -2,12 +2,13 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-const stats: { value: number; suffix?: string; prefix?: string; label: string; sub: string }[] = [
-  { value: 41, suffix: "+", label: "Yıllık Tecrübe", sub: "1983'ten bu yana" },
-  { value: 50, suffix: "+", label: "Ürün Kategorisi", sub: "Havuz ekipmanları" },
-  { value: 1000, suffix: "+", label: "Tamamlanan Proje", sub: "Türkiye genelinde" },
-  { value: 100, prefix: "%", label: "Müşteri Odaklı", sub: "İhtiyaca özel çözüm" },
+const stats: { value: number; suffix?: string; prefix?: string; labelKey: string; subKey: string }[] = [
+  { value: 41, suffix: "+", labelKey: "stats.experience", subKey: "stats.experienceSub" },
+  { value: 50, suffix: "+", labelKey: "stats.categories", subKey: "stats.categoriesSub" },
+  { value: 1000, suffix: "+", labelKey: "stats.projects", subKey: "stats.projectsSub" },
+  { value: 100, prefix: "%", labelKey: "stats.customer", subKey: "stats.customerSub" },
 ];
 
 function AnimatedNumber({
@@ -61,6 +62,7 @@ function AnimatedNumber({
 export default function Stats() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
+  const t = useTranslations();
 
   return (
     <section
@@ -72,7 +74,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {stats.map((stat, i) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -89,9 +91,9 @@ export default function Stats() {
                 />
               </div>
               <div className="mt-2 text-lg font-semibold text-white">
-                {stat.label}
+                {t(stat.labelKey)}
               </div>
-              <div className="mt-1 text-sm text-batech-silver">{stat.sub}</div>
+              <div className="mt-1 text-sm text-batech-silver">{t(stat.subKey)}</div>
             </motion.div>
           ))}
         </div>

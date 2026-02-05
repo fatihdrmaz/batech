@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "products": "Produits",
+    "values": "Valeurs",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "41 Ans d'Expérience",
+    "title1": "La façon sûre et",
+    "title2": "économique",
+    "title3": "d'entrer dans la piscine",
+    "description": "Produits de qualité, prix compétitifs, livraison rapide en éclairage de piscine, filtres, pompes et tout équipement. La marque de confiance d'équipements de piscine de Turquie.",
+    "cta": "Demander un Devis",
+    "scroll": "Explorer",
+    "qualityProduct": "Produits de Qualité",
+    "fastShipping": "Livraison Rapide",
+    "fairPrice": "Prix Compétitif",
+    "technicalSupport": "Support Technique"
+  },
+  "stats": {
+    "experience": "Années d'Expérience",
+    "experienceSub": "Depuis 1983",
+    "categories": "Catégories de Produits",
+    "categoriesSub": "Équipements de piscine",
+    "projects": "Projets Terminés",
+    "projectsSub": "À travers la Turquie",
+    "customer": "Axé sur le Client",
+    "customerSub": "Solutions personnalisées"
+  },
+  "about": {
+    "label": "À Propos de Nous",
+    "title1": "Votre partenaire de confiance",
+    "title2": "en équipements de piscine depuis 41 ans",
+    "description1": "En tant que Batech, nous fournissons des équipements de qualité et un service fiable dans tous les processus, de la fabrication à la conception et à la maintenance post-utilisation des projets de piscine. Nous sommes votre source unique pour les équipements d'éclairage de piscine, les panneaux électriques, les filtres, les pompes, les équipements de chauffage et les produits chimiques pour piscine.",
+    "description2": "Nous sommes un leader de l'industrie avec plus de 41 ans d'expérience en production, en particulier dans les lumières et systèmes d'éclairage de piscine. Nous offrons une diversité de produits adaptés aux projets de toutes tailles, des piscines résidentielles aux hôtels et installations sportives, des piscines décoratives aux piscines olympiques. La satisfaction du client et les produits durables sont nos priorités.",
+    "items": [
+      "Équipements d'Éclairage de Piscine",
+      "Panneaux Électriques",
+      "Filtres et Équipements",
+      "Pompes et Équipements de Chauffage",
+      "Équipements de Nettoyage et Bordure de Piscine",
+      "Produits Chimiques pour Piscine"
+    ],
+    "years": "41",
+    "yearsLabel": "Ans d'Expérience",
+    "yearsSub": "Numéro 1 en équipements de piscine"
+  },
+  "values": {
+    "label": "Nos Valeurs",
+    "title": "Pourquoi Batech?",
+    "subtitle": "Notre approche axée sur la qualité, la confiance et la satisfaction client.",
+    "items": [
+      {
+        "title": "41 Ans d'Expérience",
+        "description": "Nous sommes un partenaire commercial fiable avec notre portefeuille de produits solide et notre équipe expérimentée."
+      },
+      {
+        "title": "Produit de Qualité",
+        "description": "Nous nous efforçons toujours de créer le produit parfait."
+      },
+      {
+        "title": "Service Fiable",
+        "description": "Nous pensons à vous plus que vous ne le faites."
+      },
+      {
+        "title": "Prix Compétitif",
+        "description": "Nous appliquons la politique de prix la plus équitable pour les produits de la plus haute qualité."
+      },
+      {
+        "title": "Satisfaction Client",
+        "description": "Nous écoutons nos clients et fournissons le produit le plus adapté à la zone d'utilisation."
+      },
+      {
+        "title": "Livraison Rapide",
+        "description": "Nous travaillons pour vous livrer le produit fabriqué dans les plus brefs délais."
+      }
+    ]
+  },
+  "products": {
+    "featured": {
+      "label": "Produits en Vedette",
+      "title": "Produits les Plus Récents et Populaires",
+      "subtitle": "Équipements de piscine actuels et les plus préférés de notre catalogue.",
+      "viewAll": "Parcourir toutes les catégories de produits",
+      "items": [
+        { "name": "Grille de bord de piscine modèle Mosaic 20 cm", "category": "Équipements de bord de piscine", "description": "Structure inox durable, design mosaic." },
+        { "name": "Mini Spot LED unique (Mini Spot doigt)", "category": "Éclairage de piscine", "description": "LED économe en énergie, longue durée." },
+        { "name": "Rideau d'eau inox pour piscine (Cascade Cobra)", "category": "Équipements pour piscines décoratives", "description": "Rideau d'eau esthétique et effet cascade." },
+        { "name": "Vanne six voies", "category": "Équipements de bord et intérieur de piscine", "description": "Contrôle de débit multidirectionnel, utilisation fiable." },
+        { "name": "Luminaire PAR56 inox (encastré)", "category": "Éclairage de piscine", "description": "Solution d'éclairage professionnelle pour piscines." },
+        { "name": "Luminaire PAR38 sur pied", "category": "Éclairage de piscine", "description": "LED 9W, blanc / lumière du jour / RGB et options de couleur." }
+      ]
+    },
+    "all": {
+      "label": "Produits",
+      "title": "Toutes les Catégories de Produits",
+      "subtitle": "Découvrez les produits qui correspondent à vos besoins dans notre catalogue d'équipements de piscine.",
+      "viewAll": "Voir toutes les catégories"
+    },
+    "categories": [
+      { "name": "Équipements d'éclairage pour piscines", "count": "15 produits", "description": "Numéro un en fabrication de luminaires avec 41 ans d'expérience." },
+      { "name": "Filtres et équipements", "count": "2 catégories", "description": "Systèmes de filtration et pièces détachées." },
+      { "name": "Pompes", "count": "1 catégorie", "description": "Pompes de piscine haute performance." },
+      { "name": "Équipements de chauffage", "count": "3 produits", "description": "Réchauffeurs à tube et solutions de chauffage." },
+      { "name": "Équipements de bord et intérieur de piscine", "count": "13 produits", "description": "Grilles, vannes, équipements de bord." },
+      { "name": "Équipements de nettoyage pour piscines", "count": "12 produits", "description": "Brosses, épuisettes et accessoires." }
+    ],
+    "lightExampleTitle": "Produits d'éclairage pour piscines (Catalogue exemple)",
+    "lightExampleSubtitle": "Série PAR et mini spot, luminaires au sol, options encastrées et en saillie.",
+    "lightProductNames": ["Mini Spot sur pied", "Luminaire plat (en saillie)", "Mini Spot encastré", "PAR38 encastré", "Luminaire PAR56", "Luminaire PAR56 inox", "Luminaire au sol (type fontaine)", "Mini Flat 21 cm saillie", "Mini Spot LED unique"],
+    "contactForCatalog": "Pour catalogue, devis et solutions sur mesure",
+    "contactForCatalogLink": "contactez-nous",
+    "detail": "Détails du produit",
+    "quote": "Demander un devis"
+  },
+  "workProcess": {
+    "label": "Processus",
+    "title": "Comment Nous Travaillons?",
+    "subtitle": "Nous déterminons ensemble l'équipement de piscine le plus adapté à vos besoins grâce à un processus simple et transparent.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Contactez-nous",
+        "description": "Rejoignez-nous par téléphone, e-mail ou WhatsApp. Indiquez brièvement vos besoins."
+      },
+      {
+        "step": "02",
+        "title": "Analyse des Besoins",
+        "description": "Nous identifions les produits les plus adaptés selon le type de piscine, la zone d'utilisation et le budget."
+      },
+      {
+        "step": "03",
+        "title": "Devis et Catalogue",
+        "description": "Nous vous proposons une solution sur mesure avec devis détaillé et catalogue produits."
+      },
+      {
+        "step": "04",
+        "title": "Livraison et Support",
+        "description": "Votre commande est préparée rapidement; nous assurons l'installation et le support technique ensuite."
+      }
+    ]
+  },
+  "certificates": {
+    "label": "Confiance",
+    "title": "Nos Certificats",
+    "subtitle": "Nous fournissons des produits et services fiables avec nos certificats de qualité et de conformité.",
+    "contact": "contactez-nous",
+    "items": [
+      {
+        "title": "Certificats de Qualité",
+        "desc": "Normes produit et production"
+      },
+      {
+        "title": "Certificat CE",
+        "desc": "Conformité européenne"
+      },
+      {
+        "title": "Conformité TSE",
+        "desc": "Normes locales"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Références",
+    "title": "Que Disent Nos Clients?",
+    "subtitle": "Nous avons été un partenaire commercial de confiance dans des milliers de projets.",
+    "items": [
+      {
+        "quote": "Nous avons été satisfaits tant par la qualité des produits que par le rapport prix-performance. Nous avons utilisé l'équipement Batech dans notre projet, livraison sans problème et support ensuite.",
+        "role": "Entreprise de Construction de Piscines"
+      },
+      {
+        "quote": "Nous travaillons depuis longtemps avec Batech sur les produits d'éclairage de piscine. La large gamme de produits et la livraison rapide facilitent notre travail.",
+        "role": "Distributeur / Entrepreneur"
+      },
+      {
+        "quote": "Nous avons obtenu tout l'équipement d'un seul point pour la piscine de notre villa. Les recommandations de l'équipe technique et les prix compétitifs ont été nos raisons de les choisir.",
+        "role": "Client Particulier"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Ce que vous vous demandez sur les équipements de piscine, les commandes et les prix.",
+    "contact": "Contactez-nous",
+    "notAnswered": "Votre question n'a pas été répondue?",
+    "items": [
+      {
+        "question": "Comment obtenir un devis de prix?",
+        "answer": "Envoyez votre demande par téléphone (0212 616 55 20 / 0546 254 14 54), e-mail (info@batech.com.tr), WhatsApp ou le formulaire de contact du site. Si vous partagez le nom du produit, la quantité et les détails du projet, nous préparerons un devis dès que possible."
+      },
+      {
+        "question": "Comment fonctionne le processus de commande?",
+        "answer": "Vous nous contactez d'abord et indiquez vos besoins. Après présentation du devis et du catalogue, nous prenons votre commande avec votre accord. Une fois les produits prêts, nous expédions par messagerie ou nos propres véhicules. Nous sommes à vos côtés pour l'installation et le support technique."
+      },
+      {
+        "question": "Comment télécharger le catalogue produits?",
+        "answer": "Vous pouvez télécharger notre catalogue PDF depuis le bouton \"Télécharger le Catalogue\" sur le site. Nous vous recommandons de nous contacter pour les prix actuels et les informations techniques."
+      },
+      {
+        "question": "Sous quelle tension fonctionnent vos produits d'éclairage de piscine?",
+        "answer": "Nos luminaires de piscine fonctionnent principalement en 12V DC tension de sécurité. Les spécifications techniques sont indiquées sur les pages détail produit et dans le catalogue. Des options de tension différentes peuvent être proposées pour des projets spéciaux."
+      },
+      {
+        "question": "Puis-je passer des commandes en gros ou par projet?",
+        "answer": "Oui. Nous offrons des prix spéciaux et des conditions de livraison pour les distributeurs, entrepreneurs et commandes par projet. Contactez-nous et indiquez vos besoins."
+      },
+      {
+        "question": "Quelles sont les conditions de garantie et de retour?",
+        "answer": "La durée et les conditions de garantie varient selon le groupe de produits. Contactez-nous pour les retours et échanges; nous vous informerons selon l'état du produit et de la commande."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title1": "Contactez-nous pour",
+    "title2": "catalogue, devis de prix et suggestions",
+    "description": "Vous pouvez nous joindre via les canaux ci-dessous pour le catalogue de produits, le devis de projet ou le support technique. Nous vous répondrons dans les plus brefs délais.",
+    "phone": "Téléphone",
+    "mobile": "Mobile",
+    "email": "E-mail",
+    "address": "Adresse",
+    "hours": "Jours ouvrables: 09:00 – 18:00 · Samedi: 09:00 – 13:00 · Dimanche: Fermé",
+    "whatsapp": "Écrire sur WhatsApp",
+    "formTitle": "Formulaire de Devis / Message",
+    "formName": "Nom Complet",
+    "formPhone": "Téléphone",
+    "formEmail": "E-mail",
+    "formMessage": "Votre Message",
+    "formSubmit": "Envoyer",
+    "formSending": "Envoi en cours...",
+    "formSuccess": "Votre message a été reçu. Nous vous répondrons dans les plus brefs délais.",
+    "formError": "Une erreur s'est produite lors de l'envoi. Veuillez réessayer ou nous contacter par téléphone/WhatsApp.",
+    "downloadCatalog": "Télécharger le catalogue en PDF",
+    "formPlaceholderName": "Votre nom complet",
+    "formPlaceholderPhone": "05XX XXX XX XX",
+    "formPlaceholderEmail": "exemple@email.com",
+    "formPlaceholderMessage": "Demande de devis, info produit ou votre question...",
+    "formNotConfigured": "Pour activer le formulaire, définissez la variable d'environnement NEXT_PUBLIC_FORMSPREE_ID (obtenez l'ID du formulaire depuis votre compte Formspree)."
+  },
+  "cta": {
+    "title": "Obtenez un devis de prix pour votre projet",
+    "description": "Contactez-nous immédiatement pour le catalogue, les informations techniques ou les demandes de commandes en gros. Notre équipe vous répondra dans les plus brefs délais.",
+    "request": "Demander un Devis",
+    "downloadCatalog": "Télécharger le Catalogue"
+  },
+  "footer": {
+    "description": "Marque de confiance de Turquie en équipements de piscine avec 41 ans d'expérience.",
+    "products": "Produits",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "categoryLighting": "Éclairage",
+    "categoryFilters": "Filtres",
+    "categoryPumps": "Pompes",
+    "categoryHeating": "Chauffage",
+    "hours": "Jours ouvrables: 09:00 – 18:00",
+    "hoursSat": "Samedi: 09:00 – 13:00",
+    "copyright": "Batech Équipements de Piscine. Tous droits réservés.",
+    "downloadCatalog": "Télécharger le Catalogue"
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Accueil",
+      "products": "Produits"
+    },
+    "category": "Catégorie",
+    "variants": "Variantes du produit",
+    "variantCode": "Code",
+    "variantName": "Nom du produit",
+    "variantNote": "Note",
+    "description": "Description",
+    "tags": "Étiquettes",
+    "priceTitle": "Prix et catalogue",
+    "priceDescription": "Contactez-nous pour un devis de prix, des informations techniques ou une demande de commande en gros pour ce produit.",
+    "quote": "Demander un devis",
+    "related": "Produits connexes"
+  },
+  "sssPage": {
+    "back": "Accueil",
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Ce que vous vous demandez sur les équipements de piscine, les commandes et les prix."
+  },
+  "productsPage": {
+    "label": "Catalogue",
+    "title": "Catégories de Produits",
+    "subtitle": "Notre catalogue d'équipements de piscine. Parcourez les produits en sélectionnant une catégorie.",
+    "productCount": "produits",
+    "viewProducts": "Voir les produits",
+    "contact": "contactez-nous",
+    "contactText": "Pour catalogue et devis de prix"
+  },
+  "categoryPage": {
+    "back": "Toutes les catégories",
+    "products": "produits listés",
+    "empty": "Aucun produit trouvé dans cette catégorie pour le moment.",
+    "emptyContact": "contactez-nous",
+    "emptyContactText": "Pour catalogue et prix",
+    "quote": "Obtenir un devis de prix",
+    "allCategories": "Toutes les catégories",
+    "detail": "Détail"
+  },
+  "common": {
+    "required": "*",
+    "phone": "0212 616 55 20",
+    "mobile": "0546 254 14 54",
+    "email": "info@batech.com.tr",
+    "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
+    "city": "Gaziosmanpaşa / İstanbul",
+    "selectLanguage": "Choisir la langue",
+    "whatsapp": "WhatsApp"
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a peut-être été déplacée.",
+    "home": "Accueil",
+    "products": "Produits"
+  },
+  "error": {
+    "title": "Une erreur s'est produite",
+    "description": "Un problème s'est produit lors du chargement de la page. Veuillez réessayer.",
+    "tryAgain": "Réessayer",
+    "backHome": "Retour à l'accueil"
+  }
+}

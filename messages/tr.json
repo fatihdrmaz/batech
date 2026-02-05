@@ -1,0 +1,327 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "values": "Değerlerimiz",
+    "faq": "SSS",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "badge": "41 Yıllık Tecrübe",
+    "title1": "Havuza girmenin",
+    "title2": "güvenli ve ekonomik",
+    "title3": "yolu",
+    "description": "Havuz aydınlatma, filtre, pompa ve tüm ekipmanlarda kaliteli ürün, uygun fiyat, hızlı sevkiyat. Türkiye'nin güvenilir havuz ekipmanları markası.",
+    "cta": "Teklif Alın",
+    "scroll": "Keşfet",
+    "qualityProduct": "Kaliteli Ürün",
+    "fastShipping": "Hızlı Sevkiyat",
+    "fairPrice": "Uygun Fiyat",
+    "technicalSupport": "Teknik Destek"
+  },
+  "stats": {
+    "experience": "Yıllık Tecrübe",
+    "experienceSub": "1983'ten bu yana",
+    "categories": "Ürün Kategorisi",
+    "categoriesSub": "Havuz ekipmanları",
+    "projects": "Tamamlanan Proje",
+    "projectsSub": "Türkiye genelinde",
+    "customer": "Müşteri Odaklı",
+    "customerSub": "İhtiyaca özel çözüm"
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "title1": "41 yıldır havuz ekipmanlarında",
+    "title2": "güvenilir çözüm ortağınız",
+    "description1": "Batech olarak havuz projelerinin imalatından tasarımına, kullanım sonrası bakım aşamasına kadar tüm süreçlerde kaliteli ekipman ve güvenilir hizmet sunuyoruz. Havuz aydınlatma ekipmanları, elektrik panoları, filtreler, pompalar, ısıtma ekipmanları ve havuz kimyasalları ile tek adresiniziz.",
+    "description2": "Özellikle havuz lambaları ve aydınlatma sistemlerinde 41 yılı aşkın üretim tecrübemizle sektörde öncü konumdayız. Konut havuzlarından otel ve spor tesislerine, süs havuzlarından olimpik yüzme havuzlarına kadar her ölçekte projeye uygun ürün çeşitliliği sunuyoruz. Müşteri memnuniyeti ve uzun ömürlü ürünler önceliğimizdir.",
+    "items": [
+      "Havuz Aydınlatma Ekipmanları",
+      "Elektrik Panoları",
+      "Filtreler ve Ekipmanları",
+      "Pompalar ve Isıtma Ekipmanları",
+      "Havuz Temizlik ve Kenar Ekipmanları",
+      "Yüzme Havuzu Kimyasalları"
+    ],
+    "years": "41",
+    "yearsLabel": "Yıllık Tecrübe",
+    "yearsSub": "Havuz ekipmanlarında 1 numara"
+  },
+  "values": {
+    "label": "Değerlerimiz",
+    "title": "Neden Batech?",
+    "subtitle": "Kalite, güven ve müşteri memnuniyeti odaklı çalışma anlayışımız.",
+    "items": [
+      {
+        "title": "41 Yıllık Tecrübe",
+        "description": "Güçlü ürün portföyümüz ve tecrübeli kadromuzla güvenilir bir iş ortağıyız."
+      },
+      {
+        "title": "Kaliteli Ürün",
+        "description": "Her zaman kusursuz ürünü yaratmaya çalışıyoruz."
+      },
+      {
+        "title": "Güvenilir Hizmet",
+        "description": "Sizi sizden daha fazla düşünüyoruz."
+      },
+      {
+        "title": "Uygun Fiyat",
+        "description": "En kaliteli ürünler için en adil fiyat politikasını uyguluyoruz."
+      },
+      {
+        "title": "Müşteri Memnuniyeti",
+        "description": "Müşterilerimizi dinliyor; kullanım alanına en uygun ürünü temin ediyoruz."
+      },
+      {
+        "title": "Hızlı Sevkiyat",
+        "description": "Üretilen ürünü en kısa zamanda size ulaştırmak için çalışıyoruz."
+      }
+    ]
+  },
+  "products": {
+    "featured": {
+      "label": "Öne Çıkan Ürünler",
+      "title": "Son Eklenen & Popüler Ürünler",
+      "subtitle": "Katalogumuzdan güncel ve çok tercih edilen havuz ekipmanları.",
+      "viewAll": "Tüm ürün kategorilerini inceleyin",
+      "items": [
+        { "name": "20 cm Mosaic Model Havuz Kenar Izgarası", "category": "Havuz Kenar Ekipmanları", "description": "Dayanıklı paslanmaz yapı, mosaic tasarım." },
+        { "name": "Tek Led Mini Spot (Parmak Mini Spot)", "category": "Havuz Aydınlatma", "description": "Enerji tasarruflu LED, uzun ömürlü." },
+        { "name": "Paslanmaz Havuz Su Perdesi (Kobra Şelale)", "category": "Süs Havuzu Ekipmanları", "description": "Estetik su perdesi ve şelale efekti." },
+        { "name": "Altı Yollu Vana", "category": "Havuz Kenar ve İç Ekipmanları", "description": "Çok yönlü akış kontrolü, güvenilir kullanım." },
+        { "name": "PAR56 Paslanmaz Armatür (Sıva Altı)", "category": "Havuz Aydınlatma", "description": "Profesyonel havuz aydınlatma çözümü." },
+        { "name": "PAR38 Ayaklı Armatür", "category": "Havuz Aydınlatma", "description": "9W LED, beyaz / güneş ışığı / RGB ve renk seçenekleri." }
+      ]
+    },
+    "all": {
+      "label": "Ürünler",
+      "title": "Tüm Ürün Kategorileri",
+      "subtitle": "Havuz ekipmanları kataloğumuzdan ihtiyacınıza uygun ürünleri keşfedin.",
+      "viewAll": "Tüm kategorileri görüntüle"
+    },
+    "categories": [
+      { "name": "Havuz Aydınlatma Ekipmanları", "count": "15 ürün", "description": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara." },
+      { "name": "Filtreler ve Ekipmanları", "count": "2 kategori", "description": "Havuz filtre sistemleri ve yedek parçalar." },
+      { "name": "Pompalar", "count": "1 kategori", "description": "Yüksek performanslı havuz pompaları." },
+      { "name": "Isıtma Ekipmanları", "count": "3 ürün", "description": "Boru tip ısıtıcı ve ısıtma çözümleri." },
+      { "name": "Havuz Kenar ve İç Ekipmanları", "count": "13 ürün", "description": "Izgaralar, vanalar, kenar ekipmanları." },
+      { "name": "Havuz Temizlik Ekipmanları", "count": "12 ürün", "description": "Temizlik fırçaları, kepçeler ve aksesuarlar." }
+    ],
+    "lightExampleTitle": "Havuz Aydınlatma Ürünleri (Örnek Katalog)",
+    "lightExampleSubtitle": "PAR ve mini spot serileri, yer armatürleri, sıva altı ve sıva üstü seçenekler.",
+    "lightProductNames": ["Ayaklı Mini Spot", "Flat Armatür (Sıva Üstü)", "Geçme Mini Spot", "PAR38 Ankastre", "PAR56 Armatür", "PAR56 Paslanmaz Armatür", "Yer Armatürü (Fıskiye Tip)", "Mini Flat (21cm Sıva Üstü)", "Tek Led Mini Spot"],
+    "contactForCatalog": "Katalog, fiyat teklifi ve özel çözümler için",
+    "contactForCatalogLink": "iletişime geçiniz",
+    "detail": "Ürün detayı",
+    "quote": "Teklif al"
+  },
+  "workProcess": {
+    "label": "Süreç",
+    "title": "Nasıl Çalışıyoruz?",
+    "subtitle": "Basit ve şeffaf süreçle ihtiyacınıza en uygun havuz ekipmanını birlikte belirliyoruz.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "İletişime Geçin",
+        "description": "Telefon, e-posta veya WhatsApp ile bize ulaşın. İhtiyacınızı kısaca belirtin."
+      },
+      {
+        "step": "02",
+        "title": "İhtiyaç Analizi",
+        "description": "Havuz tipi, kullanım alanı ve bütçenize göre en uygun ürünleri belirliyoruz."
+      },
+      {
+        "step": "03",
+        "title": "Teklif & Katalog",
+        "description": "Detaylı fiyat teklifi ve ürün kataloğu ile size özel çözüm sunuyoruz."
+      },
+      {
+        "step": "04",
+        "title": "Sevkiyat & Destek",
+        "description": "Siparişiniz hızlıca hazırlanır; kurulum ve sonrasında teknik destek sağlarız."
+      }
+    ]
+  },
+  "certificates": {
+    "label": "Güven",
+    "title": "Belgelerimiz",
+    "subtitle": "Kalite ve uyumluluk belgelerimizle güvenilir ürün ve hizmet sunuyoruz.",
+    "contact": "iletişime geçiniz",
+    "items": [
+      {
+        "title": "Kalite Belgeleri",
+        "desc": "Ürün ve üretim standartları"
+      },
+      {
+        "title": "CE Belgesi",
+        "desc": "Avrupa uyumluluğu"
+      },
+      {
+        "title": "TSE Uygunluk",
+        "desc": "Yerli standartlar"
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Referanslar",
+    "title": "Müşterilerimiz Ne Diyor?",
+    "subtitle": "Binlerce projede güvenilir iş ortağı olarak yer aldık.",
+    "items": [
+      {
+        "quote": "Hem ürün kalitesi hem fiyat-performance açısından memnun kaldık. Projemizde Batech ekipmanları kullandık, sorunsuz teslimat ve sonrasında da destek aldık.",
+        "role": "Havuz İnşaat Firması"
+      },
+      {
+        "quote": "Havuz aydınlatma ürünlerinde uzun süredir Batech ile çalışıyoruz. Geniş ürün yelpazesi ve hızlı sevkiyat işimizi kolaylaştırıyor.",
+        "role": "Bayi / Uygulayıcı"
+      },
+      {
+        "quote": "Villa havuzumuz için tek noktadan tüm ekipmanı temin ettik. Teknik ekibin önerileri ve uygun fiyat politikası tercih sebebimiz oldu.",
+        "role": "Bireysel Müşteri"
+      }
+    ]
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Havuz ekipmanları, sipariş ve fiyatlandırma hakkında merak ettikleriniz.",
+    "contact": "İletişime geçin",
+    "notAnswered": "Sorunuz yanıtlanmadı mı?",
+    "items": [
+      {
+        "question": "Fiyat teklifi nasıl alabilirim?",
+        "answer": "Telefon (0212 616 55 20 / 0546 254 14 54), e-posta (info@batech.com.tr), WhatsApp veya sitedeki iletişim formu üzerinden talebinizi iletin. Ürün adı, miktar ve proje bilgisi paylaşırsanız en kısa sürede fiyat teklifi hazırlanır."
+      },
+      {
+        "question": "Sipariş süreci nasıl işliyor?",
+        "answer": "Önce iletişime geçip ihtiyacınızı belirtiyorsunuz. Teklif ve katalog sunulduktan sonra onayınızla sipariş alınır. Ürünler hazırlandıktan sonra kargo veya kendi araçlarımızla sevkiyat yapılır. Kurulum ve teknik destek ihtiyacında yanınızdayız."
+      },
+      {
+        "question": "Ürün kataloğunu nasıl indirebilirim?",
+        "answer": "Sitedeki \"Katalog İndir\" butonundan PDF kataloğumuzu indirebilirsiniz. Güncel fiyat ve teknik bilgi için iletişime geçmenizi öneririz."
+      },
+      {
+        "question": "Havuz aydınlatma ürünleriniz hangi gerilimde çalışıyor?",
+        "answer": "Havuz lambalarımız çoğunlukla 12V DC güvenlik gerilimi ile çalışır. Ürün detay sayfalarında ve katalogda teknik özellikler belirtilmiştir. Özel projeler için farklı gerilim seçenekleri sunulabilir."
+      },
+      {
+        "question": "Toptan veya proje bazlı sipariş verebilir miyim?",
+        "answer": "Evet. Bayi, uygulayıcı ve proje bazlı siparişler için özel fiyat ve teslimat koşulları sunuyoruz. İletişime geçerek ihtiyacınızı bildirmeniz yeterli."
+      },
+      {
+        "question": "Garanti ve iade koşulları nelerdir?",
+        "answer": "Ürünlerimizde garanti süresi ve koşulları ürün grubuna göre değişir. İade ve değişim için iletişime geçin; ürün ve sipariş durumuna göre size bilgi verilir."
+      }
+    ]
+  },
+  "contact": {
+    "label": "İletişim",
+    "title1": "Katalog, fiyat teklifi ve önerileriniz için",
+    "title2": "bizimle iletişime geçin",
+    "description": "Ürün kataloğu, proje teklifi veya teknik destek için aşağıdaki kanallardan ulaşabilirsiniz. En kısa sürede size dönüş yapacağız.",
+    "phone": "Telefon",
+    "mobile": "Cep Telefonu",
+    "email": "E-posta",
+    "address": "Adres",
+    "hours": "Hafta içi: 09:00 – 18:00 · Cumartesi: 09:00 – 13:00 · Pazar: Kapalı",
+    "whatsapp": "WhatsApp ile yazın",
+    "formTitle": "Teklif / Mesaj Formu",
+    "formName": "Ad Soyad",
+    "formPhone": "Telefon",
+    "formEmail": "E-posta",
+    "formMessage": "Mesajınız",
+    "formSubmit": "Gönder",
+    "formSending": "Gönderiliyor...",
+    "formSuccess": "Mesajınız alındı. En kısa sürede dönüş yapacağız.",
+    "formError": "Gönderilirken bir hata oluştu. Lütfen tekrar deneyin veya telefon/WhatsApp ile iletişime geçin.",
+    "downloadCatalog": "Katalogu PDF olarak indirin",
+    "formPlaceholderName": "Adınız Soyadınız",
+    "formPlaceholderPhone": "05XX XXX XX XX",
+    "formPlaceholderEmail": "ornek@email.com",
+    "formPlaceholderMessage": "Teklif talebi, ürün bilgisi veya sorunuz...",
+    "formNotConfigured": "Formu etkinleştirmek için NEXT_PUBLIC_FORMSPREE_ID ortam değişkenini ayarlayın (Formspree hesabından form ID alın)."
+  },
+  "cta": {
+    "title": "Projeniz için fiyat teklifi alın",
+    "description": "Katalog, teknik bilgi veya toplu sipariş talepleriniz için hemen iletişime geçin. Ekibimiz en kısa sürede size dönüş yapacaktır.",
+    "request": "Teklif Talep Et",
+    "downloadCatalog": "Katalog İndir"
+  },
+  "footer": {
+    "description": "41 yıllık tecrübe ile havuz ekipmanlarında Türkiye'nin güvenilir markası.",
+    "products": "Ürünler",
+    "company": "Şirket",
+    "contact": "İletişim",
+    "categoryLighting": "Havuz Aydınlatma",
+    "categoryFilters": "Filtreler",
+    "categoryPumps": "Pompalar",
+    "categoryHeating": "Isıtma Ekipmanları",
+    "hours": "Hafta içi: 09:00 – 18:00",
+    "hoursSat": "Cumartesi: 09:00 – 13:00",
+    "copyright": "Batech Havuz Ekipmanları. Tüm hakları saklıdır.",
+    "downloadCatalog": "Katalog İndir"
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Ana Sayfa",
+      "products": "Ürünler"
+    },
+    "category": "Kategori",
+    "variants": "Ürün varyantları",
+    "variantCode": "Kod",
+    "variantName": "Ürün adı",
+    "variantNote": "Not",
+    "description": "Açıklama",
+    "tags": "Etiketler",
+    "priceTitle": "Fiyat ve katalog",
+    "priceDescription": "Bu ürün için fiyat teklifi, teknik bilgi veya toplu sipariş talebiniz için iletişime geçin.",
+    "quote": "Teklif alın",
+    "related": "İlgili ürünler"
+  },
+  "sssPage": {
+    "back": "Ana Sayfa",
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Havuz ekipmanları, sipariş ve fiyatlandırma hakkında merak ettikleriniz."
+  },
+  "productsPage": {
+    "label": "Katalog",
+    "title": "Ürün Kategorileri",
+    "subtitle": "Havuz ekipmanları kataloğumuz. Kategori seçerek ürünlere göz atın.",
+    "productCount": "ürün",
+    "viewProducts": "Ürünleri görüntüle",
+    "contact": "iletişime geçiniz",
+    "contactText": "Katalog ve fiyat teklifi için"
+  },
+  "categoryPage": {
+    "back": "Tüm kategoriler",
+    "products": "ürün listeleniyor",
+    "empty": "Bu kategoride henüz ürün bulunmuyor.",
+    "emptyContact": "iletişime geçiniz",
+    "emptyContactText": "Katalog ve fiyat için",
+    "quote": "Fiyat teklifi alın",
+    "allCategories": "Tüm kategoriler",
+    "detail": "Detay"
+  },
+  "common": {
+    "required": "*",
+    "phone": "0212 616 55 20",
+    "mobile": "0546 254 14 54",
+    "email": "info@batech.com.tr",
+    "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
+    "city": "Gaziosmanpaşa / İstanbul",
+    "selectLanguage": "Dil seç",
+    "whatsapp": "WhatsApp"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "home": "Ana Sayfa",
+    "products": "Ürünler"
+  },
+  "error": {
+    "title": "Bir hata oluştu",
+    "description": "Sayfa yüklenirken bir sorun oluştu. Lütfen tekrar deneyin.",
+    "tryAgain": "Tekrar dene",
+    "backHome": "Ana sayfaya dön"
+  }
+}

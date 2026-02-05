@@ -1,6 +1,9 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export default function Hero() {
+  const t = useTranslations();
   return (
     <section
       className="relative min-h-[95vh] flex items-center justify-center overflow-hidden"
@@ -241,24 +244,23 @@ export default function Hero() {
               className="inline-block w-2 h-2 rounded-full animate-pulse"
               style={{ backgroundColor: "#06b6d4" }}
             />
-            41 Yıllık Tecrübe
+            {t("hero.badge")}
           </div>
 
           {/* Ana başlık */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.1] tracking-tight">
-            <span className="block text-white">Havuza girmenin</span>
+            <span className="block text-white">{t("hero.title1")}</span>
             <span className="block mt-2 bg-gradient-to-r from-cyan-300 via-cyan-400 to-teal-400 bg-clip-text text-transparent">
-              güvenli ve ekonomik
+              {t("hero.title2")}
             </span>
-            <span className="block mt-2 text-white">yolu</span>
+            <span className="block mt-2 text-white">{t("hero.title3")}</span>
           </h1>
 
           <p
             className="mt-8 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed"
             style={{ color: "#94a3b8" }}
           >
-            Havuz aydınlatma, filtre, pompa ve tüm ekipmanlarda kaliteli ürün,
-            uygun fiyat, hızlı sevkiyat. Türkiye&apos;nin güvenilir havuz ekipmanları markası.
+            {t("hero.description")}
           </p>
 
           {/* CTA butonları */}
@@ -272,33 +274,45 @@ export default function Hero() {
                 boxShadow: "0 10px 40px -10px rgba(6, 182, 212, 0.4)",
               }}
             >
-              Teklif Alın
+              {t("hero.cta")}
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
-            <a
-              href="tel:+902126165520"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg border-2 transition-all duration-300 hover:bg-white/10"
-              style={{ color: "#fff", borderColor: "rgba(255,255,255,0.35)" }}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              0212 616 55 20
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg border-2 transition-all duration-300 hover:bg-white/10"
+                style={{ color: "#fff", borderColor: "rgba(255,255,255,0.35)" }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                {t("common.phone")}
+              </a>
+              <a
+                href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg border-2 transition-all duration-300 hover:bg-white/10"
+                style={{ color: "#fff", borderColor: "rgba(255,255,255,0.35)" }}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                {t("common.mobile")}
+              </a>
+            </div>
           </div>
 
           {/* Trust badges - kart stil */}
           <div className="mt-16 grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-4 sm:gap-6">
             {[
-              { label: "Kaliteli Ürün", icon: "✓" },
-              { label: "Hızlı Sevkiyat", icon: "✓" },
-              { label: "Uygun Fiyat", icon: "✓" },
-              { label: "Teknik Destek", icon: "✓" },
+              { labelKey: "hero.qualityProduct" as const, icon: "✓" },
+              { labelKey: "hero.fastShipping" as const, icon: "✓" },
+              { labelKey: "hero.fairPrice" as const, icon: "✓" },
+              { labelKey: "hero.technicalSupport" as const, icon: "✓" },
             ].map((item) => (
               <div
-                key={item.label}
+                key={item.labelKey}
                 className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors hover:bg-white/5"
                 style={{
                   backgroundColor: "rgba(255,255,255,0.03)",
@@ -312,7 +326,7 @@ export default function Hero() {
                 >
                   {item.icon}
                 </span>
-                <span className="text-sm font-medium">{item.label}</span>
+                <span className="text-sm font-medium">{t(item.labelKey)}</span>
               </div>
             ))}
           </div>
@@ -326,7 +340,7 @@ export default function Hero() {
         style={{ color: "rgba(255,255,255,0.7)" }}
         aria-label="Aşağı kaydır"
       >
-        <span className="text-xs font-medium uppercase tracking-[0.25em]">Keşfet</span>
+            <span className="text-xs font-medium uppercase tracking-[0.25em]">{t("hero.scroll")}</span>
         <span
           className="inline-flex h-10 w-6 items-center justify-center rounded-full border-2"
           style={{ borderColor: "rgba(255,255,255,0.4)" }}

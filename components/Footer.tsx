@@ -1,19 +1,24 @@
-import Link from "next/link";
+"use client";
 
-const footerLinks = {
-  urunler: [
-    { label: "Havuz Aydınlatma", href: "/urunler/havuz-aydinlatma-ekipmanlari" },
-    { label: "Filtreler", href: "/urunler/filtreler-ve-ekipmanlari" },
-    { label: "Pompalar", href: "/urunler/pompalar" },
-    { label: "Isıtma Ekipmanları", href: "/urunler/isitma-ekipmanlari" },
-  ],
-  sirket: [
-    { label: "Hakkımızda", href: "/#hakkimizda" },
-    { label: "İletişim", href: "/#iletisim" },
-  ],
-};
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Footer() {
+  const t = useTranslations();
+
+  const footerLinks = {
+    urunler: [
+      { labelKey: "footer.categoryLighting", href: "/urunler/havuz-aydinlatma-ekipmanlari" },
+      { labelKey: "footer.categoryFilters", href: "/urunler/filtreler-ve-ekipmanlari" },
+      { labelKey: "footer.categoryPumps", href: "/urunler/pompalar" },
+      { labelKey: "footer.categoryHeating", href: "/urunler/isitma-ekipmanlari" },
+    ],
+    sirket: [
+      { labelKey: "nav.about", href: "/#hakkimizda" },
+      { labelKey: "nav.faq", href: "/sss" },
+      { labelKey: "nav.contact", href: "/#iletisim" },
+    ],
+  };
   return (
     <footer className="bg-batech-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -24,11 +29,11 @@ export default function Footer() {
               Batech
             </Link>
             <p className="mt-3 text-batech-silver text-sm leading-relaxed max-w-xs">
-              41 yıllık tecrübe ile havuz ekipmanlarında Türkiye&apos;nin güvenilir markası.
+              {t("footer.description")}
             </p>
             <div className="mt-4 flex gap-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/batechhavuz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-batech-silver hover:text-batech-cyan transition-colors"
@@ -39,7 +44,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/batechhavuz/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-batech-silver hover:text-batech-cyan transition-colors"
@@ -55,16 +60,16 @@ export default function Footer() {
           {/* Ürünler */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
-              Ürünler
+              {t("footer.products")}
             </h3>
             <ul className="mt-4 space-y-2">
-              {footerLinks.urunler.map((link) => (
+              {footerLinks.urunler.map((link, i) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     className="text-batech-silver hover:text-batech-cyan transition-colors text-sm"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 </li>
               ))}
@@ -74,7 +79,7 @@ export default function Footer() {
           {/* Şirket */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
-              Şirket
+              {t("footer.company")}
             </h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.sirket.map((link) => (
@@ -83,7 +88,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-batech-silver hover:text-batech-cyan transition-colors text-sm"
                   >
-                    {link.label}
+                    {t(link.labelKey)}
                   </Link>
                 </li>
               ))}
@@ -93,31 +98,39 @@ export default function Footer() {
           {/* İletişim */}
           <div>
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
-              İletişim
+              {t("footer.contact")}
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-batech-silver">
-              <li>Karlıtepe Mah. Gülserenler Sok. No:23/A</li>
-              <li>Gaziosmanpaşa / İstanbul</li>
+              <li>{t("common.address")}</li>
+              <li>{t("common.city")}</li>
               <li>
                 <a
-                  href="mailto:info@batech.com.tr"
+                  href={`mailto:${t("common.email")}`}
                   className="hover:text-batech-cyan transition-colors"
                 >
-                  info@batech.com.tr
+                  {t("common.email")}
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+902126165520"
+                  href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
                   className="hover:text-batech-cyan transition-colors font-medium"
                 >
-                  0212 616 55 20
+                  {t("common.phone")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
+                  className="hover:text-batech-cyan transition-colors font-medium"
+                >
+                  {t("common.mobile")}
                 </a>
               </li>
               <li className="pt-2">
-                Hafta içi: 09:00 – 18:00
+                {t("footer.hours")}
                 <br />
-                Cumartesi: 09:00 – 13:00
+                {t("footer.hoursSat")}
               </li>
             </ul>
           </div>
@@ -125,10 +138,23 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-batech-silver text-sm">
-            © {new Date().getFullYear()} Batech Havuz Ekipmanları. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} {t("footer.copyright")}
           </p>
+          {process.env.NEXT_PUBLIC_KATALOG_URL && (
+            <a
+              href={process.env.NEXT_PUBLIC_KATALOG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-ocean text-white text-sm font-medium hover:bg-batech-teal transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              {t("footer.downloadCatalog")}
+            </a>
+          )}
           <a
-            href="https://wa.me/902126165520"
+            href={`https://wa.me/90${t("common.mobile").replace(/\s/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors"
@@ -136,7 +162,7 @@ export default function Footer() {
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
-            WhatsApp
+            {t("common.whatsapp")}
           </a>
         </div>
       </div>

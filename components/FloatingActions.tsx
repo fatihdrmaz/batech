@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const WHATSAPP_URL = "https://wa.me/902126165520";
+const WHATSAPP_URL = "https://wa.me/905462541454";
 
 export default function FloatingActions() {
   const [showBackToTop, setShowBackToTop] = useState(false);
