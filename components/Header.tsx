@@ -48,21 +48,7 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-ocean text-white text-sm font-medium hover:bg-batech-teal transition-colors"
-            >
-              <span className="hidden xl:inline">{t("common.phone")}</span>
-              <span className="xl:hidden">{t("nav.contact")}</span>
-            </a>
-            <a
-              href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-teal text-white text-sm font-medium hover:bg-batech-cyan transition-colors"
-            >
-              <span className="hidden xl:inline">{t("common.mobile")}</span>
-              <span className="xl:hidden">{t("contact.mobile")}</span>
-            </a>
-            <div className="ml-1 pl-3 border-l border-batech-pearl/60">
+            <div className="ml-2 pl-4 border-l border-batech-pearl/60">
               <LanguageSwitcher />
             </div>
           </div>
@@ -124,20 +110,6 @@ export default function Header() {
                 <div className="px-4 py-3 border-t border-batech-pearl">
                   <LanguageSwitcher />
                 </div>
-                <a
-                  href={`tel:+90${t("common.phone").replace(/\s/g, "")}`}
-                  className="block px-4 py-3 text-batech-teal font-semibold"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {t("common.phone")}
-                </a>
-                <a
-                  href={`tel:+90${t("common.mobile").replace(/\s/g, "")}`}
-                  className="block px-4 py-3 text-batech-teal font-semibold"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {t("common.mobile")}
-                </a>
               </div>
             </motion.div>
           )}
