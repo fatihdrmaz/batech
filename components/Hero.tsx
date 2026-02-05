@@ -70,29 +70,110 @@ export default function Hero() {
         }}
       />
 
-      {/* Havuz dalga katmanı - yumuşak hareket */}
+      {/* Su yüzeyi yansıma çizgisi (üst 1/3 - havuz yüzeyi hissi) */}
       <div
-        className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.12]"
+        className="absolute left-0 right-0 top-[18%] h-[6%] pointer-events-none"
+        aria-hidden
+        style={{
+          background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.12) 20%, rgba(34,211,238,0.25) 50%, rgba(255,255,255,0.12) 80%, transparent 100%)",
+          animation: "hero-water-line 4s ease-in-out infinite",
+        }}
+      />
+
+      {/* Havuz dibi kaustik ışıkları (dans eden ışık lekeleri) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "40%",
+            height: "30%",
+            left: "10%",
+            bottom: "25%",
+            background: "radial-gradient(ellipse, rgba(6, 182, 212, 0.2) 0%, transparent 70%)",
+            animation: "hero-caustic 8s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "35%",
+            height: "25%",
+            right: "5%",
+            bottom: "35%",
+            background: "radial-gradient(ellipse, rgba(14, 116, 144, 0.18) 0%, transparent 70%)",
+            animation: "hero-caustic 10s ease-in-out infinite 2s",
+          }}
+        />
+        <div
+          className="absolute rounded-full"
+          style={{
+            width: "30%",
+            height: "22%",
+            left: "35%",
+            bottom: "15%",
+            background: "radial-gradient(ellipse, rgba(34, 211, 238, 0.12) 0%, transparent 70%)",
+            animation: "hero-caustic 9s ease-in-out infinite 1s",
+          }}
+        />
+      </div>
+
+      {/* Ripple halkaları (su yüzeyine taş atılmış hissi) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        <div
+          className="absolute rounded-full border-2 border-cyan-400/40"
+          style={{
+            width: 120,
+            height: 120,
+            left: "22%",
+            top: "28%",
+            animation: "hero-ripple 6s ease-out infinite",
+          }}
+        />
+        <div
+          className="absolute rounded-full border-2 border-cyan-300/30"
+          style={{
+            width: 100,
+            height: 100,
+            right: "30%",
+            top: "35%",
+            animation: "hero-ripple 7s ease-out infinite 2.5s",
+          }}
+        />
+        <div
+          className="absolute rounded-full border-2 border-teal-400/25"
+          style={{
+            width: 80,
+            height: 80,
+            left: "55%",
+            top: "32%",
+            animation: "hero-ripple 5.5s ease-out infinite 1s",
+          }}
+        />
+      </div>
+
+      {/* Havuz dalga katmanı - yumuşak hareket (daha belirgin) */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.18]"
         aria-hidden
       >
         <svg className="absolute bottom-0 left-0 w-[120%] h-1/2 -left-[10%]" viewBox="0 0 1200 300" preserveAspectRatio="none">
           <path
             fill="none"
-            stroke="rgba(6, 182, 212, 0.5)"
-            strokeWidth="1.5"
+            stroke="rgba(6, 182, 212, 0.6)"
+            strokeWidth="2"
             d="M0 150 Q300 80 600 150 T1200 150"
             style={{ animation: "hero-wave 6s ease-in-out infinite" }}
           />
           <path
             fill="none"
-            stroke="rgba(14, 116, 144, 0.4)"
-            strokeWidth="1"
+            stroke="rgba(14, 116, 144, 0.5)"
+            strokeWidth="1.5"
             d="M0 180 Q300 120 600 180 T1200 180"
             style={{ animation: "hero-wave 8s ease-in-out infinite 1s" }}
           />
           <path
             fill="none"
-            stroke="rgba(34, 211, 238, 0.3)"
+            stroke="rgba(34, 211, 238, 0.4)"
             strokeWidth="1"
             d="M0 200 Q300 160 600 200 T1200 200"
             style={{ animation: "hero-wave 7s ease-in-out infinite 0.5s" }}
@@ -100,19 +181,34 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Yukarı yüzen kabarcıklar */}
+      {/* Yukarı yüzen kabarcıklar (daha fazla + hafif sallanma) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
-        {[...Array(12)].map((_, i) => (
+        {[...Array(18)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full border border-cyan-400/30 bg-cyan-400/10"
+            className="absolute rounded-full border border-cyan-400/25 bg-cyan-400/10"
             style={{
-              width: `${6 + (i % 4) * 4}px`,
-              height: `${6 + (i % 4) * 4}px`,
-              left: `${8 + (i * 7) % 84}%`,
+              width: `${5 + (i % 5) * 3}px`,
+              height: `${5 + (i % 5) * 3}px`,
+              left: `${5 + (i * 5.5) % 90}%`,
               bottom: "-20px",
-              animation: "hero-bubble 12s ease-in infinite",
-              animationDelay: `${i * 1.2}s`,
+              animation: `hero-bubble ${10 + (i % 4) * 2}s ease-in infinite`,
+              animationDelay: `${i * 0.8}s`,
+            }}
+          />
+        ))}
+        {/* İkinci katman: daha küçük, daha yavaş kabarcıklar */}
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={`s-${i}`}
+            className="absolute rounded-full bg-white/20"
+            style={{
+              width: `${3 + (i % 2)}px`,
+              height: `${3 + (i % 2)}px`,
+              left: `${15 + (i * 8) % 70}%`,
+              bottom: "-10px",
+              animation: `hero-bubble 16s ease-in infinite`,
+              animationDelay: `${i * 2}s`,
             }}
           />
         ))}
@@ -145,7 +241,7 @@ export default function Hero() {
               className="inline-block w-2 h-2 rounded-full animate-pulse"
               style={{ backgroundColor: "#06b6d4" }}
             />
-            36 Yıllık Tecrübe
+            41 Yıllık Tecrübe
           </div>
 
           {/* Ana başlık */}
@@ -182,14 +278,14 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="tel:+905462541454"
+              href="tel:+902126165520"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-lg border-2 transition-all duration-300 hover:bg-white/10"
               style={{ color: "#fff", borderColor: "rgba(255,255,255,0.35)" }}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              +90 546 254 14 54
+              0212 616 55 20
             </a>
           </div>
 
@@ -242,7 +338,7 @@ export default function Hero() {
         </span>
       </a>
 
-      {/* Alt dalga */}
+      {/* Alt dalga (beyaz + hafif cyan yansıma) */}
       <div className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none" aria-hidden="true">
         <svg
           className="absolute bottom-0 w-full h-full"
@@ -259,7 +355,12 @@ export default function Hero() {
           <path
             d="M0 84C360 28 720 84 1080 28L1440 84V112H0V84Z"
             fill="white"
-            fillOpacity="0.7"
+            fillOpacity="0.85"
+          />
+          <path
+            d="M0 70C360 42 720 70 1080 42L1440 70V112H0V70Z"
+            fill="rgba(6, 182, 212, 0.08)"
+            fillOpacity="1"
           />
         </svg>
       </div>

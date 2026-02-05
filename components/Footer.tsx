@@ -24,7 +24,7 @@ export default function Footer() {
               Batech
             </Link>
             <p className="mt-3 text-batech-silver text-sm leading-relaxed max-w-xs">
-              36 yıllık tecrübe ile havuz ekipmanlarında Türkiye&apos;nin güvenilir markası.
+              41 yıllık tecrübe ile havuz ekipmanlarında Türkiye&apos;nin güvenilir markası.
             </p>
             <div className="mt-4 flex gap-4">
               <a
@@ -108,10 +108,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+905462541454"
+                  href="tel:+902126165520"
                   className="hover:text-batech-cyan transition-colors font-medium"
                 >
-                  +90 546 254 14 54
+                  0212 616 55 20
                 </a>
               </li>
               <li className="pt-2">
@@ -128,7 +128,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Batech Havuz Ekipmanları. Tüm hakları saklıdır.
           </p>
           <a
-            href="https://wa.me/905462541454"
+            href="https://wa.me/902126165520"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-green-600 text-white text-sm font-medium hover:bg-green-700 transition-colors"

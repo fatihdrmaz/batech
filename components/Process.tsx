@@ -38,7 +38,7 @@ export default function Process() {
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
             Çalışma Şeklimiz
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
             Nasıl Çalışıyoruz?
           </h2>
           <p className="mt-4 text-batech-silver">

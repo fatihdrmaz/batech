@@ -45,10 +45,10 @@ export default function Header() {
               </Link>
             ))}
             <a
-              href="tel:+905462541454"
+              href="tel:+902126165520"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-batech-ocean text-white text-sm font-medium hover:bg-batech-teal transition-colors"
             >
-              <span className="hidden sm:inline">+90 546 254 14 54</span>
+              <span className="hidden sm:inline">0212 616 55 20</span>
               <span className="sm:hidden">Ara</span>
             </a>
           </div>
@@ -108,11 +108,11 @@ export default function Header() {
                   </Link>
                 ))}
                 <a
-                  href="tel:+905462541454"
+                  href="tel:+902126165520"
                   className="block px-4 py-3 text-batech-teal font-semibold"
                   onClick={() => setMobileOpen(false)}
                 >
-                  +90 546 254 14 54
+                  0212 616 55 20
                 </a>
               </div>
             </motion.div>

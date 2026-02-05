@@ -30,7 +30,7 @@ export default function Testimonials() {
           <span className="text-batech-cyan font-medium text-sm uppercase tracking-wider">
             Referanslar
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold section-accent pb-6">
             Müşterilerimiz Ne Diyor?
           </h2>
           <p className="mt-4 text-batech-silver">

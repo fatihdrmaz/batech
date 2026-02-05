@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 
 export const metadata: Metadata = {
-  title: "Batech Havuz Ekipmanları | 36 Yıllık Tecrübe",
+  title: "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
   description:
     "Havuz aydınlatma, filtre, pompa ve tüm havuz ekipmanlarında Türkiye'nin güvenilir markası. Kaliteli ürün, uygun fiyat, hızlı sevkiyat.",
   keywords: "havuz ekipmanları, havuz lambası, havuz filtresi, Batech, İstanbul",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Batech Havuz Ekipmanları",
-    description: "36 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
+    description: "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
   },
 };
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 pt-16 lg:pt-20">{children}</main>
         <Footer />
+        <FloatingActions />
       </body>
     </html>
   );

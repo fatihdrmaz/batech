@@ -15,8 +15,8 @@ export default function About() {
             <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
               Hakkımızda
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy">
-              36 yıldır havuz ekipmanlarında
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
+              41 yıldır havuz ekipmanlarında
               <br />
               <span className="text-batech-teal">güvenilir çözüm ortağınız</span>
             </h2>
@@ -27,7 +27,7 @@ export default function About() {
               pompalar, ısıtma ekipmanları ve havuz kimyasalları ile tek adresiniziz.
             </p>
             <p className="mt-4 text-batech-silver leading-relaxed">
-              Özellikle havuz lambaları ve aydınlatma sistemlerinde 34 yılı aşkın üretim
+              Özellikle havuz lambaları ve aydınlatma sistemlerinde 41 yılı aşkın üretim
               tecrübemizle sektörde öncü konumdayız. Konut havuzlarından otel ve spor tesislerine,
               süs havuzlarından olimpik yüzme havuzlarına kadar her ölçekte projeye uygun
               ürün çeşitliliği sunuyoruz. Müşteri memnuniyeti ve uzun ömürlü ürünler
@@ -63,7 +63,7 @@ export default function About() {
             <div className="aspect-[4/3] rounded-2xl bg-water-gradient overflow-hidden shadow-2xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white/90 p-8">
-                  <span className="text-6xl sm:text-7xl font-bold">36</span>
+                  <span className="text-6xl sm:text-7xl font-bold">41</span>
                   <p className="text-lg font-medium mt-2">Yıllık Tecrübe</p>
                   <p className="text-sm mt-1 opacity-80">Havuz ekipmanlarında 1 numara</p>
                 </div>

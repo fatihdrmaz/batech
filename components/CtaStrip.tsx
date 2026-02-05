@@ -28,7 +28,7 @@ export default function CtaStrip() {
               Teklif Talep Et
             </a>
             <a
-              href="https://wa.me/905462541454"
+              href="https://wa.me/902126165520"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"

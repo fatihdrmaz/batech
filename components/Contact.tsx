@@ -15,7 +15,7 @@ export default function Contact() {
             <span className="text-batech-cyan font-medium text-sm uppercase tracking-wider">
               İletişim
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold">
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold section-accent pb-6">
               Katalog, fiyat teklifi ve önerileriniz için
               <br />
               <span className="text-batech-aqua">bizimle iletişime geçin</span>
@@ -27,7 +27,7 @@ export default function Contact() {
 
             <div className="mt-10 space-y-6">
               <a
-                href="tel:+905462541454"
+                href="tel:+902126165520"
                 className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors group"
               >
                 <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-batech-teal text-white group-hover:bg-batech-cyan transition-colors">
@@ -37,7 +37,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-sm text-batech-silver">Telefon</p>
-                  <p className="text-lg font-semibold text-white">+90 546 254 14 54</p>
+                  <p className="text-lg font-semibold text-white">0212 616 55 20</p>
                 </div>
               </a>
               <a
@@ -76,7 +76,7 @@ export default function Contact() {
             </div>
 
             <a
-              href="https://wa.me/905462541454"
+              href="https://wa.me/902126165520"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700 transition-colors"

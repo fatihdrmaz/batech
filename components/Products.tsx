@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const categories = [
-  { name: "Havuz Aydınlatma Ekipmanları", count: "15 ürün", description: "34 yıllık tecrübe ile havuz lambaları imalatında 1 numara.", href: "/urunler/havuz-aydinlatma-ekipmanlari", image: "/images/placeholder-category.svg" },
+  { name: "Havuz Aydınlatma Ekipmanları", count: "15 ürün", description: "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara.", href: "/urunler/havuz-aydinlatma-ekipmanlari", image: "/images/placeholder-category.svg" },
   { name: "Filtreler ve Ekipmanları", count: "2 kategori", description: "Havuz filtre sistemleri ve yedek parçalar.", href: "/urunler/filtreler-ve-ekipmanlari", image: "/images/placeholder-category.svg" },
   { name: "Pompalar", count: "1 kategori", description: "Yüksek performanslı havuz pompaları.", href: "/urunler/pompalar", image: "/images/placeholder-category.svg" },
   { name: "Isıtma Ekipmanları", count: "3 ürün", description: "Boru tip ısıtıcı ve ısıtma çözümleri.", href: "/urunler/isitma-ekipmanlari", image: "/images/placeholder-category.svg" },

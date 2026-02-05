@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const values = [
   {
-    title: "36 Yıllık Tecrübe",
+    title: "41 Yıllık Tecrübe",
     description: "Güçlü ürün portföyümüz ve tecrübeli kadromuzla güvenilir bir iş ortağıyız.",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ export default function Values() {
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
             Değerlerimiz
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
             Neden Batech?
           </h2>
           <p className="mt-4 text-batech-silver">
@@ -104,12 +104,17 @@ export default function Values() {
             <motion.div
               key={v.title}
               variants={item}
+              whileHover={{ y: -4 }}
               className="group relative p-8 rounded-2xl bg-batech-pearl/50 border border-transparent hover:border-batech-cyan/30 hover:shadow-xl hover:shadow-batech-cyan/5 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-4">
-                <span className="flex items-center justify-center w-14 h-14 rounded-xl bg-batech-ocean text-batech-cyan group-hover:bg-batech-teal group-hover:text-white transition-colors">
+                <motion.span
+                  className="flex items-center justify-center w-14 h-14 rounded-xl bg-batech-ocean text-batech-cyan group-hover:bg-batech-teal group-hover:text-white transition-colors"
+                  whileHover={{ scale: 1.08, rotate: 3 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                >
                   {v.icon}
-                </span>
+                </motion.span>
                 <h3 className="text-lg font-semibold text-batech-navy">
                   {v.title}
                 </h3>

@@ -26,7 +26,7 @@ export default function FeaturedProducts() {
           <span className="text-batech-teal font-medium text-sm uppercase tracking-wider">
             Öne Çıkan Ürünler
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-batech-navy section-accent pb-6">
             Son Eklenen & Popüler Ürünler
           </h2>
           <p className="mt-4 text-batech-silver">
@@ -42,9 +42,9 @@ export default function FeaturedProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="group rounded-2xl border border-batech-pearl bg-white overflow-hidden hover:border-batech-cyan/40 hover:shadow-lg transition-all duration-300"
+              className="group rounded-2xl border border-batech-pearl bg-white overflow-hidden hover:border-batech-cyan/40 hover:shadow-lg transition-all duration-300 relative card-shine"
             >
-              <div className="relative aspect-[4/3] w-full bg-batech-pearl">
+              <div className="relative aspect-[4/3] w-full bg-batech-pearl overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}

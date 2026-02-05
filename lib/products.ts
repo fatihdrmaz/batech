@@ -47,7 +47,7 @@ export type Category = {
 };
 
 export const categories: Category[] = [
-  { slug: "havuz-aydinlatma-ekipmanlari", name: "Havuz Aydınlatma Ekipmanları", productCount: 15, description: "34 yıllık tecrübe ile havuz lambaları imalatında 1 numara.", image: "/images/placeholder-category.svg" },
+  { slug: "havuz-aydinlatma-ekipmanlari", name: "Havuz Aydınlatma Ekipmanları", productCount: 15, description: "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara.", image: "/images/placeholder-category.svg" },
   { slug: "elektrik-panolari", name: "Elektrik Panoları", productCount: 2, image: "/images/placeholder-category.svg" },
   { slug: "filtreler-ve-ekipmanlari", name: "Filtreler ve Ekipmanları", productCount: 2, image: "/images/placeholder-category.svg" },
   { slug: "havuz-kenar-ve-ic-ekipmanlari", name: "Havuz Kenar ve İç Ekipmanları", productCount: 13, image: "/images/placeholder-category.svg" },
