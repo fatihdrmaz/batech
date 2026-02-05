@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --batech-navy: #0a1628;
+  --batech-ocean: #0d2137;
+  --batech-teal: #0e7490;
+  --batech-cyan: #06b6d4;
+  --batech-aqua: #22d3ee;
+  --batech-pearl: #f1f5f9;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-batech-navy antialiased;
+  background-color: #fff;
+  color: #0a1628;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Subtle water gradient for backgrounds */
+.bg-water-gradient {
+  background: linear-gradient(135deg, #0d2137 0%, #0e7490 50%, #06b6d4 100%);
+}
+
+.bg-water-subtle {
+  background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%);
+}
+
+/* Hero arka plan ışık animasyonu */
+@keyframes hero-glow {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.12; }
+}

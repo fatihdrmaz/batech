@@ -1,0 +1,9 @@
+# Ürün fotoğraflarını buraya koyun.
+# Örnek dosya adları (lib/products.ts'deki slug ile eşleşsin):
+#   par38-ayakli-armatur.jpg
+#   par56-paslanmaz-armatur-siva-alti.jpg
+#   tek-led-mini-spot.jpg
+#   mosaic-model-havuz-kenar-izgarasi.jpg
+#   pompa.jpg
+#   ... vb.
+# Desteklenen formatlar: .jpg, .jpeg, .png, .webp, .svg

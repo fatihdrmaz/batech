@@ -1,0 +1,13 @@
+# Kategori fotoğraflarını buraya koyun.
+# Örnek dosya adları (lib/products.ts'deki slug ile eşleşsin):
+#   havuz-aydinlatma-ekipmanlari.jpg
+#   elektrik-panolari.jpg
+#   filtreler-ve-ekipmanlari.jpg
+#   havuz-kenar-ve-ic-ekipmanlari.jpg
+#   havuz-temizlik-ekipmanlari.jpg
+#   isitma-ekipmanlari.jpg
+#   pompalar.jpg
+#   sus-havuzu-ekipmanlari.jpg
+#   olimpik-havuz-ekipmanlari.jpg
+#   yuzme-havuzu-kimyasallari.jpg
+# Desteklenen formatlar: .jpg, .jpeg, .png, .webp, .svg
