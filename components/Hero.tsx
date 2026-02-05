@@ -70,6 +70,65 @@ export default function Hero() {
         }}
       />
 
+      {/* Havuz dalga katmanı - yumuşak hareket */}
+      <div
+        className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.12]"
+        aria-hidden
+      >
+        <svg className="absolute bottom-0 left-0 w-[120%] h-1/2 -left-[10%]" viewBox="0 0 1200 300" preserveAspectRatio="none">
+          <path
+            fill="none"
+            stroke="rgba(6, 182, 212, 0.5)"
+            strokeWidth="1.5"
+            d="M0 150 Q300 80 600 150 T1200 150"
+            style={{ animation: "hero-wave 6s ease-in-out infinite" }}
+          />
+          <path
+            fill="none"
+            stroke="rgba(14, 116, 144, 0.4)"
+            strokeWidth="1"
+            d="M0 180 Q300 120 600 180 T1200 180"
+            style={{ animation: "hero-wave 8s ease-in-out infinite 1s" }}
+          />
+          <path
+            fill="none"
+            stroke="rgba(34, 211, 238, 0.3)"
+            strokeWidth="1"
+            d="M0 200 Q300 160 600 200 T1200 200"
+            style={{ animation: "hero-wave 7s ease-in-out infinite 0.5s" }}
+          />
+        </svg>
+      </div>
+
+      {/* Yukarı yüzen kabarcıklar */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full border border-cyan-400/30 bg-cyan-400/10"
+            style={{
+              width: `${6 + (i % 4) * 4}px`,
+              height: `${6 + (i % 4) * 4}px`,
+              left: `${8 + (i * 7) % 84}%`,
+              bottom: "-20px",
+              animation: "hero-bubble 12s ease-in infinite",
+              animationDelay: `${i * 1.2}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Su yüzeyi parıltı (hafif) */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.06]"
+        aria-hidden
+        style={{
+          background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0.15) 55%, transparent 100%)",
+          backgroundSize: "200% 100%",
+          animation: "hero-shimmer 8s linear infinite",
+        }}
+      />
+
       {/* İçerik */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36 text-center">
         <div className="max-w-4xl mx-auto">

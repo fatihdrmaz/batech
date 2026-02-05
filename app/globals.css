@@ -41,3 +41,23 @@ body {
   0%, 100% { opacity: 0.05; }
   50% { opacity: 0.12; }
 }
+
+/* Havuz / su dalga efekti */
+@keyframes hero-wave {
+  0%, 100% { transform: translateX(0) translateY(0) scaleY(1); }
+  25% { transform: translateX(2%) translateY(-3px) scaleY(1.02); }
+  50% { transform: translateX(-1%) translateY(2px) scaleY(0.98); }
+  75% { transform: translateX(1.5%) translateY(-2px) scaleY(1.01); }
+}
+
+/* Su yüzeyi parıltı */
+@keyframes hero-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Kabarcık yukarı hareket */
+@keyframes hero-bubble {
+  0% { transform: translateY(0) scale(1); opacity: 0.4; }
+  100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+}
