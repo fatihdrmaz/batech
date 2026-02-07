@@ -86,12 +86,12 @@
       "subtitle": "Equipos para piscinas actuales y más preferidos de nuestro catálogo.",
       "viewAll": "Explorar todas las categorías de productos",
       "items": [
-        { "name": "Rejilla de borde de piscina modelo Mosaic 20 cm", "category": "Equipos de borde de piscina", "description": "Estructura inoxidable resistente, diseño mosaic." },
-        { "name": "Mini Spot LED único (Mini Spot dedo)", "category": "Iluminación de piscinas", "description": "LED de bajo consumo, larga duración." },
-        { "name": "Cortina de agua inoxidable para piscina (Cascada Cobra)", "category": "Equipos para piscinas decorativas", "description": "Cortina de agua estética y efecto cascada." },
-        { "name": "Válvula de seis vías", "category": "Equipos de borde e interior de piscina", "description": "Control de flujo multidireccional, uso fiable." },
-        { "name": "Armadura PAR56 inoxidable (empotrada)", "category": "Iluminación de piscinas", "description": "Solución profesional de iluminación para piscinas." },
-        { "name": "Armadura PAR38 con pedestal", "category": "Iluminación de piscinas", "description": "LED 9W, blanco / luz diurna / RGB y opciones de color." }
+        { "name": "Rejilla de borde de piscina modelo Mosaic 20 cm", "category": "Equipos de borde e interior de piscina", "description": "Estructura inoxidable resistente, diseño mosaic." },
+        { "name": "Luminaire Par56 completo", "category": "Equipos de iluminación para piscinas", "description": "Solución profesional de iluminación para piscinas." },
+        { "name": "Cortina de agua inoxidable para piscina (Cascada Cobra)", "category": "Equipos de borde e interior de piscina", "description": "Cortina de agua estética y efecto cascada." },
+        { "name": "Válvula de seis vías", "category": "Filtros y equipos", "description": "Control de flujo multidireccional, uso fiable." },
+        { "name": "Luminaire Par56 completo inoxidable", "category": "Equipos de iluminación para piscinas", "description": "Acero inoxidable, iluminación para piscinas duradera." },
+        { "name": "Fuente volcán", "category": "Equipos para piscinas decorativas", "description": "Efecto de agua decorativo para piscinas ornamentales." }
       ]
     },
     "all": {
@@ -101,12 +101,12 @@
       "viewAll": "Ver todas las categorías"
     },
     "categories": [
-      { "name": "Equipos de iluminación para piscinas", "count": "15 productos", "description": "Número uno en fabricación de luces para piscinas con 41 años de experiencia." },
-      { "name": "Filtros y equipos", "count": "2 categorías", "description": "Sistemas de filtrado y repuestos." },
-      { "name": "Bombas", "count": "1 categoría", "description": "Bombas para piscinas de alto rendimiento." },
-      { "name": "Equipos de calefacción", "count": "3 productos", "description": "Calentadores de tubo y soluciones de calefacción." },
-      { "name": "Equipos de borde e interior de piscina", "count": "13 productos", "description": "Rejillas, válvulas, equipos de borde." },
-      { "name": "Equipos de limpieza para piscinas", "count": "12 productos", "description": "Cepillos, recogedores y accesorios." }
+      { "name": "Equipos de iluminación para piscinas", "count": "5 productos", "description": "Número uno en fabricación de luces para piscinas con 41 años de experiencia." },
+      { "name": "Paneles eléctricos", "count": "2 productos", "description": "Paneles eléctricos para piscinas tipo económico y lujo." },
+      { "name": "Filtros y equipos", "count": "2 productos", "description": "Sistemas de filtrado y repuestos." },
+      { "name": "Equipos de borde e interior de piscina", "count": "13 productos", "description": "Rejillas, válvulas, escaleras y equipos de borde." },
+      { "name": "Equipos de limpieza para piscinas", "count": "12 productos", "description": "Cepillos, recogedores y accesorios." },
+      { "name": "Equipos para piscinas decorativas", "count": "6 productos", "description": "Fuentes y equipos para piscinas decorativas." }
     ],
     "lightExampleTitle": "Productos de iluminación para piscinas (Catálogo de ejemplo)",
     "lightExampleSubtitle": "Serie PAR y mini spot, armaduras de suelo, opciones empotradas y de superficie.",
@@ -253,9 +253,11 @@
     "company": "Empresa",
     "contact": "Contacto",
     "categoryLighting": "Iluminación",
+    "categoryElectrik": "Paneles eléctricos",
     "categoryFilters": "Filtros",
-    "categoryPumps": "Bombas",
-    "categoryHeating": "Calefacción",
+    "categoryEdge": "Borde e interior",
+    "categoryCleaning": "Limpieza",
+    "categorySus": "Piscina decorativa",
     "hours": "Días laborables: 09:00 – 18:00",
     "hoursSat": "Sábado: 09:00 – 13:00",
     "copyright": "Batech Equipos para Piscinas. Todos los derechos reservados.",

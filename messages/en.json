@@ -86,12 +86,12 @@
       "subtitle": "Current and most preferred pool equipment from our catalog.",
       "viewAll": "Browse all product categories",
       "items": [
-        { "name": "20 cm Mosaic Model Pool Edge Grate", "category": "Pool Edge Equipment", "description": "Durable stainless steel, mosaic design." },
-        { "name": "Single LED Mini Spot (Finger Mini Spot)", "category": "Pool Lighting", "description": "Energy-efficient LED, long-lasting." },
-        { "name": "Stainless Steel Pool Water Curtain (Cobra Waterfall)", "category": "Decorative Pool Equipment", "description": "Aesthetic water curtain and waterfall effect." },
-        { "name": "Six-Way Valve", "category": "Pool Edge and Internal Equipment", "description": "Multi-directional flow control, reliable use." },
-        { "name": "PAR56 Stainless Steel Fixture (Recessed)", "category": "Pool Lighting", "description": "Professional pool lighting solution." },
-        { "name": "PAR38 Pedestal Fixture", "category": "Pool Lighting", "description": "9W LED, white / daylight / RGB and color options." }
+        { "name": "20 cm Mosaic Model Pool Edge Grate", "category": "Pool Edge and Internal Equipment", "description": "Durable stainless steel, mosaic design." },
+        { "name": "Par56 Complete Luminaire", "category": "Pool Lighting Equipment", "description": "Professional pool lighting solution." },
+        { "name": "Stainless Steel Pool Water Curtain (Cobra Waterfall)", "category": "Pool Edge and Internal Equipment", "description": "Aesthetic water curtain and waterfall effect." },
+        { "name": "Six-Way Valve", "category": "Filters and Equipment", "description": "Multi-directional flow control, reliable use." },
+        { "name": "Par56 Stainless Steel Complete Luminaire", "category": "Pool Lighting Equipment", "description": "Stainless steel, long-lasting pool lighting." },
+        { "name": "Volcano Fountain", "category": "Decorative Pool Equipment", "description": "Decorative water effect for ornamental pools." }
       ]
     },
     "all": {
@@ -101,12 +101,12 @@
       "viewAll": "View all categories"
     },
     "categories": [
-      { "name": "Pool Lighting Equipment", "count": "15 products", "description": "Number one in pool light manufacturing with 41 years of experience." },
-      { "name": "Filters and Equipment", "count": "2 categories", "description": "Pool filter systems and spare parts." },
-      { "name": "Pumps", "count": "1 category", "description": "High-performance pool pumps." },
-      { "name": "Heating Equipment", "count": "3 products", "description": "Pipe-type heaters and heating solutions." },
-      { "name": "Pool Edge and Internal Equipment", "count": "13 products", "description": "Grates, valves, edge equipment." },
-      { "name": "Pool Cleaning Equipment", "count": "12 products", "description": "Cleaning brushes, skimmers and accessories." }
+      { "name": "Pool Lighting Equipment", "count": "5 products", "description": "Number one in pool light manufacturing with 41 years of experience." },
+      { "name": "Electrical Panels", "count": "2 products", "description": "Economy and luxury type pool electrical panels." },
+      { "name": "Filters and Equipment", "count": "2 products", "description": "Pool filter systems and spare parts." },
+      { "name": "Pool Edge and Internal Equipment", "count": "13 products", "description": "Grates, valves, ladders and edge equipment." },
+      { "name": "Pool Cleaning Equipment", "count": "12 products", "description": "Cleaning brushes, skimmers and accessories." },
+      { "name": "Decorative Pool Equipment", "count": "6 products", "description": "Fountains and decorative pool equipment." }
     ],
     "lightExampleTitle": "Pool Lighting Products (Sample Catalog)",
     "lightExampleSubtitle": "PAR and mini spot series, floor fixtures, recessed and surface-mounted options.",
@@ -253,9 +253,11 @@
     "company": "Company",
     "contact": "Contact",
     "categoryLighting": "Pool Lighting",
+    "categoryElectrik": "Electrical Panels",
     "categoryFilters": "Filters",
-    "categoryPumps": "Pumps",
-    "categoryHeating": "Heating Equipment",
+    "categoryEdge": "Pool Edge and Internal",
+    "categoryCleaning": "Pool Cleaning",
+    "categorySus": "Decorative Pool",
     "hours": "Weekdays: 09:00 – 18:00",
     "hoursSat": "Saturday: 09:00 – 13:00",
     "copyright": "Batech Pool Equipment. All rights reserved.",

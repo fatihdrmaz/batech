@@ -58,7 +58,7 @@ export default async function LocaleLayout({
             "@type": "Organization",
             name: "Batech Havuz Ekipmanları",
             url: SITE_URL,
-            logo: `${SITE_URL}/favicon.svg`,
+            logo: `${SITE_URL}/logo_batech-300x138-300x138.png`,
             description: "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
             address: {
               "@type": "PostalAddress",

@@ -86,12 +86,12 @@
       "subtitle": "Équipements de piscine actuels et les plus préférés de notre catalogue.",
       "viewAll": "Parcourir toutes les catégories de produits",
       "items": [
-        { "name": "Grille de bord de piscine modèle Mosaic 20 cm", "category": "Équipements de bord de piscine", "description": "Structure inox durable, design mosaic." },
-        { "name": "Mini Spot LED unique (Mini Spot doigt)", "category": "Éclairage de piscine", "description": "LED économe en énergie, longue durée." },
-        { "name": "Rideau d'eau inox pour piscine (Cascade Cobra)", "category": "Équipements pour piscines décoratives", "description": "Rideau d'eau esthétique et effet cascade." },
-        { "name": "Vanne six voies", "category": "Équipements de bord et intérieur de piscine", "description": "Contrôle de débit multidirectionnel, utilisation fiable." },
-        { "name": "Luminaire PAR56 inox (encastré)", "category": "Éclairage de piscine", "description": "Solution d'éclairage professionnelle pour piscines." },
-        { "name": "Luminaire PAR38 sur pied", "category": "Éclairage de piscine", "description": "LED 9W, blanc / lumière du jour / RGB et options de couleur." }
+        { "name": "Grille de bord de piscine modèle Mosaic 20 cm", "category": "Équipements de bord et intérieur de piscine", "description": "Structure inox durable, design mosaic." },
+        { "name": "Luminaire Par56 complet", "category": "Équipements d'éclairage pour piscines", "description": "Solution d'éclairage professionnelle pour piscines." },
+        { "name": "Rideau d'eau inox pour piscine (Cascade Cobra)", "category": "Équipements de bord et intérieur de piscine", "description": "Rideau d'eau esthétique et effet cascade." },
+        { "name": "Vanne six voies", "category": "Filtres et équipements", "description": "Contrôle de débit multidirectionnel, utilisation fiable." },
+        { "name": "Luminaire Par56 complet inox", "category": "Équipements d'éclairage pour piscines", "description": "Inox, éclairage de piscine durable." },
+        { "name": "Fontaine volcan", "category": "Équipements pour piscines décoratives", "description": "Effet d'eau décoratif pour bassins ornementaux." }
       ]
     },
     "all": {
@@ -101,12 +101,12 @@
       "viewAll": "Voir toutes les catégories"
     },
     "categories": [
-      { "name": "Équipements d'éclairage pour piscines", "count": "15 produits", "description": "Numéro un en fabrication de luminaires avec 41 ans d'expérience." },
-      { "name": "Filtres et équipements", "count": "2 catégories", "description": "Systèmes de filtration et pièces détachées." },
-      { "name": "Pompes", "count": "1 catégorie", "description": "Pompes de piscine haute performance." },
-      { "name": "Équipements de chauffage", "count": "3 produits", "description": "Réchauffeurs à tube et solutions de chauffage." },
-      { "name": "Équipements de bord et intérieur de piscine", "count": "13 produits", "description": "Grilles, vannes, équipements de bord." },
-      { "name": "Équipements de nettoyage pour piscines", "count": "12 produits", "description": "Brosses, épuisettes et accessoires." }
+      { "name": "Équipements d'éclairage pour piscines", "count": "5 produits", "description": "Numéro un en fabrication de luminaires avec 41 ans d'expérience." },
+      { "name": "Panneaux électriques", "count": "2 produits", "description": "Panneaux électriques pour piscines type économique et luxe." },
+      { "name": "Filtres et équipements", "count": "2 produits", "description": "Systèmes de filtration et pièces détachées." },
+      { "name": "Équipements de bord et intérieur de piscine", "count": "13 produits", "description": "Grilles, vannes, échelles et équipements de bord." },
+      { "name": "Équipements de nettoyage pour piscines", "count": "12 produits", "description": "Brosses, épuisettes et accessoires." },
+      { "name": "Équipements pour piscines décoratives", "count": "6 produits", "description": "Fontaines et équipements pour piscines décoratives." }
     ],
     "lightExampleTitle": "Produits d'éclairage pour piscines (Catalogue exemple)",
     "lightExampleSubtitle": "Série PAR et mini spot, luminaires au sol, options encastrées et en saillie.",
@@ -253,9 +253,11 @@
     "company": "Entreprise",
     "contact": "Contact",
     "categoryLighting": "Éclairage",
+    "categoryElectrik": "Panneaux électriques",
     "categoryFilters": "Filtres",
-    "categoryPumps": "Pompes",
-    "categoryHeating": "Chauffage",
+    "categoryEdge": "Bord et intérieur",
+    "categoryCleaning": "Nettoyage",
+    "categorySus": "Piscine décorative",
     "hours": "Jours ouvrables: 09:00 – 18:00",
     "hoursSat": "Samedi: 09:00 – 13:00",
     "copyright": "Batech Équipements de Piscine. Tous droits réservés.",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -29,12 +30,14 @@ export default function Header() {
             className="flex items-center gap-2 group"
             aria-label="Batech"
           >
-            <span className="text-2xl font-bold tracking-tight text-batech-ocean group-hover:text-batech-teal transition-colors">
-              Batech
-            </span>
-            <span className="text-xs font-medium text-batech-teal uppercase tracking-widest hidden sm:inline">
-              Havuz Ekipmanları
-            </span>
+            <Image
+              src="/logo_batech-300x138-300x138.png"
+              alt="Batech Havuz Ekipmanları"
+              width={300}
+              height={138}
+              className="h-16 lg:h-20 w-auto object-contain brightness-[0.82] contrast-[1.08]"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

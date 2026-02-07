@@ -7,11 +7,11 @@ import { Link } from "@/i18n/navigation";
 
 const FEATURED_SLUGS = [
   "mosaic-model-havuz-kenar-izgarasi",
-  "tek-led-mini-spot",
+  "par56-komple-armatur",
   "paslanmaz-havuz-su-perdesi",
   "alti-yollu-vana",
-  "par56-paslanmaz-armatur-siva-alti",
-  "par38-ayakli-armatur",
+  "par56-komple-armatur-paslanmaz",
+  "volkan-fiskiye",
 ];
 const PLACEHOLDER_IMAGE = "/images/placeholder-product.svg";
 

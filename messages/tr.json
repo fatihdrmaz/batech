@@ -86,12 +86,12 @@
       "subtitle": "Katalogumuzdan güncel ve çok tercih edilen havuz ekipmanları.",
       "viewAll": "Tüm ürün kategorilerini inceleyin",
       "items": [
-        { "name": "20 cm Mosaic Model Havuz Kenar Izgarası", "category": "Havuz Kenar Ekipmanları", "description": "Dayanıklı paslanmaz yapı, mosaic tasarım." },
-        { "name": "Tek Led Mini Spot (Parmak Mini Spot)", "category": "Havuz Aydınlatma", "description": "Enerji tasarruflu LED, uzun ömürlü." },
-        { "name": "Paslanmaz Havuz Su Perdesi (Kobra Şelale)", "category": "Süs Havuzu Ekipmanları", "description": "Estetik su perdesi ve şelale efekti." },
-        { "name": "Altı Yollu Vana", "category": "Havuz Kenar ve İç Ekipmanları", "description": "Çok yönlü akış kontrolü, güvenilir kullanım." },
-        { "name": "PAR56 Paslanmaz Armatür (Sıva Altı)", "category": "Havuz Aydınlatma", "description": "Profesyonel havuz aydınlatma çözümü." },
-        { "name": "PAR38 Ayaklı Armatür", "category": "Havuz Aydınlatma", "description": "9W LED, beyaz / güneş ışığı / RGB ve renk seçenekleri." }
+        { "name": "20 cm Mosaic Model Havuz Kenar Izgarası", "category": "Havuz Kenar ve İç Ekipmanları", "description": "Dayanıklı paslanmaz yapı, mosaic tasarım." },
+        { "name": "Par56 Komple Armatür", "category": "Havuz Aydınlatma Ekipmanları", "description": "Profesyonel havuz aydınlatma çözümü." },
+        { "name": "Paslanmaz Havuz Su Perdesi (Kobra Şelale)", "category": "Havuz Kenar ve İç Ekipmanları", "description": "Estetik su perdesi ve şelale efekti." },
+        { "name": "Altı Yollu Vana", "category": "Filtreler ve Ekipmanları", "description": "Çok yönlü akış kontrolü, güvenilir kullanım." },
+        { "name": "Par56 Komple Armatür Paslanmaz", "category": "Havuz Aydınlatma Ekipmanları", "description": "Paslanmaz çelik, uzun ömürlü havuz aydınlatma." },
+        { "name": "Volkan Fıskıye", "category": "Süs Havuzu Ekipmanları", "description": "Süs havuzu için dekoratif su efekti." }
       ]
     },
     "all": {
@@ -101,12 +101,12 @@
       "viewAll": "Tüm kategorileri görüntüle"
     },
     "categories": [
-      { "name": "Havuz Aydınlatma Ekipmanları", "count": "15 ürün", "description": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara." },
-      { "name": "Filtreler ve Ekipmanları", "count": "2 kategori", "description": "Havuz filtre sistemleri ve yedek parçalar." },
-      { "name": "Pompalar", "count": "1 kategori", "description": "Yüksek performanslı havuz pompaları." },
-      { "name": "Isıtma Ekipmanları", "count": "3 ürün", "description": "Boru tip ısıtıcı ve ısıtma çözümleri." },
-      { "name": "Havuz Kenar ve İç Ekipmanları", "count": "13 ürün", "description": "Izgaralar, vanalar, kenar ekipmanları." },
-      { "name": "Havuz Temizlik Ekipmanları", "count": "12 ürün", "description": "Temizlik fırçaları, kepçeler ve aksesuarlar." }
+      { "name": "Havuz Aydınlatma Ekipmanları", "count": "5 ürün", "description": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara." },
+      { "name": "Elektrik Panoları", "count": "2 ürün", "description": "Ekonomik ve lüks tip havuz elektrik panoları." },
+      { "name": "Filtreler ve Ekipmanları", "count": "2 ürün", "description": "Havuz filtre sistemleri ve yedek parçalar." },
+      { "name": "Havuz Kenar ve İç Ekipmanları", "count": "13 ürün", "description": "Izgaralar, vanalar, merdivenler ve kenar ekipmanları." },
+      { "name": "Havuz Temizlik Ekipmanları", "count": "12 ürün", "description": "Temizlik fırçaları, kepçeler ve aksesuarlar." },
+      { "name": "Süs Havuzu Ekipmanları", "count": "6 ürün", "description": "Fıskiyeler ve dekoratif süs havuzu ekipmanları." }
     ],
     "lightExampleTitle": "Havuz Aydınlatma Ürünleri (Örnek Katalog)",
     "lightExampleSubtitle": "PAR ve mini spot serileri, yer armatürleri, sıva altı ve sıva üstü seçenekler.",
@@ -253,9 +253,11 @@
     "company": "Şirket",
     "contact": "İletişim",
     "categoryLighting": "Havuz Aydınlatma",
+    "categoryElectrik": "Elektrik Panoları",
     "categoryFilters": "Filtreler",
-    "categoryPumps": "Pompalar",
-    "categoryHeating": "Isıtma Ekipmanları",
+    "categoryEdge": "Havuz Kenar ve İç",
+    "categoryCleaning": "Havuz Temizlik",
+    "categorySus": "Süs Havuzu",
     "hours": "Hafta içi: 09:00 – 18:00",
     "hoursSat": "Cumartesi: 09:00 – 13:00",
     "copyright": "Batech Havuz Ekipmanları. Tüm hakları saklıdır.",

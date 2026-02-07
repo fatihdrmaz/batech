@@ -9,9 +9,11 @@ export default function Footer() {
   const footerLinks = {
     urunler: [
       { labelKey: "footer.categoryLighting", href: "/urunler/havuz-aydinlatma-ekipmanlari" },
+      { labelKey: "footer.categoryElectrik", href: "/urunler/elektrik-panolari" },
       { labelKey: "footer.categoryFilters", href: "/urunler/filtreler-ve-ekipmanlari" },
-      { labelKey: "footer.categoryPumps", href: "/urunler/pompalar" },
-      { labelKey: "footer.categoryHeating", href: "/urunler/isitma-ekipmanlari" },
+      { labelKey: "footer.categoryEdge", href: "/urunler/havuz-kenar-ve-ic-ekipmanlari" },
+      { labelKey: "footer.categoryCleaning", href: "/urunler/havuz-temizlik-ekipmanlari" },
+      { labelKey: "footer.categorySus", href: "/urunler/sus-havuzu-ekipmanlari" },
     ],
     sirket: [
       { labelKey: "nav.about", href: "/#hakkimizda" },
@@ -20,7 +22,7 @@ export default function Footer() {
     ],
   };
   return (
-    <footer className="bg-batech-navy text-white">
+    <footer className="relative z-30 bg-batech-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}

@@ -6,7 +6,7 @@ import type { ProductColorOption } from "@/types/product";
 
 /** Renk etiketine göre container vurgu rengi (border + glow) */
 const LABEL_TO_ACCENT: Record<string, string> = {
-  İşıksız: "#94a3b8",
+  "Ürün görünümü": "#94a3b8",
   Beyaz: "#e2e8f0",
   "Gün Işığı": "#fbbf24",
   Kırmızı: "#ef4444",

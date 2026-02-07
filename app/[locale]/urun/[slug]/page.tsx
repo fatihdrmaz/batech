@@ -216,7 +216,7 @@ export default async function ProductPage({ params }: Props) {
 
           {/* Sidebar: CTA + İlgili ürünler */}
           <div className="space-y-8">
-            <div className="sticky top-24 p-6 rounded-2xl bg-white border border-batech-pearl shadow-lg shadow-batech-navy/5 hover:shadow-xl transition-shadow">
+            <div className="sticky top-24 z-10 p-6 rounded-2xl bg-white border border-batech-pearl shadow-lg shadow-batech-navy/5 hover:shadow-xl transition-shadow">
               <h3 className="font-semibold text-batech-navy mb-3">{t("product.priceTitle")}</h3>
               <p className="text-sm text-batech-silver mb-6 leading-relaxed">
                 {t("product.priceDescription")}

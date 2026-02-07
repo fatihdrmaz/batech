@@ -7,11 +7,11 @@ import { Link } from "@/i18n/navigation";
 
 const CATEGORY_HREFS = [
   "/urunler/havuz-aydinlatma-ekipmanlari",
+  "/urunler/elektrik-panolari",
   "/urunler/filtreler-ve-ekipmanlari",
-  "/urunler/pompalar",
-  "/urunler/isitma-ekipmanlari",
   "/urunler/havuz-kenar-ve-ic-ekipmanlari",
   "/urunler/havuz-temizlik-ekipmanlari",
+  "/urunler/sus-havuzu-ekipmanlari",
 ];
 const CATEGORY_IMAGE = "/images/placeholder-category.svg";
 
