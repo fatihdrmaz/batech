@@ -270,7 +270,7 @@ export default async function ProductPage({ params }: Props) {
                       key={tag}
                       className="px-4 py-2 rounded-xl bg-batech-pearl text-batech-ocean text-sm font-medium hover:bg-batech-cyan/10 hover:text-batech-teal transition-colors"
                     >
-                      {tag}
+                      {t(`productTags.${tag}`) !== `productTags.${tag}` ? t(`productTags.${tag}`) : tag}
                     </span>
                   ))}
                 </div>
