@@ -53,7 +53,7 @@ export default function Header() {
               </Link>
             ))}
             <div className="ml-2 pl-4 border-l border-batech-pearl/60">
-              <LanguageSwitcher />
+              <LanguageSwitcher variant="desktop" />
             </div>
           </div>
 
@@ -90,7 +90,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu — kaydırılabilir, dil seçici her zaman görünsün */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -98,7 +98,7 @@ export default function Header() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
-              className="lg:hidden overflow-hidden border-t border-batech-pearl"
+              className="lg:hidden border-t border-batech-pearl max-h-[calc(100vh-5rem)] overflow-y-auto overflow-x-hidden"
             >
               <div className="py-4 space-y-1">
                 {navLinks.map((link) => (
@@ -112,7 +112,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <div className="px-4 py-3 border-t border-batech-pearl">
-                  <LanguageSwitcher />
+                  <LanguageSwitcher variant="mobile" />
                 </div>
               </div>
             </motion.div>

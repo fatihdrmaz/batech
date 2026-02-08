@@ -22,12 +22,15 @@ const languageFlags: Record<Locale, string> = {
   ar: "🇸🇦",
 };
 
-export default function LanguageSwitcher() {
+type Variant = "desktop" | "mobile";
+
+export default function LanguageSwitcher({ variant = "desktop" }: { variant?: Variant }) {
   const t = useTranslations("common");
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isMobile = variant === "mobile";
 
   const switchLocale = (newLocale: Locale) => {
     // pathname from next-intl is already without locale (e.g. "/" or "/urunler").
@@ -65,8 +68,12 @@ export default function LanguageSwitcher() {
       </button>
       {open && (
         <>
-          <div className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
-          <div className="absolute top-full right-0 mt-2 w-44 rounded-xl bg-white border border-batech-pearl shadow-xl z-50 overflow-hidden">
+          <div className="fixed inset-0 z-[55]" onClick={() => setOpen(false)} aria-hidden />
+          <div
+            className={`absolute w-44 rounded-xl bg-white border border-batech-pearl shadow-xl z-[60] overflow-hidden ${
+              isMobile ? "bottom-full left-0 mb-2" : "top-full right-0 mt-2"
+            }`}
+          >
             {locales.map((loc) => (
               <button
                 key={loc}
