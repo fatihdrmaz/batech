@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import SetHtmlLang from "@/components/SetHtmlLang";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
@@ -52,6 +53,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <SetHtmlLang locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

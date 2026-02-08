@@ -8,7 +8,10 @@ import {
   getProductImage,
   categories,
 } from "@/lib/products";
+import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
 function getTranslatedCategoryName(t: (key: string) => string, categorySlug: string, fallback: string): string {
   const value = t(`categoryName.${categorySlug}`);
@@ -53,9 +56,32 @@ export async function generateMetadata({ params }: Props) {
     categoryName: categoryDisplayName,
     productCount: t("productsPage.productCount"),
   });
+  const canonicalUrl = `${SITE_URL}/${locale}/urunler/${slug}`;
+  const languages: Record<string, string> = { "x-default": `${SITE_URL}/tr/urunler/${slug}` };
+  for (const loc of locales) {
+    languages[loc] = `${SITE_URL}/${loc}/urunler/${slug}`;
+  }
+  const categoryImage = getCategoryImage(category);
+  const ogImage = categoryImage?.startsWith("http") ? categoryImage : `${SITE_URL}${categoryImage}`;
   return {
     title: `${categoryDisplayName} | ${siteName}`,
     description: categoryDesc || metaDesc,
+    alternates: {
+      canonical: canonicalUrl,
+      languages,
+    },
+    openGraph: {
+      title: `${categoryDisplayName} | ${siteName}`,
+      description: categoryDesc || metaDesc,
+      url: canonicalUrl,
+      type: "website",
+      images: ogImage ? [{ url: ogImage, alt: categoryDisplayName }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${categoryDisplayName} | ${siteName}`,
+      description: categoryDesc || metaDesc,
+    },
   };
 }
 
@@ -74,8 +100,22 @@ export default async function CategoryPage({ params }: Props) {
     category.description
   );
 
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("product.breadcrumb.home"), item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: t("product.breadcrumb.products"), item: `${SITE_URL}/${locale}/urunler` },
+      { "@type": "ListItem", position: 3, name: categoryDisplayName },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
+      />
       <div className="relative bg-batech-ocean text-white py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image src={getCategoryImage(category)} alt="" fill className="object-cover opacity-25" sizes="100vw" />
@@ -122,7 +162,7 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-grid">
-            {categoryProducts.map((product) => {
+            {categoryProducts.map((product, index) => {
               const productDisplayName = getTranslatedProductName(t, product.slug, product.name);
               const productShortDesc = getTranslatedDescription(
                 t,
@@ -130,6 +170,7 @@ export default async function CategoryPage({ params }: Props) {
                 product.slug,
                 product.description
               );
+              const isAboveFold = index < 6;
               return (
               <Link
                 key={product.slug}
@@ -144,6 +185,7 @@ export default async function CategoryPage({ params }: Props) {
                     fill
                     className="object-contain p-4 group-hover:scale-105 transition-transform duration-500 relative z-10"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={isAboveFold}
                   />
                 </div>
                 <div className="p-6">

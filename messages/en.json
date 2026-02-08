@@ -5,7 +5,8 @@
     "products": "Products",
     "values": "Values",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "search": "Search"
   },
   "hero": {
     "badge": "41 Years of Experience",
@@ -440,6 +441,16 @@
     "title": "Frequently Asked Questions",
     "subtitle": "What you wonder about pool equipment, orders and pricing."
   },
+  "searchPage": {
+    "title": "Search",
+    "placeholder": "Search products or categories...",
+    "noResults": "No results found.",
+    "resultsFor": "Results for \"{query}\"",
+    "categories": "Categories",
+    "products": "Products",
+    "viewCategory": "View category",
+    "viewProduct": "Product detail"
+  },
   "productsPage": {
     "label": "Catalog",
     "title": "Product Categories",
@@ -485,8 +496,10 @@
   "notFound": {
     "title": "Page not found",
     "description": "The page you are looking for does not exist or may have been moved.",
+    "suggestedPages": "Suggested pages",
     "home": "Home",
-    "products": "Products"
+    "products": "Products",
+    "faq": "FAQ"
   },
   "error": {
     "title": "An error occurred",

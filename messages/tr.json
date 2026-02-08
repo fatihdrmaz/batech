@@ -5,7 +5,8 @@
     "products": "Ürünler",
     "values": "Değerlerimiz",
     "faq": "SSS",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "search": "Ara"
   },
   "hero": {
     "badge": "41 Yıllık Tecrübe",
@@ -389,6 +390,16 @@
     "title": "Sıkça Sorulan Sorular",
     "subtitle": "Havuz ekipmanları, sipariş ve fiyatlandırma hakkında merak ettikleriniz."
   },
+  "searchPage": {
+    "title": "Arama",
+    "placeholder": "Ürün veya kategori ara...",
+    "noResults": "Sonuç bulunamadı.",
+    "resultsFor": "\"{query}\" için sonuçlar",
+    "categories": "Kategoriler",
+    "products": "Ürünler",
+    "viewCategory": "Kategoriye git",
+    "viewProduct": "Ürün detayı"
+  },
   "productsPage": {
     "label": "Katalog",
     "title": "Ürün Kategorileri",
@@ -434,8 +445,10 @@
   "notFound": {
     "title": "Sayfa bulunamadı",
     "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir.",
+    "suggestedPages": "Önerilen sayfalar",
     "home": "Ana Sayfa",
-    "products": "Ürünler"
+    "products": "Ürünler",
+    "faq": "SSS"
   },
   "error": {
     "title": "Bir hata oluştu",

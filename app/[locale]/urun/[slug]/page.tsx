@@ -9,6 +9,7 @@ import {
   getAllProductSlugs,
 } from "@/lib/products";
 import { COLOR_LABEL_TO_KEY } from "@/lib/color-labels";
+import { locales } from "@/i18n";
 import ProductImageWithColorPicker from "@/components/ProductImageWithColorPicker";
 
 function getTranslatedProductName(t: (key: string) => string, slug: string, fallback: string): string {
@@ -54,13 +55,22 @@ export async function generateMetadata({ params }: Props) {
   const title = `${productDisplayNameMeta} | ${siteName}`;
   const description = metaDescriptionRaw?.slice(0, 160) || productDisplayNameMeta;
   const image = product.image ? `${SITE_URL}${product.image}` : undefined;
+  const canonicalUrl = `${SITE_URL}/${locale}/urun/${slug}`;
+  const languages: Record<string, string> = { "x-default": `${SITE_URL}/tr/urun/${slug}` };
+  for (const loc of locales) {
+    languages[loc] = `${SITE_URL}/${loc}/urun/${slug}`;
+  }
   return {
     title,
     description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages,
+    },
     openGraph: {
       title,
       description,
-      url: `${SITE_URL}/${locale}/urun/${slug}`,
+      url: canonicalUrl,
       type: "website",
       images: image ? [{ url: image, alt: productDisplayNameMeta }] : undefined,
     },
@@ -94,6 +104,18 @@ export default async function ProductPage({ params }: Props) {
   const imgPath = getProductImage(product);
   const productImageUrl = imgPath.startsWith("http") ? imgPath : `${SITE_URL}${imgPath}`;
 
+  const metaDescForSchema = productDisplayDescription?.slice(0, 200) || productDisplayName;
+  const breadcrumbList = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: t("product.breadcrumb.home"), item: `${SITE_URL}/${locale}` },
+      { "@type": "ListItem", position: 2, name: t("product.breadcrumb.products"), item: `${SITE_URL}/${locale}/urunler` },
+      { "@type": "ListItem", position: 3, name: categoryDisplayName, item: `${SITE_URL}/${locale}/urunler/${product.categorySlug}` },
+      { "@type": "ListItem", position: 4, name: productDisplayName },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <script
@@ -103,12 +125,16 @@ export default async function ProductPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "Product",
             name: productDisplayName,
-            description: product.description?.slice(0, 200) || productDisplayName,
+            description: metaDescForSchema,
             image: productImageUrl,
             brand: { "@type": "Brand", name: "Batech" },
             category: categoryDisplayName || category?.name,
           }),
         }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }}
       />
       {/* Breadcrumb & header */}
       <div className="relative bg-batech-navy text-white py-10 lg:py-14 overflow-hidden">

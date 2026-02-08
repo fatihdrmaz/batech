@@ -1,31 +1,41 @@
 import { MetadataRoute } from "next";
 import { getAllProductSlugs, getCategorySlugs } from "@/lib/products";
+import { locales } from "@/i18n";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const productSlugs = getAllProductSlugs();
   const categorySlugs = getCategorySlugs();
+  const lastMod = new Date();
 
-  const staticPages: MetadataRoute.Sitemap = [
-    { url: BASE_URL, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${BASE_URL}/urunler`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
-    { url: `${BASE_URL}/sss`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-  ];
+  const entries: MetadataRoute.Sitemap = [];
 
-  const categoryPages: MetadataRoute.Sitemap = categorySlugs.map((slug) => ({
-    url: `${BASE_URL}/urunler/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+  for (const locale of locales) {
+    const prefix = `${BASE_URL}/${locale}`;
+    entries.push({ url: prefix, lastModified: lastMod, changeFrequency: "weekly", priority: 1 });
+    entries.push({ url: `${prefix}/urunler`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.9 });
+    entries.push({ url: `${prefix}/ara`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 });
+    entries.push({ url: `${prefix}/sss`, lastModified: lastMod, changeFrequency: "monthly", priority: 0.7 });
 
-  const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
-    url: `${BASE_URL}/urun/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
+    for (const slug of categorySlugs) {
+      entries.push({
+        url: `${prefix}/urunler/${slug}`,
+        lastModified: lastMod,
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      });
+    }
 
-  return [...staticPages, ...categoryPages, ...productPages];
+    for (const slug of productSlugs) {
+      entries.push({
+        url: `${prefix}/urun/${slug}`,
+        lastModified: lastMod,
+        changeFrequency: "weekly" as const,
+        priority: 0.8,
+      });
+    }
+  }
+
+  return entries;
 }

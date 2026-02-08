@@ -562,3 +562,25 @@ export function getCategoryImage(category: Category): string {
 export function getProductImage(product: Product): string {
   return product.image || PRODUCT_PLACEHOLDER;
 }
+
+/** Arama: ürün ve kategori listesinde slug, name, description içinde query geçenleri döner */
+export function searchProductsAndCategories(query: string): {
+  products: Product[];
+  categories: Category[];
+} {
+  const q = query.trim().toLowerCase();
+  if (!q) return { products: [], categories: [] };
+  const filteredProducts = products.filter(
+    (p) =>
+      p.slug.toLowerCase().includes(q) ||
+      p.name.toLowerCase().includes(q) ||
+      (p.description && p.description.toLowerCase().includes(q))
+  );
+  const filteredCategories = categories.filter(
+    (c) =>
+      c.slug.toLowerCase().includes(q) ||
+      c.name.toLowerCase().includes(q) ||
+      (c.description && c.description.toLowerCase().includes(q))
+  );
+  return { products: filteredProducts, categories: filteredCategories };
+}

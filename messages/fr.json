@@ -5,7 +5,8 @@
     "products": "Produits",
     "values": "Valeurs",
     "faq": "FAQ",
-    "contact": "Contact"
+    "contact": "Contact",
+    "search": "Recherche"
   },
   "hero": {
     "badge": "41 Ans d'Expérience",
@@ -389,6 +390,16 @@
     "title": "Questions Fréquemment Posées",
     "subtitle": "Ce que vous vous demandez sur les équipements de piscine, les commandes et les prix."
   },
+  "searchPage": {
+    "title": "Recherche",
+    "placeholder": "Rechercher des produits ou catégories...",
+    "noResults": "Aucun résultat trouvé.",
+    "resultsFor": "Résultats pour « {query} »",
+    "categories": "Catégories",
+    "products": "Produits",
+    "viewCategory": "Voir la catégorie",
+    "viewProduct": "Détail du produit"
+  },
   "productsPage": {
     "label": "Catalogue",
     "title": "Catégories de Produits",
@@ -434,8 +445,10 @@
   "notFound": {
     "title": "Page non trouvée",
     "description": "La page que vous recherchez n'existe pas ou a peut-être été déplacée.",
+    "suggestedPages": "Pages suggérées",
     "home": "Accueil",
-    "products": "Produits"
+    "products": "Produits",
+    "faq": "FAQ"
   },
   "error": {
     "title": "Une erreur s'est produite",

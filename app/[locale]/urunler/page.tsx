@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { categories, getProductsByCategory, getCategoryImage } from "@/lib/products";
+import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
 function getTranslatedCategoryName(t: (key: string) => string, categorySlug: string, fallback: string): string {
   const value = t(`categoryName.${categorySlug}`);
@@ -27,9 +30,29 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const canonicalUrl = `${SITE_URL}/${locale}/urunler`;
+  const languages: Record<string, string> = { "x-default": `${SITE_URL}/tr/urunler` };
+  for (const loc of locales) {
+    languages[loc] = `${SITE_URL}/${loc}/urunler`;
+  }
   return {
     title: `${t("productsPage.title")} | ${t("common.siteName")}`,
     description: t("productsPage.subtitle"),
+    alternates: {
+      canonical: canonicalUrl,
+      languages,
+    },
+    openGraph: {
+      title: `${t("productsPage.title")} | ${t("common.siteName")}`,
+      description: t("productsPage.subtitle"),
+      url: canonicalUrl,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${t("productsPage.title")} | ${t("common.siteName")}`,
+      description: t("productsPage.subtitle"),
+    },
   };
 }
 
@@ -64,7 +87,7 @@ export default async function UrunlerPage({ params }: Props) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-grid">
-          {categories.map((cat) => {
+          {categories.map((cat, index) => {
             const productCount = getProductsByCategory(cat.slug).length || cat.productCount;
             const categoryDisplayName = getTranslatedCategoryName(t, cat.slug, cat.name);
             const categoryDisplayDescription = getTranslatedDescription(
@@ -73,6 +96,7 @@ export default async function UrunlerPage({ params }: Props) {
               cat.slug,
               cat.description
             );
+            const isAboveFold = index < 3;
             return (
               <Link
                 key={cat.slug}
@@ -86,6 +110,7 @@ export default async function UrunlerPage({ params }: Props) {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={isAboveFold}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-batech-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>

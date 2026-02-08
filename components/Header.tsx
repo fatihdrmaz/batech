@@ -15,6 +15,7 @@ export default function Header() {
     { href: "/", label: t("nav.home") },
     { href: "/#hakkimizda", label: t("nav.about") },
     { href: "/urunler", label: t("nav.products") },
+    { href: "/ara", label: t("nav.search") },
     { href: "/#degerler", label: t("nav.values") },
     { href: "/sss", label: t("nav.faq") },
     { href: "/#iletisim", label: t("nav.contact") },

@@ -1,6 +1,9 @@
 import Faq from "@/components/Faq";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getMessages } from "next-intl/server";
+import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -9,18 +12,57 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const canonicalUrl = `${SITE_URL}/${locale}/sss`;
+  const languages: Record<string, string> = { "x-default": `${SITE_URL}/tr/sss` };
+  for (const loc of locales) {
+    languages[loc] = `${SITE_URL}/${loc}/sss`;
+  }
   return {
     title: `${t("sssPage.title")} | ${t("common.siteName")}`,
     description: t("sssPage.subtitle"),
+    alternates: {
+      canonical: canonicalUrl,
+      languages,
+    },
+    openGraph: {
+      title: `${t("sssPage.title")} | ${t("common.siteName")}`,
+      description: t("sssPage.subtitle"),
+      url: canonicalUrl,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${t("sssPage.title")} | ${t("common.siteName")}`,
+      description: t("sssPage.subtitle"),
+    },
   };
 }
 
 export default async function SssPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const messages = (await getMessages({ locale })) as Record<string, unknown>;
+  const faqData = messages?.faq as { items?: Array<{ question: string; answer: string }> } | undefined;
+  const faqItems = Array.isArray(faqData?.items) ? faqData.items : [];
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
       <div className="bg-batech-navy text-white py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
