@@ -37,7 +37,8 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return getAllProductSlugs().map((slug) => ({ slug }));
+  const slugs = getAllProductSlugs();
+  return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";

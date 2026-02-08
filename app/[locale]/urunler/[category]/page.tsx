@@ -41,7 +41,9 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return categories.map((c) => ({ category: c.slug }));
+  return locales.flatMap((locale) =>
+    categories.map((c) => ({ locale, category: c.slug }))
+  );
 }
 
 export async function generateMetadata({ params }: Props) {

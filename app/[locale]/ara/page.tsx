@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { searchProductsAndCategories, getCategoryImage, getProductImage } from "@/lib/products";
+import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 import SearchForm from "@/components/SearchForm";
 
@@ -19,6 +20,10 @@ type Props = {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ q?: string }>;
 };
+
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export async function generateMetadata({ params, searchParams }: Props) {
   const { locale } = await params;

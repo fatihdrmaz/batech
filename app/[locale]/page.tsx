@@ -25,6 +25,10 @@ const Contact = dynamic(() => import("@/components/Contact"), {
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
