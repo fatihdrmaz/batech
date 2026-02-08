@@ -230,6 +230,7 @@
     "hours": "Jours ouvrables: 09:00 – 18:00 · Samedi: 09:00 – 13:00 · Dimanche: Fermé",
     "whatsapp": "Écrire sur WhatsApp",
     "formTitle": "Formulaire de Devis / Message",
+    "infoTitle": "Adresse et informations de contact",
     "formName": "Nom Complet",
     "formPhone": "Téléphone",
     "formEmail": "E-mail",
@@ -243,7 +244,7 @@
     "formPlaceholderPhone": "05XX XXX XX XX",
     "formPlaceholderEmail": "exemple@email.com",
     "formPlaceholderMessage": "Demande de devis, info produit ou votre question...",
-    "formNotConfigured": "Pour activer le formulaire, définissez la variable d'environnement NEXT_PUBLIC_FORMSPREE_ID (obtenez l'ID du formulaire depuis votre compte Formspree)."
+    "formNotConfigured": "Pour activer le formulaire, configurez SMTP dans .env : CONTACT_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD."
   },
   "cta": {
     "title": "Obtenez un devis de prix pour votre projet",

@@ -230,6 +230,7 @@
     "hours": "Hafta içi: 09:00 – 18:00 · Cumartesi: 09:00 – 13:00 · Pazar: Kapalı",
     "whatsapp": "WhatsApp ile yazın",
     "formTitle": "Teklif / Mesaj Formu",
+    "infoTitle": "Adres ve İletişim Bilgileri",
     "formName": "Ad Soyad",
     "formPhone": "Telefon",
     "formEmail": "E-posta",
@@ -243,7 +244,7 @@
     "formPlaceholderPhone": "05XX XXX XX XX",
     "formPlaceholderEmail": "ornek@email.com",
     "formPlaceholderMessage": "Teklif talebi, ürün bilgisi veya sorunuz...",
-    "formNotConfigured": "Formu etkinleştirmek için NEXT_PUBLIC_FORMSPREE_ID ortam değişkenini ayarlayın (Formspree hesabından form ID alın)."
+    "formNotConfigured": "Formu etkinleştirmek için .env dosyasında SMTP ayarlarını yapın: CONTACT_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD."
   },
   "cta": {
     "title": "Projeniz için fiyat teklifi alın",

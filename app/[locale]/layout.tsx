@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
     description: meta?.description ?? "Havuz aydınlatma, filtre, pompa ve tüm havuz ekipmanlarında Türkiye'nin güvenilir markası.",
     keywords: meta?.keywords,
-    icons: { icon: "/favicon.svg" },
+    icons: { icon: "/favicon-e1563147291832.png" },
     openGraph: {
       type: "website",
       locale: locale === "tr" ? "tr_TR" : locale === "en" ? "en_US" : locale === "es" ? "es_ES" : locale === "fr" ? "fr_FR" : "ar_SA",

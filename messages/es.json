@@ -230,6 +230,7 @@
     "hours": "Días laborables: 09:00 – 18:00 · Sábado: 09:00 – 13:00 · Domingo: Cerrado",
     "whatsapp": "Escribir en WhatsApp",
     "formTitle": "Formulario de Cotización / Mensaje",
+    "infoTitle": "Dirección e información de contacto",
     "formName": "Nombre Completo",
     "formPhone": "Teléfono",
     "formEmail": "Correo electrónico",
@@ -243,7 +244,7 @@
     "formPlaceholderPhone": "05XX XXX XX XX",
     "formPlaceholderEmail": "ejemplo@email.com",
     "formPlaceholderMessage": "Solicitud de cotización, información del producto o su pregunta...",
-    "formNotConfigured": "Para habilitar el formulario, configure la variable de entorno NEXT_PUBLIC_FORMSPREE_ID (obtenga el ID del formulario desde su cuenta de Formspree)."
+    "formNotConfigured": "Para habilitar el formulario, configure SMTP en .env: CONTACT_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD."
   },
   "cta": {
     "title": "Obtenga una cotización de precio para su proyecto",

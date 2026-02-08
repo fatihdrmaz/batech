@@ -230,6 +230,7 @@
     "hours": "Weekdays: 09:00 – 18:00 · Saturday: 09:00 – 13:00 · Sunday: Closed",
     "whatsapp": "Write on WhatsApp",
     "formTitle": "Quote / Message Form",
+    "infoTitle": "Address and Contact Information",
     "formName": "Full Name",
     "formPhone": "Phone",
     "formEmail": "Email",
@@ -243,7 +244,7 @@
     "formPlaceholderPhone": "05XX XXX XX XX",
     "formPlaceholderEmail": "example@email.com",
     "formPlaceholderMessage": "Quote request, product info or your question...",
-    "formNotConfigured": "To enable the form, set the NEXT_PUBLIC_FORMSPREE_ID environment variable (get form ID from your Formspree account)."
+    "formNotConfigured": "To enable the form, configure SMTP in .env: CONTACT_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD."
   },
   "cta": {
     "title": "Get a price quote for your project",

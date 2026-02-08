@@ -3,46 +3,38 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ID
-  ? `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`
-  : null;
-
 export default function ContactForm() {
   const t = useTranslations();
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "not_configured">("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!FORMSPREE_ENDPOINT) {
-      setStatus("error");
-      return;
-    }
     setStatus("sending");
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const payload = {
+      name: (form.querySelector('[name="name"]') as HTMLInputElement).value.trim(),
+      phone: (form.querySelector('[name="phone"]') as HTMLInputElement).value.trim(),
+      email: (form.querySelector('[name="email"]') as HTMLInputElement).value.trim(),
+      message: (form.querySelector('[name="message"]') as HTMLTextAreaElement).value.trim(),
+    };
     try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
-      if (res.ok) {
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok !== false) {
         setStatus("success");
         form.reset();
+      } else if (res.status === 503 && data.error === "not_configured") {
+        setStatus("not_configured");
       } else {
         setStatus("error");
       }
     } catch {
       setStatus("error");
     }
-  }
-
-  if (!FORMSPREE_ENDPOINT) {
-    return (
-      <div className="p-6 rounded-2xl bg-white/5 border border-white/10 text-batech-silver text-sm">
-        <p>{t("contact.formNotConfigured")}</p>
-      </div>
-    );
   }
 
   return (
@@ -99,6 +91,9 @@ export default function ContactForm() {
           placeholder={t("contact.formPlaceholderMessage")}
         />
       </div>
+      {status === "not_configured" && (
+        <p className="text-sm text-amber-400">{t("contact.formNotConfigured")}</p>
+      )}
       {status === "success" && (
         <p className="text-sm text-green-400">{t("contact.formSuccess")}</p>
       )}

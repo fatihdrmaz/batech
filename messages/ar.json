@@ -230,6 +230,7 @@
     "hours": "أيام العمل: 09:00 – 18:00 · السبت: 09:00 – 13:00 · الأحد: مغلق",
     "whatsapp": "اكتب على WhatsApp",
     "formTitle": "نموذج عرض السعر / الرسالة",
+    "infoTitle": "العنوان ومعلومات الاتصال",
     "formName": "الاسم الكامل",
     "formPhone": "الهاتف",
     "formEmail": "البريد الإلكتروني",
@@ -243,7 +244,7 @@
     "formPlaceholderPhone": "05XX XXX XX XX",
     "formPlaceholderEmail": "example@email.com",
     "formPlaceholderMessage": "طلب عرض سعر، معلومات المنتج أو سؤالك...",
-    "formNotConfigured": "لتفعيل النموذج، قم بتعيين متغير البيئة NEXT_PUBLIC_FORMSPREE_ID (احصل على معرف النموذج من حساب Formspree)."
+    "formNotConfigured": "لتفعيل النموذج، قم بتكوين SMTP في .env: CONTACT_EMAIL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD."
   },
   "cta": {
     "title": "احصل على عرض سعر لمشروعك",
