@@ -32,7 +32,7 @@ export default function Header() {
           >
             <Image
               src="/logo_batech-300x138-300x138.png"
-              alt="Batech Havuz Ekipmanları"
+              alt={t("common.siteName")}
               width={300}
               height={138}
               className="h-16 lg:h-20 w-auto object-contain brightness-[0.82] contrast-[1.08]"

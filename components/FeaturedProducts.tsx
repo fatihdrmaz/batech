@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { getProductBySlug, getProductImage } from "@/lib/products";
 
 const FEATURED_SLUGS = [
   "mosaic-model-havuz-kenar-izgarasi",
@@ -19,11 +20,16 @@ export default function FeaturedProducts() {
   const t = useTranslations();
   const items = t.raw("products.featured.items") as Array<{ name: string; category: string; description: string }>;
   const products = Array.isArray(items)
-    ? items.slice(0, FEATURED_SLUGS.length).map((item, i) => ({
-        ...item,
-        slug: FEATURED_SLUGS[i],
-        image: PLACEHOLDER_IMAGE,
-      }))
+    ? items.slice(0, FEATURED_SLUGS.length).map((item, i) => {
+        const slug = FEATURED_SLUGS[i];
+        const product = getProductBySlug(slug);
+        const image = product ? getProductImage(product) : PLACEHOLDER_IMAGE;
+        return {
+          ...item,
+          slug,
+          image: image || PLACEHOLDER_IMAGE,
+        };
+      })
     : [];
 
   return (

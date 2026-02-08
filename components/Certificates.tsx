@@ -1,12 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+
+const CERTIFICATE_IMAGES = ["/ISO_9001.png", "/CE_belgesi.png", "/marka_tescil_belgesi.png"] as const;
 
 export default function Certificates() {
   const t = useTranslations();
   const items = t.raw("certificates.items") as Array<{ title: string; desc: string }>;
+  const [popupImage, setPopupImage] = useState<string | null>(null);
+  const [popupTitle, setPopupTitle] = useState<string>("");
+
+  const openPopup = (src: string, title: string) => {
+    setPopupImage(src);
+    setPopupTitle(title);
+  };
+
+  const closePopup = () => {
+    setPopupImage(null);
+    setPopupTitle("");
+  };
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closePopup();
+    };
+    if (popupImage) {
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "";
+    };
+  }, [popupImage]);
 
   return (
     <section className="py-20 lg:py-28 bg-white">
@@ -35,29 +65,80 @@ export default function Certificates() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
           {items.map((item, i) => (
-            <motion.div
+            <motion.button
               key={item.title}
+              type="button"
+              onClick={() => openPopup(CERTIFICATE_IMAGES[i] ?? "", item.title)}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{ y: -6, boxShadow: "0 20px 40px -12px rgba(6, 182, 212, 0.15)" }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center text-center p-8 rounded-2xl border border-batech-pearl bg-batech-pearl/20 hover:border-batech-cyan/30 transition-all duration-300"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-batech-pearl bg-batech-pearl/20 hover:border-batech-cyan/30 transition-all duration-300 cursor-pointer group w-full text-left"
             >
-              <motion.div
-                className="w-20 h-20 rounded-2xl bg-water-gradient flex items-center justify-center text-white shadow-lg"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 15 }}
-              >
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 00-4.438 0 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 00-4.438 0 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138z" />
-                </svg>
-              </motion.div>
+              <div className="relative w-full aspect-[3/4] max-h-48 rounded-xl overflow-hidden bg-white border border-batech-pearl/50 group-hover:ring-2 group-hover:ring-batech-cyan/20 transition-all">
+                <Image
+                  src={CERTIFICATE_IMAGES[i] ?? "/images/placeholder-product.svg"}
+                  alt={item.title}
+                  fill
+                  className="object-contain p-2"
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                />
+              </div>
               <h3 className="mt-4 text-lg font-semibold text-batech-navy">{item.title}</h3>
               <p className="mt-2 text-sm text-batech-silver">{item.desc}</p>
-            </motion.div>
+              <span className="mt-2 text-xs text-batech-teal font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                {t("certificates.viewFull")}
+              </span>
+            </motion.button>
           ))}
         </motion.div>
+
+        <AnimatePresence>
+          {popupImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+              onClick={closePopup}
+              role="dialog"
+              aria-modal="true"
+              aria-label={popupTitle}
+            >
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  onClick={closePopup}
+                  className="absolute -top-12 right-0 z-10 p-2 rounded-full text-white hover:bg-white/20 transition-colors"
+                  aria-label={t("certificates.close")}
+                >
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                <div className="relative w-full max-h-[85vh] aspect-[3/4] bg-white rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src={popupImage}
+                    alt={popupTitle}
+                    fill
+                    className="object-contain p-4"
+                    sizes="100vw"
+                  />
+                </div>
+                <p className="mt-3 text-white font-medium">{popupTitle}</p>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -65,7 +146,7 @@ export default function Certificates() {
           viewport={{ once: true }}
           className="mt-8 text-center text-sm text-batech-silver"
         >
-          Detaylı belge bilgisi ve katalog için{" "}
+          {t("certificates.viewFullHint")}{" "}
           <Link href="#iletisim" className="text-batech-teal font-medium hover:underline">
             {t("certificates.contact")}
           </Link>

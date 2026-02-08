@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("sssPage.title")} | Batech Havuz Ekipmanları`,
+    title: `${t("sssPage.title")} | ${t("common.siteName")}`,
     description: t("sssPage.subtitle"),
   };
 }

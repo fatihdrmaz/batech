@@ -101,7 +101,7 @@
       "viewAll": "Tüm kategorileri görüntüle"
     },
     "categories": [
-      { "name": "Havuz Aydınlatma Ekipmanları", "count": "5 ürün", "description": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara." },
+      { "name": "Havuz Aydınlatma Ekipmanları", "count": "18 ürün", "description": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara." },
       { "name": "Elektrik Panoları", "count": "2 ürün", "description": "Ekonomik ve lüks tip havuz elektrik panoları." },
       { "name": "Filtreler ve Ekipmanları", "count": "2 ürün", "description": "Havuz filtre sistemleri ve yedek parçalar." },
       { "name": "Havuz Kenar ve İç Ekipmanları", "count": "13 ürün", "description": "Izgaralar, vanalar, merdivenler ve kenar ekipmanları." },
@@ -148,9 +148,12 @@
     "title": "Belgelerimiz",
     "subtitle": "Kalite ve uyumluluk belgelerimizle güvenilir ürün ve hizmet sunuyoruz.",
     "contact": "iletişime geçiniz",
+    "viewFull": "Büyütmek için tıklayın",
+    "close": "Kapat",
+    "viewFullHint": "Detaylı belge bilgisi ve katalog için",
     "items": [
       {
-        "title": "Kalite Belgeleri",
+        "title": "ISO 9001",
         "desc": "Ürün ve üretim standartları"
       },
       {
@@ -158,8 +161,8 @@
         "desc": "Avrupa uyumluluğu"
       },
       {
-        "title": "TSE Uygunluk",
-        "desc": "Yerli standartlar"
+        "title": "Marka Tescil Belgesi",
+        "desc": "Tescilli marka"
       }
     ]
   },
@@ -278,7 +281,108 @@
     "priceTitle": "Fiyat ve katalog",
     "priceDescription": "Bu ürün için fiyat teklifi, teknik bilgi veya toplu sipariş talebiniz için iletişime geçin.",
     "quote": "Teklif alın",
-    "related": "İlgili ürünler"
+    "related": "İlgili ürünler",
+    "technicalDrawing": "Teknik çizim",
+    "technicalDrawingClick": "Büyütmek için tıklayın",
+    "colorAppearance": "Renk / görünüm"
+  },
+  "productColors": {
+    "productAppearance": "Ürün görünümü",
+    "beyaz": "Beyaz",
+    "gunisigi": "Gün Işığı",
+    "kirmizi": "Kırmızı",
+    "mavi": "Mavi",
+    "macenta": "Macenta",
+    "rgb": "RGB",
+    "turkuaz": "Turkuaz",
+    "yesil": "Yeşil",
+    "amber": "Amber",
+    "isiksiz": "İşıksız",
+    "blackProductAppearance": "Siyah - Ürün görünümü",
+    "blackBeyaz": "Siyah - Beyaz",
+    "blackGunisigi": "Siyah - Gün Işığı",
+    "blackKirmizi": "Siyah - Kırmızı",
+    "blackMavi": "Siyah - Mavi",
+    "blackMacenta": "Siyah - Macenta",
+    "blackRgb": "Siyah - RGB",
+    "blackTurkuaz": "Siyah - Turkuaz",
+    "blackYesil": "Siyah - Yeşil",
+    "blackAmber": "Siyah - Amber"
+  },
+  "categoryName": {
+    "havuz-aydinlatma-ekipmanlari": "Havuz Aydınlatma Ekipmanları",
+    "elektrik-panolari": "Elektrik Panoları",
+    "filtreler-ve-ekipmanlari": "Filtreler ve Ekipmanları",
+    "havuz-kenar-ve-ic-ekipmanlari": "Havuz Kenar ve İç Ekipmanları",
+    "havuz-temizlik-ekipmanlari": "Havuz Temizlik Ekipmanları",
+    "sus-havuzu-ekipmanlari": "Süs Havuzu Ekipmanları"
+  },
+  "categoryDescription": {
+    "havuz-aydinlatma-ekipmanlari": "41 yıllık tecrübe ile havuz lambaları imalatında 1 numara.",
+    "elektrik-panolari": "Ekonomik ve lüks tip havuz elektrik panoları.",
+    "filtreler-ve-ekipmanlari": "Havuz filtre sistemleri ve yedek parçalar.",
+    "havuz-kenar-ve-ic-ekipmanlari": "Izgaralar, vanalar, merdivenler ve kenar ekipmanları.",
+    "havuz-temizlik-ekipmanlari": "Temizlik fırçaları, skimmerlar ve aksesuarlar.",
+    "sus-havuzu-ekipmanlari": "Fıskiyeler ve süs havuzu ekipmanları."
+  },
+  "productDescription": {
+    "ekonomik-tip-elektrik-panolari": "Antibakteriyel, sızdırmaz, termoplastik ekonomik tip elektrik panosu.\n*kaçak akım, timer ve digital termostat harici olarak satılır lütfen belirtiniz.",
+    "luks-tip-elektrik-panolari": "Antibakteriyel yanmaz, polikarbon camlı kırılmaz, IP68 özellikli sızdırmaz lux tip elektrik panosu.\n*kaçak akım, timer ve digital termostat harici olarak satılır lütfen belirtiniz."
+  },
+  "productName": {
+    "par56-ampul": "Par56 Ampul",
+    "par56-komple-armatur": "Par56 Komple Armatür",
+    "par56-komple-armatur-paslanmaz": "Par56 Komple Armatür Paslanmaz",
+    "slim-flat-armatur": "Slim Flat Armatür",
+    "slim-flat-paslanmaz-armatur": "Slim Flat Paslanmaz Armatür",
+    "tek-led-mini-spot": "Tek Led Mini Spot",
+    "gecme-mini-spot": "Geçme Mini Spot",
+    "paslanmaz-gecme-mini-spot": "Paslanmaz Geçme Mini Spot",
+    "ayakli-mini-spot-armatur": "Ayaklı Mini Spot Armatür",
+    "super-smart-armatur": "Super Smart Armatür",
+    "super-smart-armatur-paslanmaz": "Super Smart Armatür Paslanmaz",
+    "par38-yer-armaturu-paslanmaz": "Par38 Yer Armatürü Paslanmaz",
+    "mini-flat-armatur": "Mini Flat Armatür",
+    "mini-flat-paslanmaz-armatur": "Mini Flat Paslanmaz Armatür",
+    "par38-ankastre-armatur": "Par38 Ankastre Armatür",
+    "par38-ankastre-armatur-paslanmaz": "Par38 Ankastre Armatür Paslanmaz",
+    "par38-ayakli-armatur": "Par38 Ayaklı Armatür",
+    "ekonomik-tip-elektrik-panolari": "Ekonomik Tip Elektrik Panoları",
+    "luks-tip-elektrik-panolari": "Lüks Tip Elektrik Panoları",
+    "alti-yollu-vana": "Altı Yollu Vana",
+    "polyester-kum-filtreleri": "Polyester Kum Filtreleri",
+    "mosaic-model-havuz-kenar-izgarasi": "20 cm Mosaic Model Havuz Kenar Izgarası",
+    "45-kose-parcalari": "45° Köşe Parçaları",
+    "90-kose-parcalari": "90° Köşe Parçaları",
+    "cift-gecme-izgara": "Çift Geçme Izgara",
+    "kare-dip-suzgec": "Kare Dip Süzgeç",
+    "muro-tip-havuz-merdiveni": "Muro Tip Havuz Merdiveni",
+    "paslanmaz-havuz-su-perdesi": "Paslanmaz Havuz Su Perdesi (Kobra Şelale)",
+    "standart-tip-havuz-merdiveni": "Standart Tip Havuz Merdiveni",
+    "tabandan-besleme-nozulu": "Tabandan Besleme Nozulu (Debi Ayarlı)",
+    "tek-gecme-izgara": "Tek Geçme Izgara",
+    "vakum-nozulu": "Vakum Nozulu",
+    "yandan-besleme-nozulu": "Yandan Besleme Nozulu",
+    "yuvarlak-dip-suzgec": "Yuvarlak Dip Süzgeç",
+    "bspool-tuz-jeneratori": "BsPool Tuz Jeneratörü",
+    "duvar-fircasi": "Duvar Fırçası",
+    "eco-tip-derin-kepce": "Eco Tip Derin Kepçe",
+    "havuz-supurgesi": "Havuz Süpürgesi",
+    "kose-fircasi": "Köşe Fırçası",
+    "lux-derin-tip-kepce": "Lux Derin Tip Kepçe",
+    "robodeep-havuz-robotu": "robodeep Havuz Robotu",
+    "sivili-test-kiti": "Sıvılı Test Kiti",
+    "supurge-hortum-adaptoru": "Süpürge Hortum Adaptörü",
+    "supurge-hortumu": "Süpürge Hortumu",
+    "teleskopik-saplar": "Teleskopik Saplar",
+    "yosun-fircasi": "Yosun Fırçası",
+    "caglayan-fiskiye": "Çağlayan Fıskıye",
+    "kopuk-fiskiye": "Köpük Fıskıye",
+    "parmak-fiskiye": "Parmak Fıskıye",
+    "su-cani-fiskiye": "Su Çanı Fıskıye",
+    "volkan-fiskiye": "Volkan Fıskıye",
+    "yelpaze-film-fiskiye": "Yelpaze Film Fıskıye",
+    "fiskiye-armaturu": "Fıskiye Armatürü"
   },
   "sssPage": {
     "back": "Ana Sayfa",
@@ -302,7 +406,8 @@
     "emptyContactText": "Katalog ve fiyat için",
     "quote": "Fiyat teklifi alın",
     "allCategories": "Tüm kategoriler",
-    "detail": "Detay"
+    "detail": "Detay",
+    "metaDescription": "{categoryName} {productCount} kataloğu."
   },
   "common": {
     "required": "*",
@@ -312,7 +417,19 @@
     "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
     "city": "Gaziosmanpaşa / İstanbul",
     "selectLanguage": "Dil seç",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "siteName": "Batech Havuz Ekipmanları"
+  },
+  "metadata": {
+    "titleDefault": "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
+    "titleTemplate": "%s | Batech Havuz Ekipmanları",
+    "description": "Havuz aydınlatma, filtre, pompa ve tüm havuz ekipmanlarında Türkiye'nin güvenilir markası. Kaliteli ürün, uygun fiyat, hızlı sevkiyat.",
+    "keywords": "havuz ekipmanları, havuz lambası, havuz filtresi, Batech, İstanbul, Gaziosmanpaşa",
+    "openGraphTitle": "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
+    "openGraphDescription": "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara. Havuz aydınlatma, filtre, pompa.",
+    "twitterTitle": "Batech Havuz Ekipmanları",
+    "twitterDescription": "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
+    "siteName": "Batech Havuz Ekipmanları"
   },
   "notFound": {
     "title": "Sayfa bulunamadı",

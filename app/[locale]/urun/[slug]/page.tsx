@@ -8,7 +8,27 @@ import {
   getProductImage,
   getAllProductSlugs,
 } from "@/lib/products";
+import { COLOR_LABEL_TO_KEY } from "@/lib/color-labels";
 import ProductImageWithColorPicker from "@/components/ProductImageWithColorPicker";
+
+function getTranslatedProductName(t: (key: string) => string, slug: string, fallback: string): string {
+  const key = `productName.${slug}`;
+  const value = t(key);
+  return value && value !== key ? value : fallback;
+}
+
+function getTranslatedCategoryName(t: (key: string) => string, categorySlug: string, fallback: string): string {
+  const value = t(`categoryName.${categorySlug}`);
+  return value && value !== `categoryName.${categorySlug}` ? value : fallback;
+}
+
+function translateColorLabel(t: (key: string) => string, label: string): string {
+  const key = COLOR_LABEL_TO_KEY[label];
+  if (!key) return label;
+  const value = t(`productColors.${key}`);
+  return value && value !== `productColors.${key}` ? value : label;
+}
+import ProductTechnicalDrawing from "@/components/ProductTechnicalDrawing";
 import { Link } from "@/i18n/navigation";
 
 type Props = {
@@ -26,8 +46,13 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale });
   const product = getProductBySlug(slug);
   if (!product) return { title: `${t("product.breadcrumb.products")} | Batech` };
-  const title = `${product.name} | Batech Havuz Ekipmanları`;
-  const description = product.description?.slice(0, 160) || product.name;
+  const siteName = t("common.siteName");
+  const productDisplayNameMeta = getTranslatedProductName(t, product.slug, product.name);
+  const descKeyMeta = `productDescription.${product.slug}`;
+  const metaDescriptionRaw =
+    (t(descKeyMeta) && t(descKeyMeta) !== descKeyMeta ? t(descKeyMeta) : null) ?? product.description ?? null;
+  const title = `${productDisplayNameMeta} | ${siteName}`;
+  const description = metaDescriptionRaw?.slice(0, 160) || productDisplayNameMeta;
   const image = product.image ? `${SITE_URL}${product.image}` : undefined;
   return {
     title,
@@ -37,7 +62,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       url: `${SITE_URL}/${locale}/urun/${slug}`,
       type: "website",
-      images: image ? [{ url: image, alt: product.name }] : undefined,
+      images: image ? [{ url: image, alt: productDisplayNameMeta }] : undefined,
     },
     twitter: {
       card: "summary_large_image",
@@ -56,6 +81,16 @@ export default async function ProductPage({ params }: Props) {
   const category = getCategoryBySlug(product.categorySlug);
   const related = getRelatedProducts(product);
 
+  const productDisplayName = getTranslatedProductName(t, product.slug, product.name);
+  const categoryDisplayName = category ? getTranslatedCategoryName(t, product.categorySlug, category.name) : "";
+  const descKey = `productDescription.${product.slug}`;
+  const productDisplayDescription =
+    (t(descKey) && t(descKey) !== descKey ? t(descKey) : null) ?? product.description ?? null;
+  const colorOptionsWithTranslations = product.colorOptions?.map((opt) => ({
+    ...opt,
+    translatedLabel: translateColorLabel(t, opt.label),
+  }));
+
   const imgPath = getProductImage(product);
   const productImageUrl = imgPath.startsWith("http") ? imgPath : `${SITE_URL}${imgPath}`;
 
@@ -67,11 +102,11 @@ export default async function ProductPage({ params }: Props) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            name: product.name,
-            description: product.description?.slice(0, 200) || product.name,
+            name: productDisplayName,
+            description: product.description?.slice(0, 200) || productDisplayName,
             image: productImageUrl,
             brand: { "@type": "Brand", name: "Batech" },
-            category: category?.name,
+            category: categoryDisplayName || category?.name,
           }),
         }}
       />
@@ -94,20 +129,20 @@ export default async function ProductPage({ params }: Props) {
               <>
                 <span className="text-white/40" aria-hidden>/</span>
                 <Link href={`/urunler/${product.categorySlug}`} className="hover:text-batech-cyan transition-colors">
-                  {category.name}
+                  {categoryDisplayName}
                 </Link>
               </>
             )}
             <span className="text-white/40" aria-hidden>/</span>
-            <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">{product.name}</span>
+            <span className="text-white font-medium truncate max-w-[200px] sm:max-w-none">{productDisplayName}</span>
           </nav>
           {category && (
             <span className="inline-block px-3 py-1 rounded-lg bg-white/10 text-batech-cyan text-xs font-medium uppercase tracking-wider mb-4">
-              {category.name}
+              {categoryDisplayName}
             </span>
           )}
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold section-accent pb-6">
-            {product.name}
+            {productDisplayName}
           </h1>
         </div>
       </div>
@@ -119,9 +154,10 @@ export default async function ProductPage({ params }: Props) {
             {/* Ürün görseli + renk seçici (varsa) */}
             {product.colorOptions && product.colorOptions.length > 0 ? (
               <ProductImageWithColorPicker
-                productName={product.name}
-                colorOptions={product.colorOptions}
+                productName={productDisplayName}
+                colorOptions={colorOptionsWithTranslations ?? []}
                 fallbackImage={getProductImage(product)}
+                sectionTitle={t("product.colorAppearance")}
               />
             ) : (
               <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-batech-pearl shadow-lg shadow-batech-navy/5">
@@ -130,7 +166,7 @@ export default async function ProductPage({ params }: Props) {
                   <div className="absolute inset-0 bg-white z-0" />
                   <Image
                     src={getProductImage(product)}
-                    alt={product.name}
+                    alt={productDisplayName}
                     fill
                     className="object-contain relative z-10"
                     sizes="(max-width: 1024px) 100vw, 66vw"
@@ -176,13 +212,13 @@ export default async function ProductPage({ params }: Props) {
             )}
 
             {/* Açıklama */}
-            {product.description && (
+            {productDisplayDescription && (
               <section className="rounded-2xl border border-batech-pearl bg-batech-pearl/20 p-6 lg:p-8">
                 <h2 className="text-lg font-semibold text-batech-navy mb-4 pb-2 border-b border-batech-pearl">
                   {t("product.description")}
                 </h2>
                 <div className="prose prose-sm max-w-none text-batech-silver leading-relaxed">
-                  {product.description.split("\n\n").map((para, i) => (
+                  {productDisplayDescription.split("\n\n").map((para, i) => (
                     <p key={i} className="mb-4 last:mb-0">
                       {para.split("\n").map((line, j) => (
                         <span key={j}>
@@ -263,6 +299,14 @@ export default async function ProductPage({ params }: Props) {
               </div>
             </div>
 
+            {/* Teknik çizim (varsa) */}
+            {product.technicalDrawing && (
+              <ProductTechnicalDrawing
+                technicalDrawing={product.technicalDrawing}
+                productName={productDisplayName}
+              />
+            )}
+
             {/* İlgili ürünler */}
             {related.length > 0 && (
               <div className="rounded-2xl border border-batech-pearl bg-batech-pearl/20 p-6">
@@ -277,14 +321,14 @@ export default async function ProductPage({ params }: Props) {
                         <div className="relative w-16 h-16 flex-shrink-0 rounded-xl overflow-hidden bg-batech-pearl group-hover:ring-2 group-hover:ring-batech-cyan/30 transition-all">
                           <Image
                             src={getProductImage(p)}
-                            alt={p.name}
+                            alt={getTranslatedProductName(t, p.slug, p.name)}
                             fill
                             className="object-cover group-hover:scale-105 transition-transform duration-300"
                             sizes="64px"
                           />
                         </div>
                         <span className="text-sm font-medium text-batech-navy group-hover:text-batech-teal line-clamp-2 flex-1 min-w-0">
-                          {p.name}
+                          {getTranslatedProductName(t, p.slug, p.name)}
                         </span>
                         <svg className="w-4 h-4 flex-shrink-0 text-batech-cyan opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

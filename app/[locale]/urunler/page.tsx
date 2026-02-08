@@ -3,6 +3,23 @@ import { getTranslations } from "next-intl/server";
 import { categories, getProductsByCategory, getCategoryImage } from "@/lib/products";
 import { Link } from "@/i18n/navigation";
 
+function getTranslatedCategoryName(t: (key: string) => string, categorySlug: string, fallback: string): string {
+  const value = t(`categoryName.${categorySlug}`);
+  return value && value !== `categoryName.${categorySlug}` ? value : fallback;
+}
+
+function getTranslatedDescription(
+  t: (key: string) => string,
+  keyPrefix: string,
+  slug: string,
+  fallback: string | undefined
+): string | undefined {
+  if (!fallback) return undefined;
+  const key = `${keyPrefix}.${slug}`;
+  const value = t(key);
+  return value && value !== key ? value : fallback;
+}
+
 type Props = {
   params: Promise<{ locale: string }>;
 };
@@ -11,7 +28,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
   return {
-    title: `${t("productsPage.title")} | Batech Havuz Ekipmanları`,
+    title: `${t("productsPage.title")} | ${t("common.siteName")}`,
     description: t("productsPage.subtitle"),
   };
 }
@@ -49,6 +66,13 @@ export default async function UrunlerPage({ params }: Props) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-grid">
           {categories.map((cat) => {
             const productCount = getProductsByCategory(cat.slug).length || cat.productCount;
+            const categoryDisplayName = getTranslatedCategoryName(t, cat.slug, cat.name);
+            const categoryDisplayDescription = getTranslatedDescription(
+              t,
+              "categoryDescription",
+              cat.slug,
+              cat.description
+            );
             return (
               <Link
                 key={cat.slug}
@@ -58,7 +82,7 @@ export default async function UrunlerPage({ params }: Props) {
                 <div className="relative aspect-[16/10] w-full bg-batech-pearl overflow-hidden">
                   <Image
                     src={getCategoryImage(cat)}
-                    alt={cat.name}
+                    alt={categoryDisplayName}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -70,11 +94,11 @@ export default async function UrunlerPage({ params }: Props) {
                     {productCount} {t("productsPage.productCount")}
                   </span>
                   <h2 className="mt-2 text-xl font-semibold text-batech-navy group-hover:text-batech-teal transition-colors">
-                    {cat.name}
+                    {categoryDisplayName}
                   </h2>
-                  {cat.description && (
+                  {categoryDisplayDescription && (
                     <p className="mt-2 text-sm text-batech-silver line-clamp-2">
-                      {cat.description}
+                      {categoryDisplayDescription}
                     </p>
                   )}
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-batech-teal group-hover:text-batech-cyan group-hover:gap-3 transition-all">

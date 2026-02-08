@@ -9,31 +9,30 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://batech.com.tr";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const messages = await getMessages({ locale });
-  const t = (key: string) => (messages as any)[key] || key;
+  const messages = (await getMessages({ locale })) as Record<string, unknown>;
+  const meta = messages.metadata as Record<string, string> | undefined;
 
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
-      template: "%s | Batech Havuz Ekipmanları",
+      default: meta?.titleDefault ?? "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
+      template: meta?.titleTemplate ?? "%s | Batech Havuz Ekipmanları",
     },
-    description:
-      "Havuz aydınlatma, filtre, pompa ve tüm havuz ekipmanlarında Türkiye'nin güvenilir markası. Kaliteli ürün, uygun fiyat, hızlı sevkiyat.",
-    keywords: "havuz ekipmanları, havuz lambası, havuz filtresi, Batech, İstanbul, Gaziosmanpaşa",
+    description: meta?.description ?? "Havuz aydınlatma, filtre, pompa ve tüm havuz ekipmanlarında Türkiye'nin güvenilir markası.",
+    keywords: meta?.keywords,
     icons: { icon: "/favicon.svg" },
     openGraph: {
       type: "website",
       locale: locale === "tr" ? "tr_TR" : locale === "en" ? "en_US" : locale === "es" ? "es_ES" : locale === "fr" ? "fr_FR" : "ar_SA",
       url: SITE_URL,
-      siteName: "Batech Havuz Ekipmanları",
-      title: "Batech Havuz Ekipmanları | 41 Yıllık Tecrübe",
-      description: "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara. Havuz aydınlatma, filtre, pompa.",
+      siteName: meta?.siteName ?? "Batech Havuz Ekipmanları",
+      title: meta?.openGraphTitle ?? meta?.titleDefault,
+      description: meta?.openGraphDescription ?? meta?.description,
     },
     twitter: {
       card: "summary_large_image",
-      title: "Batech Havuz Ekipmanları",
-      description: "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
+      title: meta?.twitterTitle ?? meta?.siteName,
+      description: meta?.twitterDescription ?? meta?.description,
     },
   };
 }
@@ -47,6 +46,9 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   const messages = await getMessages({ locale });
+  const meta = (messages as Record<string, Record<string, string>>)?.metadata;
+  const orgName = meta?.siteName ?? "Batech Havuz Ekipmanları";
+  const orgDesc = meta?.twitterDescription ?? "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.";
 
   return (
     <NextIntlClientProvider messages={messages}>
@@ -56,10 +58,10 @@ export default async function LocaleLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Batech Havuz Ekipmanları",
+            name: orgName,
             url: SITE_URL,
             logo: `${SITE_URL}/logo_batech-300x138-300x138.png`,
-            description: "41 yıllık tecrübe ile havuz ekipmanlarında 1 numara.",
+            description: orgDesc,
             address: {
               "@type": "PostalAddress",
               streetAddress: "Karlıtepe Mah. Gülserenler Sok. No:23/A",

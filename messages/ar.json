@@ -101,7 +101,7 @@
       "viewAll": "عرض جميع الفئات"
     },
     "categories": [
-      { "name": "معدات إضاءة المسابح", "count": "5 منتجات", "description": "رقم واحد في تصنيع إضاءة المسابح مع 41 عامًا من الخبرة." },
+      { "name": "معدات إضاءة المسابح", "count": "18 منتجات", "description": "رقم واحد في تصنيع إضاءة المسابح مع 41 عامًا من الخبرة." },
       { "name": "اللوحات الكهربائية", "count": "منتجان", "description": "لوحات كهربائية للمسابح نوع اقتصادي وفاخر." },
       { "name": "الفلاتر والمعدات", "count": "منتجان", "description": "أنظمة فلترة المسابح وقطع الغيار." },
       { "name": "معدات حافة وداخل المسبح", "count": "13 منتج", "description": "شبكات، صمامات، سلالم ومعدات حافة." },
@@ -148,9 +148,12 @@
     "title": "شهاداتنا",
     "subtitle": "نقدم منتجات وخدمات موثوقة مع شهادات الجودة والامتثال لدينا.",
     "contact": "اتصل بنا",
+    "viewFull": "انقر لعرض بالحجم الكامل",
+    "close": "إغلاق",
+    "viewFullHint": "لمعلومات الشهادات والكتالوج",
     "items": [
       {
-        "title": "شهادات الجودة",
+        "title": "ISO 9001",
         "desc": "معايير المنتج والإنتاج"
       },
       {
@@ -158,8 +161,8 @@
         "desc": "الامتثال الأوروبي"
       },
       {
-        "title": "مطابقة TSE",
-        "desc": "المعايير المحلية"
+        "title": "تسجيل العلامة التجارية",
+        "desc": "علامة مسجلة"
       }
     ]
   },
@@ -278,7 +281,108 @@
     "priceTitle": "السعر والكتالوج",
     "priceDescription": "اتصل بنا للحصول على عرض سعر أو معلومات فنية أو طلب طلب بالجملة لهذا المنتج.",
     "quote": "اطلب عرض سعر",
-    "related": "المنتجات ذات الصلة"
+    "related": "المنتجات ذات الصلة",
+    "technicalDrawing": "الرسم الفني",
+    "technicalDrawingClick": "انقر لعرض بالحجم الكامل",
+    "colorAppearance": "اللون / المظهر"
+  },
+  "productColors": {
+    "productAppearance": "مظهر المنتج",
+    "beyaz": "أبيض",
+    "gunisigi": "نهاري",
+    "kirmizi": "أحمر",
+    "mavi": "أزرق",
+    "macenta": "أرجواني",
+    "rgb": "RGB",
+    "turkuaz": "تركواز",
+    "yesil": "أخضر",
+    "amber": "كهرماني",
+    "isiksiz": "بدون إضاءة",
+    "blackProductAppearance": "أسود - مظهر المنتج",
+    "blackBeyaz": "أسود - أبيض",
+    "blackGunisigi": "أسود - نهاري",
+    "blackKirmizi": "أسود - أحمر",
+    "blackMavi": "أسود - أزرق",
+    "blackMacenta": "أسود - أرجواني",
+    "blackRgb": "أسود - RGB",
+    "blackTurkuaz": "أسود - تركواز",
+    "blackYesil": "أسود - أخضر",
+    "blackAmber": "أسود - كهرماني"
+  },
+  "categoryName": {
+    "havuz-aydinlatma-ekipmanlari": "معدات إضاءة المسابح",
+    "elektrik-panolari": "اللوحات الكهربائية",
+    "filtreler-ve-ekipmanlari": "الفلاتر والمعدات",
+    "havuz-kenar-ve-ic-ekipmanlari": "معدات حافة وداخل المسبح",
+    "havuz-temizlik-ekipmanlari": "معدات تنظيف المسابح",
+    "sus-havuzu-ekipmanlari": "معدات المسابح الزخرفية"
+  },
+  "categoryDescription": {
+    "havuz-aydinlatma-ekipmanlari": "الأول في تصنيع مصابيح المسابح مع 41 عاماً من الخبرة.",
+    "elektrik-panolari": "لوحات كهربائية اقتصادية وفاخرة للمسابح.",
+    "filtreler-ve-ekipmanlari": "أنظمة فلاتر المسابح وقطع الغيار.",
+    "havuz-kenar-ve-ic-ekipmanlari": "شبكات، صمامات، سلالم ومعدات حافة.",
+    "havuz-temizlik-ekipmanlari": "فراشي تنظيف، سكيمرات وملحقات.",
+    "sus-havuzu-ekipmanlari": "نوافير ومعدات المسابح الزخرفية."
+  },
+  "productDescription": {
+    "ekonomik-tip-elektrik-panolari": "لوحة كهربائية اقتصادية من البلاستيك الحراري، مضادة للبكتيريا ومحكمة الإغلاق.\n*جهاز التيار المتبقي والمؤقت والثرموستات الرقمي يباعان بشكل منفصل، يرجى التحديد.",
+    "luks-tip-elektrik-panolari": "لوحة كهربائية فاخرة مضادة للبكتيريا وغير قابلة للاحتراق، زجاج بوليكربونات غير قابل للكسر، محكمة الإغلاق IP68.\n*جهاز التيار المتبقي والمؤقت والثرموستات الرقمي يباعان بشكل منفصل، يرجى التحديد."
+  },
+  "productName": {
+    "par56-ampul": "لمبة Par56",
+    "par56-komple-armatur": "تركيب Par56 كامل",
+    "par56-komple-armatur-paslanmaz": "تركيب Par56 كامل ستانلس",
+    "slim-flat-armatur": "تركيب Slim Flat",
+    "slim-flat-paslanmaz-armatur": "تركيب Slim Flat ستانلس",
+    "tek-led-mini-spot": "ميني سبوت LED واحد",
+    "gecme-mini-spot": "ميني سبوت مدمج",
+    "paslanmaz-gecme-mini-spot": "ميني سبوت مدمج ستانلس",
+    "ayakli-mini-spot-armatur": "ميني سبوت بقاعدة",
+    "super-smart-armatur": "تركيب Super Smart",
+    "super-smart-armatur-paslanmaz": "تركيب Super Smart ستانلس",
+    "par38-yer-armaturu-paslanmaz": "تركيب أرضي Par38 ستانلس",
+    "mini-flat-armatur": "تركيب Mini Flat",
+    "mini-flat-paslanmaz-armatur": "تركيب Mini Flat ستانلس",
+    "par38-ankastre-armatur": "تركيب Par38 مدمج",
+    "par38-ankastre-armatur-paslanmaz": "تركيب Par38 مدمج ستانلس",
+    "par38-ayakli-armatur": "تركيب Par38 بقاعدة",
+    "ekonomik-tip-elektrik-panolari": "لوحات كهربائية نوع اقتصادي",
+    "luks-tip-elektrik-panolari": "لوحات كهربائية نوع فاخر",
+    "alti-yollu-vana": "صمام سداسي الاتجاهات",
+    "polyester-kum-filtreleri": "فلاتر رمل بوليستر",
+    "mosaic-model-havuz-kenar-izgarasi": "شبكة حافة مسبح فسيفساء 20 سم",
+    "45-kose-parcalari": "قطع زاوية 45°",
+    "90-kose-parcalari": "قطع زاوية 90°",
+    "cift-gecme-izgara": "شبكة مزدوجة التمرير",
+    "kare-dip-suzgec": "مصفاة قاع مربعة",
+    "muro-tip-havuz-merdiveni": "سلم مسبح نوع Muro",
+    "paslanmaz-havuz-su-perdesi": "ستارة ماء ستانلس (شلال كوبرا)",
+    "standart-tip-havuz-merdiveni": "سلم مسبح نوع قياسي",
+    "tabandan-besleme-nozulu": "فوهة تغذية من القاع",
+    "tek-gecme-izgara": "شبكة مفردة التمرير",
+    "vakum-nozulu": "فوهة تفريغ",
+    "yandan-besleme-nozulu": "فوهة تغذية جانبية",
+    "yuvarlak-dip-suzgec": "مصفاة قاع دائرية",
+    "bspool-tuz-jeneratori": "مولد كلور ملحي BsPool",
+    "duvar-fircasi": "فرشاة حائط",
+    "eco-tip-derin-kepce": "ماسكة عمق نوع Eco",
+    "havuz-supurgesi": "ماسحة مسبح",
+    "kose-fircasi": "فرشاة زاوية",
+    "lux-derin-tip-kepce": "ماسكة عمق نوع Lux",
+    "robodeep-havuz-robotu": "روبوت مسبح robodeep",
+    "sivili-test-kiti": "طقم اختبار سائل",
+    "supurge-hortum-adaptoru": "محول خرطوم الماسحة",
+    "supurge-hortumu": "خرطوم الماسحة",
+    "teleskopik-saplar": "أعمدة تلسكوبية",
+    "yosun-fircasi": "فرشاة طحالب",
+    "caglayan-fiskiye": "نافورة شلال",
+    "kopuk-fiskiye": "نافورة رغوية",
+    "parmak-fiskiye": "نافورة أصابع",
+    "su-cani-fiskiye": "نافورة جرس مائي",
+    "volkan-fiskiye": "نافورة بركان",
+    "yelpaze-film-fiskiye": "نافورة مروحة فيلم",
+    "fiskiye-armaturu": "تركيب نافورة"
   },
   "sssPage": {
     "back": "الرئيسية",
@@ -302,7 +406,8 @@
     "emptyContactText": "للكتالوج والسعر",
     "quote": "احصل على عرض سعر",
     "allCategories": "جميع الفئات",
-    "detail": "التفاصيل"
+    "detail": "التفاصيل",
+    "metaDescription": "كتالوج {categoryName} {productCount}."
   },
   "common": {
     "required": "*",
@@ -312,7 +417,19 @@
     "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
     "city": "Gaziosmanpaşa / İstanbul",
     "selectLanguage": "اختر اللغة",
-    "whatsapp": "واتساب"
+    "whatsapp": "واتساب",
+    "siteName": "Batech معدات المسابح"
+  },
+  "metadata": {
+    "titleDefault": "Batech معدات المسابح | 41 عامًا من الخبرة",
+    "titleTemplate": "%s | Batech معدات المسابح",
+    "description": "علامة تركيا الموثوقة في إضاءة المسابح والمرشحات والمضخات وجميع معدات المسابح. منتجات عالية الجودة، أسعار تنافسية، شحن سريع.",
+    "keywords": "معدات المسابح، إضاءة المسابح، مرشح المسابح، Batech، إسطنبول",
+    "openGraphTitle": "Batech معدات المسابح | 41 عامًا من الخبرة",
+    "openGraphDescription": "رقم واحد في معدات المسابح مع 41 عامًا من الخبرة. إضاءة المسابح، مرشحات، مضخات.",
+    "twitterTitle": "Batech معدات المسابح",
+    "twitterDescription": "رقم واحد في معدات المسابح مع 41 عامًا من الخبرة.",
+    "siteName": "Batech معدات المسابح"
   },
   "notFound": {
     "title": "الصفحة غير موجودة",

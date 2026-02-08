@@ -101,7 +101,7 @@
       "viewAll": "Voir toutes les catégories"
     },
     "categories": [
-      { "name": "Équipements d'éclairage pour piscines", "count": "5 produits", "description": "Numéro un en fabrication de luminaires avec 41 ans d'expérience." },
+      { "name": "Équipements d'éclairage pour piscines", "count": "18 produits", "description": "Numéro un en fabrication de luminaires avec 41 ans d'expérience." },
       { "name": "Panneaux électriques", "count": "2 produits", "description": "Panneaux électriques pour piscines type économique et luxe." },
       { "name": "Filtres et équipements", "count": "2 produits", "description": "Systèmes de filtration et pièces détachées." },
       { "name": "Équipements de bord et intérieur de piscine", "count": "13 produits", "description": "Grilles, vannes, échelles et équipements de bord." },
@@ -148,9 +148,12 @@
     "title": "Nos Certificats",
     "subtitle": "Nous fournissons des produits et services fiables avec nos certificats de qualité et de conformité.",
     "contact": "contactez-nous",
+    "viewFull": "Cliquez pour agrandir",
+    "close": "Fermer",
+    "viewFullHint": "Pour les détails des certificats et le catalogue",
     "items": [
       {
-        "title": "Certificats de Qualité",
+        "title": "ISO 9001",
         "desc": "Normes produit et production"
       },
       {
@@ -158,8 +161,8 @@
         "desc": "Conformité européenne"
       },
       {
-        "title": "Conformité TSE",
-        "desc": "Normes locales"
+        "title": "Enregistrement de Marque",
+        "desc": "Marque déposée"
       }
     ]
   },
@@ -278,7 +281,108 @@
     "priceTitle": "Prix et catalogue",
     "priceDescription": "Contactez-nous pour un devis de prix, des informations techniques ou une demande de commande en gros pour ce produit.",
     "quote": "Demander un devis",
-    "related": "Produits connexes"
+    "related": "Produits connexes",
+    "technicalDrawing": "Dessin technique",
+    "technicalDrawingClick": "Cliquez pour agrandir",
+    "colorAppearance": "Couleur / aspect"
+  },
+  "productColors": {
+    "productAppearance": "Aspect du produit",
+    "beyaz": "Blanc",
+    "gunisigi": "Lumière du jour",
+    "kirmizi": "Rouge",
+    "mavi": "Bleu",
+    "macenta": "Magenta",
+    "rgb": "RGB",
+    "turkuaz": "Turquoise",
+    "yesil": "Vert",
+    "amber": "Ambre",
+    "isiksiz": "Sans lumière",
+    "blackProductAppearance": "Noir - Aspect du produit",
+    "blackBeyaz": "Noir - Blanc",
+    "blackGunisigi": "Noir - Lumière du jour",
+    "blackKirmizi": "Noir - Rouge",
+    "blackMavi": "Noir - Bleu",
+    "blackMacenta": "Noir - Magenta",
+    "blackRgb": "Noir - RGB",
+    "blackTurkuaz": "Noir - Turquoise",
+    "blackYesil": "Noir - Vert",
+    "blackAmber": "Noir - Ambre"
+  },
+  "categoryName": {
+    "havuz-aydinlatma-ekipmanlari": "Équipements d'éclairage pour piscines",
+    "elektrik-panolari": "Panneaux électriques",
+    "filtreler-ve-ekipmanlari": "Filtres et équipements",
+    "havuz-kenar-ve-ic-ekipmanlari": "Équipements de bord et intérieur de piscine",
+    "havuz-temizlik-ekipmanlari": "Équipements de nettoyage pour piscines",
+    "sus-havuzu-ekipmanlari": "Équipements pour piscines décoratives"
+  },
+  "categoryDescription": {
+    "havuz-aydinlatma-ekipmanlari": "N°1 dans la fabrication de lampes pour piscines avec 41 ans d'expérience.",
+    "elektrik-panolari": "Panneaux électriques économiques et luxe pour piscines.",
+    "filtreler-ve-ekipmanlari": "Systèmes de filtres et pièces détachées pour piscines.",
+    "havuz-kenar-ve-ic-ekipmanlari": "Grilles, vannes, échelles et équipements de bord.",
+    "havuz-temizlik-ekipmanlari": "Brosses, skimmers et accessoires de nettoyage.",
+    "sus-havuzu-ekipmanlari": "Fontaines et équipements pour piscines décoratives."
+  },
+  "productDescription": {
+    "ekonomik-tip-elektrik-panolari": "Tableau électrique économique thermoplastique, antibactérien et étanche.\n*Le disjoncteur différentiel, minuterie et thermostat digital se vendent séparément, veuillez préciser.",
+    "luks-tip-elektrik-panolari": "Tableau électrique type luxe antibactérien, ininflammable, verre polycarbonate incassable, étanche IP68.\n*Le disjoncteur différentiel, minuterie et thermostat digital se vendent séparément, veuillez préciser."
+  },
+  "productName": {
+    "par56-ampul": "Ampoule Par56",
+    "par56-komple-armatur": "Luminaire Par56 complet",
+    "par56-komple-armatur-paslanmaz": "Luminaire Par56 complet inox",
+    "slim-flat-armatur": "Luminaire Slim Flat",
+    "slim-flat-paslanmaz-armatur": "Luminaire Slim Flat inox",
+    "tek-led-mini-spot": "Mini spot LED unique",
+    "gecme-mini-spot": "Mini spot encastré",
+    "paslanmaz-gecme-mini-spot": "Mini spot encastré inox",
+    "ayakli-mini-spot-armatur": "Luminaire mini spot sur pied",
+    "super-smart-armatur": "Luminaire Super Smart",
+    "super-smart-armatur-paslanmaz": "Luminaire Super Smart inox",
+    "par38-yer-armaturu-paslanmaz": "Luminaire au sol Par38 inox",
+    "mini-flat-armatur": "Luminaire Mini Flat",
+    "mini-flat-paslanmaz-armatur": "Luminaire Mini Flat inox",
+    "par38-ankastre-armatur": "Luminaire Par38 encastré",
+    "par38-ankastre-armatur-paslanmaz": "Luminaire Par38 encastré inox",
+    "par38-ayakli-armatur": "Luminaire Par38 sur pied",
+    "ekonomik-tip-elektrik-panolari": "Panneaux électriques type économique",
+    "luks-tip-elektrik-panolari": "Panneaux électriques type luxe",
+    "alti-yollu-vana": "Vanne six voies",
+    "polyester-kum-filtreleri": "Filtres à sable polyester",
+    "mosaic-model-havuz-kenar-izgarasi": "Grille de bord modèle Mosaic 20 cm",
+    "45-kose-parcalari": "Pièces d'angle 45°",
+    "90-kose-parcalari": "Pièces d'angle 90°",
+    "cift-gecme-izgara": "Grille double passage",
+    "kare-dip-suzgec": "Bonde de fond carrée",
+    "muro-tip-havuz-merdiveni": "Échelle de piscine type Muro",
+    "paslanmaz-havuz-su-perdesi": "Rideau d'eau inox (Cascade Cobra)",
+    "standart-tip-havuz-merdiveni": "Échelle de piscine type standard",
+    "tabandan-besleme-nozulu": "Buse d'alimentation par le fond",
+    "tek-gecme-izgara": "Grille simple passage",
+    "vakum-nozulu": "Buse de vide",
+    "yandan-besleme-nozulu": "Buse d'alimentation latérale",
+    "yuvarlak-dip-suzgec": "Bonde de fond ronde",
+    "bspool-tuz-jeneratori": "Générateur de chlore salin BsPool",
+    "duvar-fircasi": "Brosse de mur",
+    "eco-tip-derin-kepce": "Épuisette type Eco",
+    "havuz-supurgesi": "Aspirateur de piscine",
+    "kose-fircasi": "Brosse d'angle",
+    "lux-derin-tip-kepce": "Épuisette type Lux",
+    "robodeep-havuz-robotu": "Robot de piscine robodeep",
+    "sivili-test-kiti": "Kit de test liquide",
+    "supurge-hortum-adaptoru": "Adaptateur de tuyau",
+    "supurge-hortumu": "Tuyau d'aspirateur",
+    "teleskopik-saplar": "Manches télescopiques",
+    "yosun-fircasi": "Brosse à algues",
+    "caglayan-fiskiye": "Fontaine cascade",
+    "kopuk-fiskiye": "Fontaine mousse",
+    "parmak-fiskiye": "Fontaine doigts",
+    "su-cani-fiskiye": "Fontaine cloche d'eau",
+    "volkan-fiskiye": "Fontaine volcan",
+    "yelpaze-film-fiskiye": "Fontaine éventail film",
+    "fiskiye-armaturu": "Luminaire fontaine"
   },
   "sssPage": {
     "back": "Accueil",
@@ -302,7 +406,8 @@
     "emptyContactText": "Pour catalogue et prix",
     "quote": "Obtenir un devis de prix",
     "allCategories": "Toutes les catégories",
-    "detail": "Détail"
+    "detail": "Détail",
+    "metaDescription": "Catalogue {categoryName} {productCount}."
   },
   "common": {
     "required": "*",
@@ -312,7 +417,19 @@
     "address": "Karlıtepe Mah. Gülserenler Sok. No:23/A",
     "city": "Gaziosmanpaşa / İstanbul",
     "selectLanguage": "Choisir la langue",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "siteName": "Batech Équipements de Piscine"
+  },
+  "metadata": {
+    "titleDefault": "Batech Équipements de Piscine | 41 Ans d'Expérience",
+    "titleTemplate": "%s | Batech Équipements de Piscine",
+    "description": "La marque de confiance de Turquie en éclairage, filtres, pompes et équipements de piscine. Produits de qualité, prix compétitifs, livraison rapide.",
+    "keywords": "équipements de piscine, luminaire piscine, filtre piscine, Batech, Istanbul",
+    "openGraphTitle": "Batech Équipements de Piscine | 41 Ans d'Expérience",
+    "openGraphDescription": "Numéro un en équipements de piscine avec 41 ans d'expérience. Éclairage, filtres, pompes.",
+    "twitterTitle": "Batech Équipements de Piscine",
+    "twitterDescription": "Numéro un en équipements de piscine avec 41 ans d'expérience.",
+    "siteName": "Batech Équipements de Piscine"
   },
   "notFound": {
     "title": "Page non trouvée",

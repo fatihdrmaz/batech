@@ -25,26 +25,34 @@ const RGB_GRADIENT =
 const RGB_GLOW =
   "0 10px 40px -10px rgba(239,68,68,0.35), 0 10px 50px -15px rgba(34,197,94,0.3), 0 10px 60px -20px rgba(59,130,246,0.35)";
 
+const SİYAH_ACCENT = "#64748b";
+
 function getAccentForLabel(label: string): string | null {
   const normalized = label.trim();
-  if (normalized === "RGB") return null; // RGB özel gradient ile
+  if (normalized === "RGB" || normalized === "Siyah - RGB") return null; // RGB özel gradient ile
+  if (normalized.startsWith("Siyah")) return SİYAH_ACCENT;
   return LABEL_TO_ACCENT[normalized] ?? null;
 }
 
 function isRgbLabel(label: string | undefined): boolean {
-  return label?.trim() === "RGB";
+  const t = label?.trim();
+  return t === "RGB" || t === "Siyah - RGB";
 }
+
+type ColorOptionWithTranslation = ProductColorOption & { translatedLabel?: string };
 
 type Props = {
   productName: string;
-  colorOptions: ProductColorOption[];
+  colorOptions: ColorOptionWithTranslation[];
   fallbackImage: string;
+  sectionTitle?: string;
 };
 
 export default function ProductImageWithColorPicker({
   productName,
   colorOptions,
   fallbackImage,
+  sectionTitle = "Renk / görünüm",
 }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selected = colorOptions[selectedIndex];
@@ -52,6 +60,7 @@ export default function ProductImageWithColorPicker({
   const currentSrc = rawSrc.includes(" ") ? rawSrc.replace(/ /g, "%20") : rawSrc;
   const accentColor = selected?.label ? getAccentForLabel(selected.label) : null;
   const useRgbGradient = isRgbLabel(selected?.label);
+  const displayLabel = (opt: ColorOptionWithTranslation | undefined) => opt?.translatedLabel ?? opt?.label ?? "";
 
   if (!colorOptions?.length) return null;
 
@@ -73,7 +82,7 @@ export default function ProductImageWithColorPicker({
               <Image
                 key={currentSrc}
                 src={currentSrc}
-                alt={`${productName} - ${selected?.label ?? "görsel"}`}
+                alt={`${productName} - ${displayLabel(selected) || "görsel"}`}
                 fill
                 className="object-contain transition-opacity duration-300 relative z-10"
                 sizes="(max-width: 1024px) 100vw, 66vw"
@@ -103,7 +112,7 @@ export default function ProductImageWithColorPicker({
           <Image
             key={currentSrc}
             src={currentSrc}
-            alt={`${productName} - ${selected?.label ?? "görsel"}`}
+            alt={`${productName} - ${displayLabel(selected) || "görsel"}`}
             fill
             className="object-contain transition-opacity duration-300 relative z-10"
             sizes="(max-width: 1024px) 100vw, 66vw"
@@ -131,7 +140,7 @@ export default function ProductImageWithColorPicker({
             style={{ backgroundColor: accentColor }}
           />
         ) : null}
-        <p className="text-sm font-semibold text-batech-navy mb-4">Renk / görünüm</p>
+        <p className="text-sm font-semibold text-batech-navy mb-4">{sectionTitle}</p>
         <div className="flex flex-wrap gap-2.5">
           {colorOptions.map((option, index) => (
             <button
@@ -144,7 +153,7 @@ export default function ProductImageWithColorPicker({
                   : "bg-batech-pearl text-batech-ocean hover:bg-batech-pearl/80 hover:ring-1 hover:ring-batech-cyan/50 hover:shadow-sm"
               }`}
             >
-              {option.label}
+              {displayLabel(option)}
             </button>
           ))}
         </div>

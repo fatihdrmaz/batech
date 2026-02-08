@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { categories as categoriesData, getCategoryImage } from "@/lib/products";
 
 const CATEGORY_HREFS = [
   "/urunler/havuz-aydinlatma-ekipmanlari",
@@ -13,13 +14,16 @@ const CATEGORY_HREFS = [
   "/urunler/havuz-temizlik-ekipmanlari",
   "/urunler/sus-havuzu-ekipmanlari",
 ];
-const CATEGORY_IMAGE = "/images/placeholder-category.svg";
 
 export default function Products() {
   const t = useTranslations();
   const categoriesRaw = t.raw("products.categories") as Array<{ name: string; count: string; description: string }>;
   const categories = Array.isArray(categoriesRaw)
-    ? categoriesRaw.map((cat, i) => ({ ...cat, href: CATEGORY_HREFS[i] ?? "/urunler", image: CATEGORY_IMAGE }))
+    ? categoriesRaw.map((cat, i) => ({
+        ...cat,
+        href: CATEGORY_HREFS[i] ?? "/urunler",
+        image: categoriesData[i] ? getCategoryImage(categoriesData[i]) : "/images/placeholder-category.svg",
+      }))
     : [];
 
   return (

@@ -10,6 +10,29 @@ import {
 } from "@/lib/products";
 import { Link } from "@/i18n/navigation";
 
+function getTranslatedCategoryName(t: (key: string) => string, categorySlug: string, fallback: string): string {
+  const value = t(`categoryName.${categorySlug}`);
+  return value && value !== `categoryName.${categorySlug}` ? value : fallback;
+}
+
+function getTranslatedProductName(t: (key: string) => string, slug: string, fallback: string): string {
+  const key = `productName.${slug}`;
+  const value = t(key);
+  return value && value !== key ? value : fallback;
+}
+
+function getTranslatedDescription(
+  t: (key: string) => string,
+  keyPrefix: string,
+  slug: string,
+  fallback: string | undefined
+): string | undefined {
+  if (!fallback) return undefined;
+  const key = `${keyPrefix}.${slug}`;
+  const value = t(key);
+  return value && value !== key ? value : fallback;
+}
+
 type Props = {
   params: Promise<{ category: string; locale: string }>;
 };
@@ -23,9 +46,16 @@ export async function generateMetadata({ params }: Props) {
   const t = await getTranslations({ locale });
   const category = getCategoryBySlug(slug);
   if (!category) return { title: `${t("product.category")} | Batech` };
+  const siteName = t("common.siteName");
+  const categoryDisplayName = getTranslatedCategoryName(t, slug, category.name);
+  const categoryDesc = getTranslatedDescription(t, "categoryDescription", slug, category.description);
+  const metaDesc = t("categoryPage.metaDescription", {
+    categoryName: categoryDisplayName,
+    productCount: t("productsPage.productCount"),
+  });
   return {
-    title: `${category.name} | Batech Havuz Ekipmanları`,
-    description: category.description || `${category.name} ${t("productsPage.productCount")} kataloğu.`,
+    title: `${categoryDisplayName} | ${siteName}`,
+    description: categoryDesc || metaDesc,
   };
 }
 
@@ -36,6 +66,13 @@ export default async function CategoryPage({ params }: Props) {
   if (!category) notFound();
 
   const categoryProducts = getProductsByCategory(slug);
+  const categoryDisplayName = getTranslatedCategoryName(t, slug, category.name);
+  const categoryDisplayDescription = getTranslatedDescription(
+    t,
+    "categoryDescription",
+    slug,
+    category.description
+  );
 
   return (
     <div className="min-h-screen bg-white">
@@ -55,10 +92,10 @@ export default async function CategoryPage({ params }: Props) {
             {t("categoryPage.back")}
           </Link>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold section-accent pb-6">
-            {category.name}
+            {categoryDisplayName}
           </h1>
-          {category.description && (
-            <p className="mt-4 text-batech-silver max-w-2xl text-lg">{category.description}</p>
+          {categoryDisplayDescription && (
+            <p className="mt-4 text-batech-silver max-w-2xl text-lg">{categoryDisplayDescription}</p>
           )}
           <p className="mt-3 text-sm text-batech-cyan/90">
             {categoryProducts.length} {t("categoryPage.products")}
@@ -85,7 +122,15 @@ export default async function CategoryPage({ params }: Props) {
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-grid">
-            {categoryProducts.map((product) => (
+            {categoryProducts.map((product) => {
+              const productDisplayName = getTranslatedProductName(t, product.slug, product.name);
+              const productShortDesc = getTranslatedDescription(
+                t,
+                "productDescription",
+                product.slug,
+                product.description
+              );
+              return (
               <Link
                 key={product.slug}
                 href={`/urun/${product.slug}`}
@@ -95,7 +140,7 @@ export default async function CategoryPage({ params }: Props) {
                   <div className="absolute inset-0 bg-white z-0" />
                   <Image
                     src={getProductImage(product)}
-                    alt={product.name}
+                    alt={productDisplayName}
                     fill
                     className="object-contain p-4 group-hover:scale-105 transition-transform duration-500 relative z-10"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -103,11 +148,11 @@ export default async function CategoryPage({ params }: Props) {
                 </div>
                 <div className="p-6">
                   <h2 className="text-lg font-semibold text-batech-navy group-hover:text-batech-teal transition-colors line-clamp-2">
-                    {product.name}
+                    {productDisplayName}
                   </h2>
-                  {product.description && (
+                  {productShortDesc && (
                     <p className="mt-2 text-sm text-batech-silver line-clamp-2">
-                      {product.description}
+                      {productShortDesc.split("\n\n")[0]}
                     </p>
                   )}
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-batech-teal group-hover:text-batech-cyan group-hover:gap-3 transition-all">
@@ -118,7 +163,8 @@ export default async function CategoryPage({ params }: Props) {
                   </span>
                 </div>
               </Link>
-            ))}
+            );
+            })}
           </div>
         )}
 
