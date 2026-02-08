@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { searchProductsAndCategories, getCategoryImage, getProductImage } from "@/lib/products";
 import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
@@ -35,6 +35,7 @@ export async function generateMetadata({ params, searchParams }: Props) {
 
 export default async function SearchPage({ params, searchParams }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const { q = "" } = await searchParams;
   const t = await getTranslations({ locale });
   const { products: foundProducts, categories: foundCategories } = searchProductsAndCategories(q);

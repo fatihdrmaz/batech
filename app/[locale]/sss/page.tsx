@@ -1,5 +1,5 @@
 import Faq from "@/components/Faq";
-import { getTranslations, getMessages } from "next-intl/server";
+import { getTranslations, getMessages, setRequestLocale } from "next-intl/server";
 import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
 
@@ -44,6 +44,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function SssPage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const messages = (await getMessages({ locale })) as Record<string, unknown>;
   const faqData = messages?.faq as { items?: Array<{ question: string; answer: string }> } | undefined;

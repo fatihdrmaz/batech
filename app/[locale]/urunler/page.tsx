@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { categories, getProductsByCategory, getCategoryImage } from "@/lib/products";
 import { locales } from "@/i18n";
 import { Link } from "@/i18n/navigation";
@@ -62,6 +62,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function UrunlerPage({ params }: Props) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
   return (
     <div className="min-h-screen bg-white">

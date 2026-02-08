@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   getCategoryBySlug,
   getProductsByCategory,
@@ -89,6 +89,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function CategoryPage({ params }: Props) {
   const { category: slug, locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale });
   const category = getCategoryBySlug(slug);
   if (!category) notFound();
