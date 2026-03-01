@@ -20,11 +20,15 @@ export default function Footer() {
       { labelKey: "nav.faq", href: "/sss" },
       { labelKey: "nav.contact", href: "/#iletisim" },
     ],
+    business: [
+      { labelKey: "footer.oem", href: "/oem" },
+      { labelKey: "footer.distributorWanted", href: "/distributor-wanted" },
+    ],
   };
   return (
     <footer className="relative z-30 bg-batech-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="text-2xl font-bold text-white">
@@ -85,6 +89,25 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-2">
               {footerLinks.sirket.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-batech-silver hover:text-batech-cyan transition-colors text-sm"
+                  >
+                    {t(link.labelKey)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* İş birlikleri (OEM / Distribütör) */}
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
+              {t("footer.business")}
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {footerLinks.business.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

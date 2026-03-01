@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entries.push({ url: `${prefix}/urunler`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.9 });
     entries.push({ url: `${prefix}/ara`, lastModified: lastMod, changeFrequency: "weekly", priority: 0.8 });
     entries.push({ url: `${prefix}/sss`, lastModified: lastMod, changeFrequency: "monthly", priority: 0.7 });
+    entries.push({ url: `${prefix}/oem`, lastModified: lastMod, changeFrequency: "monthly", priority: 0.6 });
+    entries.push({ url: `${prefix}/distributor-wanted`, lastModified: lastMod, changeFrequency: "monthly", priority: 0.6 });
 
     for (const slug of categorySlugs) {
       entries.push({
