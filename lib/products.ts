@@ -4,7 +4,7 @@
  * KATEGORİ FOTOĞRAFLARI: public/images/categories/
  *   Örnek: havuz-aydinlatma-ekipmanlari.jpg
  *   Aşağıdaki categories dizisinde ilgili kategorinin image alanını güncelleyin:
- *   image: "/images/categories/havuz-aydinlatma-ekipmanlari.jpg"
+ *   image: "/images/categories/havuz-aydinlatma-ekipmanlari.jpg"gst
  *
  * ÜRÜN FOTOĞRAFLARI: public/images/products/
  *   Örnek: par38-ayakli-armatur.jpg
