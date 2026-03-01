@@ -43,14 +43,18 @@ export async function POST(request: Request) {
     );
   }
 
+  const port = Number(SMTP_PORT);
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
-    port: Number(SMTP_PORT),
-    secure: Number(SMTP_PORT) === 465,
+    port,
+    secure: port === 465,
     auth: {
       user: SMTP_USER,
       pass: SMTP_PASSWORD,
     },
+    // Vercel serverless ortamında bağlantı zaman aşımı
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
   });
 
   const mailOptions = {
@@ -79,9 +83,10 @@ export async function POST(request: Request) {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("Contact form SMTP error:", err);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Contact form SMTP error:", message, err);
     return NextResponse.json(
-      { error: "send_failed" },
+      { error: "send_failed", detail: process.env.NODE_ENV === "development" ? message : undefined },
       { status: 500 }
     );
   }
