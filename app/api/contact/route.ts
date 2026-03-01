@@ -85,6 +85,40 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail(mailOptions);
+
+    // Formu dolduran kişiye "mesajınız alındı" onay e-postası
+    const confirmSubject = "Mesajınız alındı – Batech Havuz Ekipmanları";
+    const confirmText = [
+      `Sayın ${name},`,
+      ``,
+      `İletişim formundan gönderdiğiniz mesaj tarafımıza ulaşmıştır.`,
+      `En kısa sürede sizinle iletişime geçeceğiz.`,
+      ``,
+      `İyi günler dileriz.`,
+      `Batech Havuz Ekipmanları`,
+    ].join("\n");
+    const confirmHtml = `
+      <div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #333;">
+        <p style="font-size: 16px;">Sayın <strong>${escapeHtml(name)}</strong>,</p>
+        <p style="font-size: 16px; line-height: 1.6;">İletişim formundan gönderdiğiniz mesaj tarafımıza ulaşmıştır. En kısa sürede sizinle iletişime geçeceğiz.</p>
+        <p style="font-size: 16px; margin-top: 24px;">İyi günler dileriz,<br><strong>Batech Havuz Ekipmanları</strong></p>
+        <hr style="border: none; border-top: 1px solid #eee; margin: 24px 0;">
+        <p style="font-size: 12px; color: #888;">Bu e-posta otomatik gönderilmiştir. Lütfen yanıtlamayın.</p>
+      </div>
+    `;
+    try {
+      await transporter.sendMail({
+        from: `"Batech Havuz Ekipmanları" <${SMTP_USER}>`,
+        to: email,
+        subject: confirmSubject,
+        text: confirmText,
+        html: confirmHtml,
+      });
+    } catch (confirmErr) {
+      console.error("Contact form confirmation email error:", confirmErr);
+      // Ana mail gitti, yanıt 200 dönmeye devam et
+    }
+
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
