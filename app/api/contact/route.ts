@@ -44,6 +44,10 @@ export async function POST(request: Request) {
   }
 
   const port = Number(SMTP_PORT);
+  // Sertifika host adı ile eşleşmiyorsa (örn. mail.batech.com.tr'de başka domain sertifikası): SMTP_INSECURE_TLS=true ile TLS doğrulaması atlanabilir (sadece gerekirse kullanın)
+  const tlsOptions =
+    process.env.SMTP_INSECURE_TLS === "true" ? { rejectUnauthorized: false } : undefined;
+
   const transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port,
@@ -52,7 +56,7 @@ export async function POST(request: Request) {
       user: SMTP_USER,
       pass: SMTP_PASSWORD,
     },
-    // Vercel serverless ortamında bağlantı zaman aşımı
+    ...(tlsOptions && { tls: tlsOptions }),
     connectionTimeout: 10000,
     greetingTimeout: 10000,
   });
