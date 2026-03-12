@@ -8,6 +8,10 @@ const nextConfig = {
     "use-intl",
     "@formatjs/intl-localematcher",
   ],
+  images: {
+    // Avoid Vercel Image Optimization transformation limits breaking pages.
+    unoptimized: true,
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
